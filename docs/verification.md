@@ -31,7 +31,9 @@ See [Hosting](hosting.md) and the web build's `godot-runtime-patch.json`.
 
 `tests/browser-smoke.mjs` checks the packaged demo site.
 The local browser is Google Chrome on macOS.
-CI repeats the browser checks with Chromium on Linux before publishing.
+The workflow is configured to repeat these checks with Chromium on Linux.
+The first hosted job could not start because GitHub reported an organization billing lock.
+Linux CI has not passed for this release.
 
 - Phaser: full keyboard route, all five cells, gate success, pause, restart, timeout, and frozen terminal state.
 - Godot: full keyboard route, all four cells, hop, gate success, pause, restart, hazard loss, and frozen terminal movement.
@@ -61,3 +63,18 @@ The Godot browser game needs WebGL 2.
 The samples have no audio pack, multiplayer, persistence, or editor plug-ins.
 Unity and Unreal templates are not part of this release.
 Each future engine needs its own editable project and export proof.
+
+## Publication proof
+
+The public repository is `radbro/game-templates`.
+Release `v0.1.0` contains both source ZIPs, the Godot web ZIP, the asset catalog,
+and `SHA256SUMS`. The public download hashes match the local release files.
+
+GitHub Pages serves the tested static files from the separate `codex/site` branch.
+The Pages build and deployment passed.
+The source tree on `main` keeps generated builds ignored.
+The initial custom verification workflow could not start because of the billing lock.
+Do not treat that blocked run as a passed Linux check.
+
+After the billing lock is resolved, change Pages to the `workflow` build type
+and run `Verify templates and publish demos` to restore the automatic release path.

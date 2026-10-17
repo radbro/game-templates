@@ -12,5 +12,6 @@ Use short sentences and active voice. Keep each template small and editable.
 - Run the Godot smoke and web export when Godot code changes.
 - Test browser controls, outcomes, real touch input, and a sandboxed iframe before release.
 - Record verification limits. A desktop or headless check does not prove a browser build.
-- Keep generated builds, engine caches, test results, and credentials out of Git.
+- Keep generated builds off main. The separate codex/site branch contains static publication artifacts.
+- Keep engine caches, test results, and credentials out of Git.
 - Use Git trailers for relevant constraints, tests, and risks in each commit.

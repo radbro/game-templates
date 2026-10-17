@@ -112,7 +112,9 @@ Set `PLAYWRIGHT_MODULE` to your installed Playwright `index.mjs` path.
 Run `node tests/browser-smoke.mjs`.
 Set `BROWSER_CHANNEL=chrome` to use an installed Google Chrome.
 CI installs its browser tools in a temporary folder.
-It verifies both games before publishing the demo site.
+It can verify both games before publishing the demo site.
+The initial hosted job could not start because the organization has a billing lock.
+The current demos use locally verified artifacts on the `codex/site` branch.
 
 The tests cover rules, source hashes, sprite timing, engine import, motion,
 collisions, outcomes, browser controls, and restricted iframe loading.

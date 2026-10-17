@@ -90,8 +90,10 @@ The shared catalog starts with three packs:
 - **Radcat Playground:** nine reusable 3D prop types.
 - **Relay Arena 2D:** six new vector assets with a repeatable generation script.
 
-Read [Add assets and templates](docs/adding-assets.md) for the release process
-and the next platform, combat, racing, audio, and UI packs.
+Follow [the Radclaw workflow](docs/radclaw-workflow.md) for new character packs.
+It uses native pixel art, editable layers, exact frame timing, source records, and local review.
+The next template proof uses modular Radbro equipment.
+Read [Add assets and templates](docs/adding-assets.md) for the release process and priorities.
 Use a new pack version when changing a released asset.
 Unity and Unreal projects are planned for later releases.
 

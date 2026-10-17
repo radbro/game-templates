@@ -1,5 +1,8 @@
 # Add an asset pack
 
+Start with [the Radclaw asset workflow](radclaw-workflow.md).
+Use its character references, editable sources, review process, and runtime contracts.
+
 1. Give the pack a stable ID and version.
 2. Make a new folder under `assets/`.
 3. Record the source and permission in `pack.json`.
@@ -17,7 +20,8 @@
 
 Use a new pack ID for a character revision that changes its appearance or rig.
 Keep released character files unchanged.
-Use `scripts/build-arena.py` as a small example of a repeatable source generator.
+Use `scripts/build-arena.py` for simple supporting environment pieces.
+Use the Radclaw character and equipment process for new character packs.
 Keep each pack useful without its original game.
 
 # Add a game template
@@ -36,13 +40,16 @@ Keep engine caches and generated exports out of Git.
 
 These items are planned. They are not included in this release.
 
-| Pack | Assets to add | Template it enables |
+| Priority | Pack | Template proof |
 | --- | --- | --- |
-| Platform course | Ledges, moving platforms, springs, checkpoints | Phaser platformer; Godot obstacle course |
-| Arena combat | Enemy sprites, hit effects, projectiles, attack clips | Phaser arena survival; Godot combat room |
-| Racing kit | Modular road turns, ramps, barriers, checkpoint arches | Godot time trial |
-| Audio kit | Original pickup, impact, hop, start, and finish sounds | Both engines |
-| UI kit | Buttons, status bars, score badges, controller prompts | Both engines |
+| 1 | Modular OG Radbro base and animated trait layers | Equip and remove items during movement in Phaser and Godot 2D |
+| 2 | Shared native pixel cast | Switch characters while preserving game state and clip timing |
+| 3 | Reference-based 3D characters, rigs, and motions | Import and play full character scenes in a 3D game |
+| 4 | Matching environment and interaction pieces | Build platform, combat, or racing rules around the character packs |
+| 5 | Audio and UI | Add original sounds and clear equipment and status controls |
+
+The current Radclaw pixel trials need art release approval and engine import proof.
+Choose the first released pack from that work before creating a separate character style.
 
 Add one pack with one game that proves its use.
 Unity and Unreal are later engine tracks.

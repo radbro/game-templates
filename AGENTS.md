@@ -2,6 +2,9 @@
 
 Use short sentences and active voice. Keep each template small and editable.
 
+- Use Radclaw as the source project for new character assets. Read docs/radclaw-workflow.md before adding a character pack.
+- Keep local review candidates out of public assets until their release approval and notices are recorded.
+- Preserve each source pack's native grid, anchor, frame timing, rig revision, layers, and source hashes.
 - Keep code under the root MIT license.
 - Keep each asset notice with that pack. The root MIT license does not cover assets.
 - Do not copy art from other projects without a recorded source and permission.

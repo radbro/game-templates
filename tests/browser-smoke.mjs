@@ -56,6 +56,10 @@ async function phaser() {
   const page = await context.newPage();
   await ready(page, 'phaser-radcat-courier/');
   assert.equal((await state(page)).mode, 'ready');
+  await page.keyboard.press('KeyF');
+  await page.waitForFunction(() => document.fullscreenElement !== null);
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => document.fullscreenElement === null);
   await page.locator('#start').click();
   await page.evaluate(() => window.advanceTime(0));
   async function move(x, y, hop = false) {

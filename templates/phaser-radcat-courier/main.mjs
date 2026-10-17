@@ -46,6 +46,7 @@ window.addEventListener('keydown', event => {
   if (key === 'Enter' && state.mode === 'ready') startGame(state);
   if (key === 'p') pause();
   if (key === 'r') restart();
+  if (key === 'Escape' && document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
   if (key === 'f') {
     if (document.fullscreenElement) document.exitFullscreen?.();
     else document.querySelector('.game-shell').requestFullscreen?.().catch(() => {});

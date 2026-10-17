@@ -1,6 +1,6 @@
 # Release verification
 
-Release: v0.1.0. Date: 2026-10-17.
+Release: v0.1.1. Date: 2026-10-17.
 
 ## Source and asset checks
 
@@ -35,7 +35,7 @@ The workflow is configured to repeat these checks with Chromium on Linux.
 The first hosted job could not start because GitHub reported an organization billing lock.
 Linux CI has not passed for this release.
 
-- Phaser: full keyboard route, all five cells, gate success, pause, restart, timeout, and frozen terminal state.
+- Phaser: fullscreen entry and Escape exit, full keyboard route, all five cells, gate success, pause, restart, timeout, and frozen terminal state.
 - Godot: full keyboard route, all four cells, hop, gate success, pause, restart, hazard loss, and frozen terminal movement.
 - Both games: start and pause with the real touchscreen API in a 390-pixel touch context.
 - Both games: simultaneous touch movement and hop.
@@ -67,7 +67,7 @@ Each future engine needs its own editable project and export proof.
 ## Publication proof
 
 The public repository is `radbro/game-templates`.
-Release `v0.1.0` contains both source ZIPs, the Godot web ZIP, the asset catalog,
+Release `v0.1.1` contains both source ZIPs, the Godot web ZIP, the asset catalog,
 and `SHA256SUMS`. The public download hashes match the local release files.
 
 GitHub Pages serves the tested static files from the separate `codex/site` branch.
@@ -78,3 +78,6 @@ Do not treat that blocked run as a passed Linux check.
 
 After the billing lock is resolved, change Pages to the `workflow` build type
 and run `Verify templates and publish demos` to restore the automatic release path.
+
+Release `v0.1.1` adds explicit Escape handling for Phaser fullscreen exit.
+The original `v0.1.0` downloads remain available.

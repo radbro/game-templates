@@ -1,0 +1,8 @@
+{
+  "engine": "Godot 4.6.2",
+  "file": "index.js",
+  "reason": "Skip the unavailable service-worker API in an opaque-origin sandbox.",
+  "source": "https://github.com/godotengine/godot/blob/4.6.2-stable/platform/web/js/libs/library_godot_os.js",
+  "originalSha256": "e3f56ee40e6f84371053db06692cfac15e2c8659547b11c6b2dfa1996dabd981",
+  "patchedSha256": "ad9370d3bc2609e6531c770fd9b8ccc71db9b56b9ba4eebf0e947a79e94781d3"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "radcat-motion-v2",
+  "version": "2.0.0",
+  "title": "Radcat Motion v2",
+  "credit": "Radbro",
+  "license": "Radbro Community Asset Permission",
+  "source": "https://radbro.gg/shared-assets/radcat-motion-v2/radcat-motion-v2-source.zip",
+  "sourceArchiveSha256": "f8a5a2da7679013588ebfeaa2af1f24d279158b96689deb366f36c2bf0959ebd",
+  "runtimeSource": "https://radbro.gg/shared-assets/runtime/radcat-motion-v2.glb",
+  "runtimeSha256": "eec1127321cb0bbf1be54b2ba0b4bf2535cbebcecf570129bb5275f9172ae54a",
+  "notes": "Published source sprite PNG and JSON bytes stay unchanged. Animate the full 3D scene. Keep bone and morph tracks. The 2D pack has idle, walk, and hop. Jog exists only in 3D.",
+  "clips3d": ["idle", "walk", "jog", "hop"],
+  "clips2d": ["idle", "walk", "hop"]
+}

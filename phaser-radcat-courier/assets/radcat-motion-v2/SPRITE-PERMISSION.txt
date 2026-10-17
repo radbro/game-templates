@@ -1,0 +1,12 @@
+Radbro Community Sprite Permission
+
+Copyright Radbro. All character ownership stays with Radbro.
+
+This notice covers the PNG sprites and JSON animation files in this pack.
+You may use and modify these files in personal and commercial games,
+videos, and streams. You may include the files in those projects.
+Credit Radbro and link to https://radbro.fun/assets where credits are shown.
+Do not claim that you made the original art or that Radbro endorses your work.
+Keep this notice and LICENSE.txt with the sprite files when you share them.
+
+The files are provided as-is, without warranty.

@@ -1,0 +1,79 @@
+name: Verify templates and publish demos
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: samples-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: ~/.local/share/godot/export_templates/4.6.2.stable
+          key: godot-web-4.6.2-942366dc
+      - name: Install the pinned Godot editor and web templates
+        run: python3 scripts/install-godot-linux.py
+      - name: Prepare assets and verify source
+        run: |
+          python3 scripts/prepare.py
+          python3 scripts/check.py
+      - name: Import Godot assets
+        run: godot --headless --path templates/godot-radcat-relay --editor --import
+      - name: Check Godot gameplay
+        run: godot --headless --fixed-fps 60 --path templates/godot-radcat-relay --script tests/smoke.gd
+      - name: Export the Godot browser game
+        run: |
+          mkdir -p build/godot-radcat-relay
+          godot --headless --path templates/godot-radcat-relay --export-release Web
+      - name: Package source games and demos
+        run: |
+          python3 scripts/build-site.py
+          python3 scripts/check-packages.py
+      - name: Install browser test tools outside the repository
+        run: |
+          npm install --prefix "$RUNNER_TEMP/browser-tools" --no-package-lock playwright@1.56.1
+          "$RUNNER_TEMP/browser-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Test browser gameplay, touch controls, and sandboxes
+        run: |
+          python3 scripts/serve.py --port 8096 > "$RUNNER_TEMP/sample-server.log" 2>&1 &
+          PLAYWRIGHT_MODULE="$RUNNER_TEMP/browser-tools/node_modules/playwright/index.mjs" node tests/browser-smoke.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-evidence
+          path: evidence/browser
+      - uses: actions/upload-artifact@v4
+        with:
+          name: template-downloads
+          path: dist/*.zip
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist/site
+  publish:
+    if: github.event_name != 'pull_request'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publish verified demos
+        id: deploy
+        uses: actions/deploy-pages@v4

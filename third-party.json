@@ -1,0 +1,19 @@
+{
+  "phaser": {
+    "version": "3.90.0",
+    "source": "https://github.com/phaserjs/phaser/tree/v3.90.0",
+    "license": "MIT",
+    "files": [
+      {
+        "path": "templates/phaser-radcat-courier/vendor/LICENSE.phaser.txt",
+        "bytes": 1100,
+        "sha256": "c3123cd25de4eccf1fd5a5a0a6fc872299116d1dbbb48b00f2554a4c35220a65"
+      },
+      {
+        "path": "templates/phaser-radcat-courier/vendor/phaser.min.js",
+        "bytes": 1196122,
+        "sha256": "e92ddef111ba42e92d316979c732311757093688ea1810591cb7aa2858eba7a7"
+      }
+    ]
+  }
+}

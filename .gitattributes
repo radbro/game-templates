@@ -1,0 +1,5 @@
+* text=auto eol=lf
+assets/** -text
+templates/phaser-radcat-courier/vendor/** -text
+*.glb binary
+*.png binary

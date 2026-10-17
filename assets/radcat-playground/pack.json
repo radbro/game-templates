@@ -1,0 +1,23 @@
+{
+  "id": "radcat-playground",
+  "version": "1.0.0",
+  "title": "Radcat Playground",
+  "credit": "Radbro",
+  "license": "Radbro Community Asset Permission",
+  "source": "https://radbro.gg/shared-assets/runtime/radcat-playground.glb",
+  "runtimeSha256": "eda129384abde4f844013cfcac8a0029c5d1ae343f11f6a2a60878e2467ab4f2",
+  "nodes": [
+    "ground_tile",
+    "gate",
+    "barrier",
+    "energy_pickup",
+    "beacon",
+    "tree",
+    "rock",
+    "platform",
+    "flag"
+  ],
+  "notes": "Original procedural props. Y-up. One unit is one metre. Clone each named node and place it. All source origins overlap. Add simple game colliders.",
+  "sourceArchive": "https://radbro.gg/shared-assets/radcat-playground/radcat-playground.zip",
+  "sourceArchiveSha256": "ae6dcdcd9ab1e8f3bf1342214bc2f506ab93a3f03004bd61a102b636d5995688"
+}

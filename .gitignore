@@ -1,0 +1,10 @@
+.DS_Store
+.omx/
+__pycache__/
+*.pyc
+build/
+dist/
+evidence/
+.godot/
+*.import
+/templates/*/assets/

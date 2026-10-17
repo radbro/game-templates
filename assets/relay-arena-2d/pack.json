@@ -1,0 +1,10 @@
+{
+  "id": "relay-arena-2d",
+  "version": "1.0.0",
+  "title": "Relay Arena 2D",
+  "credit": "Radbro",
+  "license": "Radbro Community Asset Permission",
+  "source": "scripts/build-arena.py",
+  "notes": "Original vector assets built from simple shapes. No external art or textures. Rebuild with python3 scripts/build-arena.py. Each asset uses a transparent background. The gate is 128 by 96 pixels. All other cells are 64 by 64 pixels.",
+  "sprites": ["ground", "wall", "energy", "gate", "hazard", "beacon"]
+}

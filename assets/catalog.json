@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 1,
+  "packs": [
+    {
+      "id": "radcat-motion-v2",
+      "version": "2.0.0",
+      "title": "Radcat Motion v2",
+      "credit": "Radbro",
+      "license": "Radbro Community Asset Permission",
+      "source": "https://radbro.gg/shared-assets/radcat-motion-v2/radcat-motion-v2-source.zip",
+      "sourceArchiveSha256": "f8a5a2da7679013588ebfeaa2af1f24d279158b96689deb366f36c2bf0959ebd",
+      "runtimeSource": "https://radbro.gg/shared-assets/runtime/radcat-motion-v2.glb",
+      "runtimeSha256": "eec1127321cb0bbf1be54b2ba0b4bf2535cbebcecf570129bb5275f9172ae54a",
+      "notes": "Published source sprite PNG and JSON bytes stay unchanged. Animate the full 3D scene. Keep bone and morph tracks. The 2D pack has idle, walk, and hop. Jog exists only in 3D.",
+      "clips3d": [
+        "idle",
+        "walk",
+        "jog",
+        "hop"
+      ],
+      "clips2d": [
+        "idle",
+        "walk",
+        "hop"
+      ],
+      "files": [
+        {
+          "path": "assets/radcat-motion-v2/LICENSE.txt",
+          "bytes": 505,
+          "sha256": "031a9e11a5d436dffbc643bba31e6a9d41c6f5013d1236fc8b5b23b45ad249fb"
+        },
+        {
+          "path": "assets/radcat-motion-v2/SPRITE-PERMISSION.txt",
+          "bytes": 588,
+          "sha256": "2fb3c15208b8b569cc1ba0b629ff923f9a73435a53e2c4fd2d6b6e4e4e78406d"
+        },
+        {
+          "path": "assets/radcat-motion-v2/pack.json",
+          "bytes": 782,
+          "sha256": "c64af979b9164b055e1af4ed15ccf92f4cc0322144952cfe79d50ecf8477e859"
+        },
+        {
+          "path": "assets/radcat-motion-v2/radcat-motion-v2.glb",
+          "bytes": 18208788,
+          "sha256": "eec1127321cb0bbf1be54b2ba0b4bf2535cbebcecf570129bb5275f9172ae54a"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/animation-manifest.json",
+          "bytes": 5851,
+          "sha256": "38e456b022044ca23ebbe5d09f4adb68f788e1fb8675905f5ba5b10877804ad3"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/hop-sheet.json",
+          "bytes": 2838,
+          "sha256": "4a2ca6047a8891b23bf4c1ccdab1730030eeb92a5b05a0f9078cbb68befeb497"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/hop-sheet.png",
+          "bytes": 532712,
+          "sha256": "981a5703e5edfa88b8aced19459fc2aa8ea49c4862b4a05ba293f740717b9894"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/hop.png",
+          "bytes": 603770,
+          "sha256": "1b19565a6bc6707a5224bba3f45f085f30518caea3bb5845eb85c785bbcef083"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/idle-sheet.json",
+          "bytes": 2487,
+          "sha256": "3956ed17c5f96fac2cc5e03fa7780e06935409b2643e81236da7b9fa76fa7360"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/idle-sheet.png",
+          "bytes": 553239,
+          "sha256": "fb248d437203450374afafe69b5fd2fdef7fd950c86e47274d150a8ecfd8e991"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/idle.png",
+          "bytes": 549863,
+          "sha256": "9676867e1aa483d2bc6e7be598277f04620875b7e88b0d5ab112db04d669d971"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/radcat-atlas.json",
+          "bytes": 5712,
+          "sha256": "86bac167d01ce2c0fcab5d3b97ee71edccdfa7d971ed2ee69acd871ccffbcf1d"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/radcat-atlas.png",
+          "bytes": 1573927,
+          "sha256": "e06f4d6330b22c80aefd39c0f98c1d56e0f61e0ca0c6a259e0d50dafeef343ee"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/walk-sheet.json",
+          "bytes": 2487,
+          "sha256": "94e1f305c6a27578db90613819738828b8915b66c163148a392cf96e01ee4c6d"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/walk-sheet.png",
+          "bytes": 546494,
+          "sha256": "38f84b920176e66435ecdad385db1e3c5916ef270ad3fa37a552266be20426be"
+        },
+        {
+          "path": "assets/radcat-motion-v2/sprites/walk.png",
+          "bytes": 543740,
+          "sha256": "19025f7427366079344b8fd927622743fddd505428d562f75a958746fcc7b3b2"
+        }
+      ]
+    },
+    {
+      "id": "radcat-playground",
+      "version": "1.0.0",
+      "title": "Radcat Playground",
+      "credit": "Radbro",
+      "license": "Radbro Community Asset Permission",
+      "source": "https://radbro.gg/shared-assets/runtime/radcat-playground.glb",
+      "runtimeSha256": "eda129384abde4f844013cfcac8a0029c5d1ae343f11f6a2a60878e2467ab4f2",
+      "nodes": [
+        "ground_tile",
+        "gate",
+        "barrier",
+        "energy_pickup",
+        "beacon",
+        "tree",
+        "rock",
+        "platform",
+        "flag"
+      ],
+      "notes": "Original procedural props. Y-up. One unit is one metre. Clone each named node and place it. All source origins overlap. Add simple game colliders.",
+      "sourceArchive": "https://radbro.gg/shared-assets/radcat-playground/radcat-playground.zip",
+      "sourceArchiveSha256": "ae6dcdcd9ab1e8f3bf1342214bc2f506ab93a3f03004bd61a102b636d5995688",
+      "files": [
+        {
+          "path": "assets/radcat-playground/LICENSE.txt",
+          "bytes": 505,
+          "sha256": "031a9e11a5d436dffbc643bba31e6a9d41c6f5013d1236fc8b5b23b45ad249fb"
+        },
+        {
+          "path": "assets/radcat-playground/pack.json",
+          "bytes": 820,
+          "sha256": "84c0d58fb76b346ab7ac5bc93e3f2b7bcb8031b62f90a9b64471f9bc15077706"
+        },
+        {
+          "path": "assets/radcat-playground/radcat-playground.glb",
+          "bytes": 42112,
+          "sha256": "eda129384abde4f844013cfcac8a0029c5d1ae343f11f6a2a60878e2467ab4f2"
+        }
+      ]
+    },
+    {
+      "id": "relay-arena-2d",
+      "version": "1.0.0",
+      "title": "Relay Arena 2D",
+      "credit": "Radbro",
+      "license": "Radbro Community Asset Permission",
+      "source": "scripts/build-arena.py",
+      "notes": "Original vector assets built from simple shapes. No external art or textures. Rebuild with python3 scripts/build-arena.py. Each asset uses a transparent background. The gate is 128 by 96 pixels. All other cells are 64 by 64 pixels.",
+      "sprites": [
+        "ground",
+        "wall",
+        "energy",
+        "gate",
+        "hazard",
+        "beacon"
+      ],
+      "files": [
+        {
+          "path": "assets/relay-arena-2d/LICENSE.txt",
+          "bytes": 506,
+          "sha256": "9cb9b3bf7698de671d042c8984fca94bac609f6892d8e086b00f179449ed56a7"
+        },
+        {
+          "path": "assets/relay-arena-2d/beacon.svg",
+          "bytes": 389,
+          "sha256": "4cb86e00fa6a90f3bcf342665ff6e37e3f2b8c670f3aebca548e3130c67e554f"
+        },
+        {
+          "path": "assets/relay-arena-2d/energy.svg",
+          "bytes": 351,
+          "sha256": "9e9e2e0a1ebd4b63a2b80ab7f17c6d084c3cf6f721967c289add91175e717d4f"
+        },
+        {
+          "path": "assets/relay-arena-2d/gate.svg",
+          "bytes": 550,
+          "sha256": "076269824f9e5bc5d4115a84068a30c472b690b389d7dca1888caaf5d3451e20"
+        },
+        {
+          "path": "assets/relay-arena-2d/ground.svg",
+          "bytes": 274,
+          "sha256": "2baf1865e888f278532985694b085604ab95aadf455ab103d01c44450124228e"
+        },
+        {
+          "path": "assets/relay-arena-2d/hazard.svg",
+          "bytes": 385,
+          "sha256": "83a7ceb0b51a173e7954b6a3c7018de7de0db1797eaf80bd664643021ef8a76a"
+        },
+        {
+          "path": "assets/relay-arena-2d/pack.json",
+          "bytes": 507,
+          "sha256": "65a269d0dbb0b8a91b262ec6c157388652361da8289fa51aebdf1fdf2707cfbb"
+        },
+        {
+          "path": "assets/relay-arena-2d/wall.svg",
+          "bytes": 431,
+          "sha256": "7fefa896352acf0584e62f9f37dee152098d11cbfd3c746071f6ab9bb7a3ac2f"
+        }
+      ]
+    }
+  ]
+}

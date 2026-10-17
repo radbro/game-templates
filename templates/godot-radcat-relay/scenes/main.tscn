@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/pickup.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/barrier.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/hazard.tscn" id="5"]
+[ext_resource type="Script" path="res://scripts/kit_piece.gd" id="6"]
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(16, 0.3, 22)
+[sub_resource type="BoxMesh" id="FloorMesh"]
+size = Vector3(16, 0.3, 22)
+[sub_resource type="StandardMaterial3D" id="FloorMat"]
+albedo_color = Color(0.12, 0.30, 0.23, 1)
+roughness = 1.0
+[sub_resource type="Environment" id="Environment"]
+background_mode = 1
+background_color = Color(0.11, 0.18, 0.25, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.82, 0.91, 1, 1)
+ambient_light_energy = 0.7
+[sub_resource type="BoxShape3D" id="SideWall"]
+size = Vector3(0.5, 2.0, 22)
+
+[node name="RadcatRelay" type="Node3D"]
+script = ExtResource("1")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -30, 0)
+light_energy = 1.5
+shadow_enabled = true
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0, 21, 14.7)
+rotation_degrees = Vector3(-55, 0, 0)
+projection = 1
+size = 37.3
+keep_aspect = 0
+current = true
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.15, 0)
+[node name="Shape" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorShape")
+[node name="Art" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("FloorMesh")
+material_override = SubResource("FloorMat")
+[node name="LeftWall" type="StaticBody3D" parent="."]
+position = Vector3(-8.0, 0.5, 0)
+[node name="Shape" type="CollisionShape3D" parent="LeftWall"]
+shape = SubResource("SideWall")
+[node name="RightWall" type="StaticBody3D" parent="."]
+position = Vector3(8, 0.5, 0)
+[node name="Shape" type="CollisionShape3D" parent="RightWall"]
+shape = SubResource("SideWall")
+[node name="Player" parent="." instance=ExtResource("2")]
+position = Vector3(0, 0.05, 8)
+[node name="Gate" type="Node3D" parent="."]
+position = Vector3(0, 0, 8)
+script = ExtResource("6")
+piece = "gate"
+[node name="Pickups" type="Node3D" parent="."]
+[node name="Energy1" parent="Pickups" instance=ExtResource("3")]
+position = Vector3(-5, 0, 5)
+[node name="Energy2" parent="Pickups" instance=ExtResource("3")]
+position = Vector3(5, 0, 0)
+[node name="Energy3" parent="Pickups" instance=ExtResource("3")]
+position = Vector3(-4, 0, -6)
+[node name="Energy4" parent="Pickups" instance=ExtResource("3")]
+position = Vector3(4, 0, -8)
+[node name="Barriers" type="Node3D" parent="."]
+[node name="Barrier1" parent="Barriers" instance=ExtResource("4")]
+position = Vector3(0, 0, 3)
+[node name="Barrier2" parent="Barriers" instance=ExtResource("4")]
+position = Vector3(-3, 0, -2)
+[node name="Barrier3" parent="Barriers" instance=ExtResource("4")]
+position = Vector3(3, 0, -5)
+[node name="Hazards" type="Node3D" parent="."]
+[node name="Hazard1" parent="Hazards" instance=ExtResource("5")]
+position = Vector3(-5, 0, 0)
+[node name="Hazard2" parent="Hazards" instance=ExtResource("5")]
+position = Vector3(4, 0, 4)
+[node name="Hazard3" parent="Hazards" instance=ExtResource("5")]
+position = Vector3(0, 0, -8)
+[node name="Tree1" type="Node3D" parent="."]
+position = Vector3(-6.7, 0, -8.5)
+script = ExtResource("6")
+piece = "tree"
+[node name="Tree2" type="Node3D" parent="."]
+position = Vector3(6.7, 0, 6.5)
+script = ExtResource("6")
+piece = "tree"
+[node name="Flag" type="Node3D" parent="."]
+position = Vector3(-1.8, 0, 8)
+script = ExtResource("6")
+piece = "flag"
+[node name="HUD" type="CanvasLayer" parent="."]

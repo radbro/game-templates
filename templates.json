@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "templates": [
+    {
+      "id": "phaser-radcat-courier",
+      "title": "Radcat Courier",
+      "engine": "Phaser 3.90.0",
+      "genre": "2D collection game",
+      "path": "templates/phaser-radcat-courier",
+      "assets": [
+        "radcat-motion-v2",
+        "relay-arena-2d"
+      ],
+      "entry": "index.html",
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "pack.json",
+          "sprites/animation-manifest.json",
+          "sprites/idle-sheet.png",
+          "sprites/idle-sheet.json",
+          "sprites/walk-sheet.png",
+          "sprites/walk-sheet.json",
+          "sprites/hop-sheet.png",
+          "sprites/hop-sheet.json",
+          "SPRITE-PERMISSION.txt"
+        ],
+        "relay-arena-2d": [
+          "LICENSE.txt",
+          "pack.json",
+          "ground.svg",
+          "wall.svg",
+          "energy.svg",
+          "gate.svg",
+          "hazard.svg",
+          "beacon.svg"
+        ]
+      }
+    },
+    {
+      "id": "godot-radcat-relay",
+      "title": "Radcat Relay",
+      "engine": "Godot 4.6.2",
+      "genre": "3D collection game",
+      "path": "templates/godot-radcat-relay",
+      "assets": [
+        "radcat-motion-v2",
+        "radcat-playground"
+      ],
+      "entry": "project.godot",
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "pack.json",
+          "radcat-motion-v2.glb"
+        ],
+        "radcat-playground": [
+          "LICENSE.txt",
+          "pack.json",
+          "radcat-playground.glb"
+        ]
+      }
+    }
+  ]
+}

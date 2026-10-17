@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%278%27 fill=%27%23c8ef85%27/%3E%3Ctext x=%278%27 y=%2724%27 font-size=%2724%27%3ER%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#101c33"><title>Radcat Courier · Game.fun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header><a href="https://radbro.fun/assets" target="_blank" rel="noopener">RADBRO / GAME.FUN</a><span>PHASER STARTER 01</span></header>
+    <section class="intro"><div><p class="eyebrow">A SMALL DELIVERY. A BIG DETOUR.</p><h1>Radcat Courier</h1></div><p>Collect five energy cells.<br>Return to the lime gate.</p></section>
+    <div class="game-shell"><div id="game" aria-label="Radcat Courier game"></div><p id="loading" role="status">Loading the route…</p></div>
+    <div class="toolbar"><p id="status" role="status" aria-live="polite">Select Start route to play.</p><div><button id="start" disabled>Start route</button><button id="pause" disabled>Pause</button><button id="restart" disabled>Restart</button></div></div>
+    <div class="touch-controls" aria-label="Touch controls">
+      <div class="dpad"><button data-input="up" aria-label="Move up">↑</button><button data-input="left" aria-label="Move left">←</button><button data-input="down" aria-label="Move down">↓</button><button data-input="right" aria-label="Move right">→</button></div><button data-input="hop" class="hop">Hop</button>
+    </div>
+    <footer><p>WASD / arrows: move · Space: hop · P: pause · R: restart · F: fullscreen</p><p>Character: <a href="https://radbro.fun/assets" target="_blank" rel="noopener">Radbro</a> · Replace the level. Build your game.</p></footer>
+  </main>
+  <script src="vendor/phaser.min.js"></script><script type="module" src="main.mjs"></script>
+</body>
+</html>

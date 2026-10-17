@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/kit_piece.gd" id="1"]
+[sub_resource type="BoxShape3D" id="Shape"]
+size = Vector3(3.4, 1.4, 0.7)
+[node name="Barrier" type="StaticBody3D"]
+collision_layer = 1
+collision_mask = 2
+[node name="Shape" type="CollisionShape3D" parent="."]
+position = Vector3(0, 0.7, 0)
+shape = SubResource("Shape")
+[node name="Art" type="Node3D" parent="."]
+script = ExtResource("1")
+piece = "barrier"
+scale = Vector3(1.4, 1.4, 1.4)

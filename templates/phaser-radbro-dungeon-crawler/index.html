@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23cfef87%27/%3E%3C/svg%3E">
+  <meta name="theme-color" content="#151c24"><title>Radbro Dungeon Crawler</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header><a href="https://radbro.fun" target="_blank" rel="noopener">RADBRO</a><span>PHASER / DUNGEON CRAWLER</span></header>
+  <section class="intro"><div><p class="eyebrow">THREE CHESTS. FOUR LIZARDS. ONE WAY OUT.</p><h1>Dungeon Crawler</h1></div><p>Loot the dungeon.<br>Return to the lime portal.</p></section>
+  <div class="game-shell"><div class="hud"><span id="health">♥ ♥ ♥</span><span id="loot">0 / 3 CHESTS</span><span id="enemies">4 LIZARDS</span></div><div id="game" aria-label="Radbro Dungeon Crawler game"></div><p id="loading" role="status">Loading the dungeon…</p></div>
+  <div class="toolbar"><p id="status" role="status" aria-live="polite">Select Enter dungeon.</p><div><button id="start" disabled>Enter dungeon</button><button id="pause" disabled>Pause</button><button id="restart" disabled>Restart</button></div></div>
+  <div class="touch-controls" aria-label="Touch controls"><div class="dpad"><button data-input="up" aria-label="Move up">↑</button><button data-input="left" aria-label="Move left">←</button><button data-input="down" aria-label="Move down">↓</button><button data-input="right" aria-label="Move right">→</button></div><button data-input="attack" class="attack">Throw / Open</button></div>
+  <footer><p>WASD / arrows: move · Space: throw / open · P: pause · R: restart · F: fullscreen</p><p>Radcat by Radbro · Starter by <a href="https://github.com/ourcade/phaser3-dungeon-crawler-starter" target="_blank" rel="noopener">Ourcade</a> · Dungeon art by <a href="https://0x72.itch.io/dungeontileset-ii" target="_blank" rel="noopener">0x72</a></p></footer>
+</main>
+<script src="vendor/phaser.min.js"></script><script type="module" src="main.mjs"></script>
+</body>
+</html>

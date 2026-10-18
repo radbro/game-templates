@@ -1,0 +1,145 @@
+{
+  "repository": "https://github.com/ourcade/phaser3-dungeon-crawler-starter",
+  "commit": "186705eb557af3d7042590fc61485a7cbed7b7f0",
+  "license": "MIT",
+  "licenseFile": "upstream/LICENSE",
+  "sourceSnapshot": "upstream/source",
+  "adaptation": [
+    "Retain original Tiled dungeon, chest and enemy placements.",
+    "Port Faune movement, cardinal knife pool, health and chest interaction.",
+    "Port Lizard random cardinal movement and wall turn.",
+    "Port Chest single-open coin rewards.",
+    "Replace Faune graphics with released Radcat sprites.",
+    "Add complete exit objective, pause, restart, deterministic simulation and touch controls."
+  ],
+  "assetSources": [
+    {
+      "title": "Dungeon Tileset II",
+      "creator": "0x72",
+      "url": "https://0x72.itch.io/dungeontileset-ii",
+      "license": "CC0-1.0",
+      "verified": "2026-10-18",
+      "evidence": "Author page: You can use this tileset for whatever you like (CC-0). Asset license: Creative Commons Zero v1.0 Universal."
+    },
+    {
+      "title": "Legend of Faune",
+      "creator": "ansimuz",
+      "url": "https://ansimuz.itch.io/legend-of-faune",
+      "included": false,
+      "reason": "Original player graphics are excluded. Released Radcat graphics replace them."
+    }
+  ],
+  "files": [
+    {
+      "path": "upstream/art/tiles/dungeon-01.json",
+      "sha256": "9400d909b8d0611a2b9f6ec4df29b03ef488eb9888eab1edd5f960f34a1d870c",
+      "upstreamPath": "public/tiles/dungeon-01.json"
+    },
+    {
+      "path": "upstream/art/tiles/dungeon_tiles_extruded.png",
+      "sha256": "01036aec7ae73c0505c3a97fa124e4acce478a2d41311141a6b3e0462688130d",
+      "upstreamPath": "public/tiles/dungeon_tiles_extruded.png"
+    },
+    {
+      "path": "upstream/art/enemies/lizard.json",
+      "sha256": "ad1a8478b4085864062034ed7873e781e17910837a11b496c0100eef680929c8",
+      "upstreamPath": "public/enemies/lizard.json"
+    },
+    {
+      "path": "upstream/art/enemies/lizard.png",
+      "sha256": "b85857664cb0ce8068acd88c74df5471458e19f1593621a97ba4c963c4f0631d",
+      "upstreamPath": "public/enemies/lizard.png"
+    },
+    {
+      "path": "upstream/art/items/treasure.json",
+      "sha256": "bbed943f0db631f71e24c99904ff922d0c98f5ace46966329964ac207b48ef25",
+      "upstreamPath": "public/items/treasure.json"
+    },
+    {
+      "path": "upstream/art/items/treasure.png",
+      "sha256": "2e7531c6e6088f4a9270964e153cf89a38331350ccb113d8974a67eadf212131",
+      "upstreamPath": "public/items/treasure.png"
+    },
+    {
+      "path": "upstream/art/weapons/weapon_knife.png",
+      "sha256": "238484ff64a61543d86bc808fa1c3b09cf07923c2293d1615b62d69bcb843228",
+      "upstreamPath": "public/weapons/weapon_knife.png"
+    },
+    {
+      "path": "upstream/art/ui/ui_heart_full.png",
+      "sha256": "0b9bcaf3548422c156d4e17d1176313ccc75e9da44f0a08d1a79ae424540db0b",
+      "upstreamPath": "public/ui/ui_heart_full.png"
+    },
+    {
+      "path": "upstream/art/ui/ui_heart_empty.png",
+      "sha256": "1308cd154f306d44e5d5ca416d50298070d6808c9ddb31bffb3d92c5d3050874",
+      "upstreamPath": "public/ui/ui_heart_empty.png"
+    },
+    {
+      "path": "upstream/LICENSE",
+      "sha256": "efcb943c49321521e40f9bdd68ce5804c533dc7bba4be95360ffbf54db04d015"
+    },
+    {
+      "path": "upstream/readme.md",
+      "sha256": "0bc5fca02571cec45bcd95d4b75d9a8390e0474145af6d85c83fb7df46437a6b"
+    },
+    {
+      "path": "upstream/source/anims/CharacterAnims.ts",
+      "sha256": "6eebc6a25bea0c7d46dd865b46ec16cda1c3445cbc94931a1f7132b314f4dd7b"
+    },
+    {
+      "path": "upstream/source/anims/EnemyAnims.ts",
+      "sha256": "865826096008fe62c28af0041e4b45843485ac168c735dacc30a163fee1210a9"
+    },
+    {
+      "path": "upstream/source/anims/TreasureAnims.ts",
+      "sha256": "8b6355ccb404e8f318de8e09cb33520f6ed752265aa3451a29e3a27b2be2028f"
+    },
+    {
+      "path": "upstream/source/characters/Faune.ts",
+      "sha256": "14d09cdd7aaeb8ecf24a7dc544b82a59d5a719d7003dd640309568e158337735"
+    },
+    {
+      "path": "upstream/source/enemies/Lizard.ts",
+      "sha256": "090cdc53d11c8a4ca14b81bde12c76e6161a2c2317b2cd086a649ca1c35b87ea"
+    },
+    {
+      "path": "upstream/source/events/EventsCenter.ts",
+      "sha256": "51cbd4a148bf8512caf95cf7b9bf945079b1a40871867da8c805ff857d8a8025"
+    },
+    {
+      "path": "upstream/source/index.html",
+      "sha256": "6c345c5d314e1385abe8f3c2a6a72416402fd0c4ada111586c0b02c9f6e10525"
+    },
+    {
+      "path": "upstream/source/items/Chest.ts",
+      "sha256": "77bee70242e4968e7140e3983f905a8afbd23768bc697ff7cb6e9d5df9f90040"
+    },
+    {
+      "path": "upstream/source/main.ts",
+      "sha256": "c3a90c3bb615272b8275e7ecc0397c032a46c7aaf026ef37b3ed7ca6a758d06e"
+    },
+    {
+      "path": "upstream/source/scenes/Game.ts",
+      "sha256": "fa473dc16490f6198d0a9198b4bc2f02768311d32b9b6558421ddcd3863341a5"
+    },
+    {
+      "path": "upstream/source/scenes/GameUI.ts",
+      "sha256": "c3e4a6abd307aa21483aa572acc195c8483f8b34ab63ed946898197ca329741b"
+    },
+    {
+      "path": "upstream/source/scenes/Preloader.ts",
+      "sha256": "24801d5314ec01c3d936819b4d1eff04ebd23db387213fbf8de715ae6d7c1eee"
+    },
+    {
+      "path": "upstream/source/utils/debug.ts",
+      "sha256": "3d23e3e49d60646281ef55ba8bbd07ded39787de88a2297e9ad79db5f3a88f56"
+    }
+  ],
+  "engine": {
+    "name": "Phaser",
+    "version": "3.90.0",
+    "source": "https://github.com/phaserjs/phaser/tree/v3.90.0",
+    "sha256": "e92ddef111ba42e92d316979c732311757093688ea1810591cb7aa2858eba7a7"
+  }
+}

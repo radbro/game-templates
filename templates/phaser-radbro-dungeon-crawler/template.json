@@ -1,0 +1,22 @@
+{
+  "id": "phaser-radbro-dungeon-crawler",
+  "title": "Radbro Dungeon Crawler",
+  "engine": "Phaser 3.90.0",
+  "genre": "2D dungeon crawler",
+  "path": "templates/phaser-radbro-dungeon-crawler",
+  "entry": "index.html",
+  "assets": [
+    "radcat-motion-v2"
+  ],
+  "assetFiles": {
+    "radcat-motion-v2": [
+      "LICENSE.txt",
+      "pack.json",
+      "SPRITE-PERMISSION.txt",
+      "sprites/idle-sheet.png",
+      "sprites/idle-sheet.json",
+      "sprites/walk-sheet.png",
+      "sprites/walk-sheet.json"
+    ]
+  }
+}

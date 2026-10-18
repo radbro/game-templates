@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "publicDefault": "Released Radcat Motion v2",
+  "reviewAssetsIncluded": false,
+  "files": [
+    {
+      "path": "assets/radcat-motion-v2/LICENSE.txt",
+      "sha256": "031a9e11a5d436dffbc643bba31e6a9d41c6f5013d1236fc8b5b23b45ad249fb"
+    },
+    {
+      "path": "assets/radcat-motion-v2/pack.json",
+      "sha256": "c64af979b9164b055e1af4ed15ccf92f4cc0322144952cfe79d50ecf8477e859"
+    },
+    {
+      "path": "assets/radcat-motion-v2/SPRITE-PERMISSION.txt",
+      "sha256": "2fb3c15208b8b569cc1ba0b629ff923f9a73435a53e2c4fd2d6b6e4e4e78406d"
+    },
+    {
+      "path": "assets/radcat-motion-v2/sprites/idle-sheet.png",
+      "sha256": "fb248d437203450374afafe69b5fd2fdef7fd950c86e47274d150a8ecfd8e991"
+    },
+    {
+      "path": "assets/radcat-motion-v2/sprites/idle-sheet.json",
+      "sha256": "3956ed17c5f96fac2cc5e03fa7780e06935409b2643e81236da7b9fa76fa7360"
+    },
+    {
+      "path": "assets/radcat-motion-v2/sprites/walk-sheet.png",
+      "sha256": "38f84b920176e66435ecdad385db1e3c5916ef270ad3fa37a552266be20426be"
+    },
+    {
+      "path": "assets/radcat-motion-v2/sprites/walk-sheet.json",
+      "sha256": "94e1f305c6a27578db90613819738828b8915b66c163148a392cf96e01ee4c6d"
+    }
+  ]
+}

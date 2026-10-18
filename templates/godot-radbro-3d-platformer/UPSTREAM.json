@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/KenneyNL/Starter-Kit-3D-Platformer",
+  "commit": "3fa8a04b1c01ab23db43123d4ce814a34c3fc7f0",
+  "archiveSha256": "850ef848d22d0fd25d6bd5b43f019f506ba6372ef958330b524527099b4968ca",
+  "codeLicense": "MIT (LICENSE.md and UPSTREAM-README.md retain both copyright notices)",
+  "assetLicense": "CC0, as declared in upstream README; models, sprites and sounds retained",
+  "fontLicense": "SIL Open Font License 1.1; fonts/license.txt",
+  "changes": [
+    "Radcat full imported character replaces upstream character",
+    "Controller uses fixed units per second and two physical jumps",
+    "Small linear course with six coins, finish, failure, restart and pause",
+    "Compatibility renderer and single-thread web export",
+    "Keyboard, gamepad and simultaneous touch controls",
+    "Removed unused starter scenes, sprites, meshes, sounds and large skybox"
+  ],
+  "retainedFiles": {
+    "LICENSE.md": "f755bf8f21002f8d5baedaf75564141d363971f3f7bc8c4062956b0b15a6f04f",
+    "fonts/license.txt": "31d45880a38de46bc81835329c0c7d964609751e65add92769ea0095ad92c05b",
+    "fonts/lilita_one_regular.ttf": "4444c23631884f411aa7f2fee35061b1756a9927940c62d2a5572acf470b3ffa",
+    "models/Textures/colormap.png": "106cf02e0d6dccded6d9f90c2ae6a51eb94c6301645fea159e834c44ed4708a3",
+    "models/cloud.glb": "09c6f071d3a9ab64993248ee5c8d50debcd9c6cc4369236a01155ff7ff87f30a",
+    "models/flag.glb": "0ba84ff43f0fea0a9f0b080cfa1be54ebda36c8c35174d1ac2553ae6da9f65ae",
+    "models/platform-falling.glb": "d6dc9baba80af659e6d0fffc435bd1f08b1a7945942ccbb85dd9bb103b7a574d",
+    "models/platform.glb": "78c5ed4da30c5a97f0747a54248bc9de05ba1b3fb6b94be527dd48599f5ef44c",
+    "objects/coin.gd.uid": "1a3531a94ddf50e6031bc611684775a1532f022a5866ab512beac245709e1013",
+    "objects/platform_falling.gd.uid": "8e076d20204055e604a8ef12a2778177cbccd013d69f2fce89a002c64eb48c92",
+    "scripts/audio.gd": "5acda0bd646862e0746a9bd27c26d16585fd361e37d9e0fc5248551053f10f1b",
+    "scripts/audio.gd.uid": "9a9d59d3130242cee415d6804b49c8d4fa4a7aaef9aafe426772f6a291fc80ed",
+    "scripts/main.gd.uid": "351692c83faa76ee55082b0fd7c54dd2524a8bcc8804fe71a1bc52b8855b64c0",
+    "scripts/player.gd.uid": "0101d1c0eaff0c08ae9f95c5906fa6bd46af892e492aa3e1faae2a673f6ccbd1",
+    "scripts/view.gd": "092d594548dfc67f028de64ccd15bba35aaebd9fb14b78550e75102df5d60312",
+    "scripts/view.gd.uid": "37df961338856b4f2044e1632f008d42e1684bdecaa21b5fc562b434037a15ea",
+    "sounds/coin.ogg": "df55e931e6b78e5aecc015922e873a0e8bfa4e97cfb19abc64149d54afe89216",
+    "sounds/fall.ogg": "e5d4c5b36e738eeb55ee9c8deffd526af313623e50580a096302021c4e138268",
+    "sounds/jump.ogg": "f090c16689e9ec04c4bef80bfcbf68bc4b63ab4ce29f7fbb5cee05a5641d5694",
+    "sprites/particle.png": "5d650f2299f846d2c54f32af252da5c59c54bfb1e44fb6fcef79ae17b97cc60a"
+  },
+  "removedUpstreamCharacter": [
+    "models/character.glb",
+    "objects/character.tscn"
+  ],
+  "releasedCharacter": {
+    "pack": "radcat-motion-v2",
+    "runtime": "assets/radcat-motion-v2/radcat-motion-v2.glb",
+    "sha256": "eec1127321cb0bbf1be54b2ba0b4bf2535cbebcecf570129bb5275f9172ae54a",
+    "license": "assets/radcat-motion-v2/LICENSE.txt",
+    "registry": "../../assets/catalog.json"
+  }
+}

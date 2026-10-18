@@ -1,0 +1,24 @@
+Radbro Sky Run
+
+Adaptation code: Radbro. MIT. See PROJECT-LICENSE.txt.
+Upstream code: Kenney, Starter Kit 3D Platformer.
+https://github.com/KenneyNL/Starter-Kit-3D-Platformer
+Pinned commit: 3fa8a04b1c01ab23db43123d4ce814a34c3fc7f0
+See LICENSE.md and UPSTREAM-README.md. Preserve both upstream notices.
+
+Kenney models, sprites and sound effects: CC0.
+The upstream README records this grant. No credit is required by CC0.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+Lilita One: SIL Open Font License 1.1. See fonts/license.txt.
+
+Radcat Motion v2: Radbro. See assets/radcat-motion-v2/LICENSE.txt.
+Credit Radbro and link https://radbro.fun/assets where credits are shown.
+This asset license is separate from the MIT code license.
+Source provenance and hashes remain in pack.json and the root assets catalog.
+The complete imported GLB retains all bones, morph targets and motions.
+No review-only Radclaw character or generated asset is included.
+
+Godot Engine: Godot contributors. MIT.
+See GODOT-LICENSE.txt and GODOT-COPYRIGHT.txt.
+https://godotengine.org/license/

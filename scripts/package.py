@@ -9,7 +9,9 @@ from catalog import ROOT
 from prepare import prepare, templates
 
 DIST = ROOT / 'dist'
-IGNORED = {'.omx', '.godot', 'evidence', '__pycache__'}
+IGNORED = {'.omx', '.godot', '.git', 'evidence', '__pycache__',
+           '.local-assets', 'local-assets', '.review-assets', 'review-assets',
+           'node_modules', 'build', 'dist'}
 
 
 def zip_folder(folder, output):
@@ -34,7 +36,7 @@ def package():
         if folder.exists():
             shutil.rmtree(folder)
         shutil.copytree(ROOT / item['path'], folder,
-                        ignore=shutil.ignore_patterns('.omx', '.godot', '*.import', 'evidence', '__pycache__', 'progress.md'))
+                        ignore=shutil.ignore_patterns(*IGNORED, '*.import', 'progress.md'))
         shutil.copy2(ROOT / 'LICENSE', folder / 'LICENSE.code.txt')
         shutil.copy2(ROOT / 'CREDITS.md', folder / 'CREDITS.md')
         if item['id'].startswith('godot-'):

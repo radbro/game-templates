@@ -3,6 +3,7 @@
 from zipfile import ZipFile
 from catalog import ROOT
 from prepare import templates
+from package import IGNORED
 
 
 def check_zip(path, entry, asset_ids, godot=False):
@@ -12,7 +13,7 @@ def check_zip(path, entry, asset_ids, godot=False):
             raise ValueError(f'Missing entry or code notice: {path.name}')
         for name in names:
             parts = name.split('/')
-            if name.startswith('/') or '..' in parts or any(p in {'.omx', '.godot', 'evidence', '__pycache__'} for p in parts):
+            if name.startswith('/') or '..' in parts or any(p in IGNORED for p in parts):
                 raise ValueError(f'Invalid or local-only ZIP entry: {name}')
         for pack_id in asset_ids:
             name = f'assets/{pack_id}/LICENSE.txt'

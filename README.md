@@ -93,6 +93,7 @@ The shared catalog starts with three packs:
 Follow [the Radclaw workflow](docs/radclaw-workflow.md) for new character packs.
 It uses native pixel art, editable layers, exact frame timing, source records, and local review.
 The next template proof uses modular Radbro equipment.
+The next four game adaptations are tracked in [Game template work](docs/parallel-games.md).
 Read [Add assets and templates](docs/adding-assets.md) for the release process and priorities.
 Use a new pack version when changing a released asset.
 Unity and Unreal projects are planned for later releases.

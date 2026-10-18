@@ -8,3 +8,5 @@ evidence/
 .godot/
 *.import
 /templates/*/assets/
+/templates/*/.local-assets/
+/templates/*/.review-assets/

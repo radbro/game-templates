@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0e5r0r012mk"]
+
+[ext_resource type="PackedScene" path="res://tiny_wizard/items/default_items/default_health_item.tscn" id="1_4vlia"]
+[ext_resource type="Resource" path="res://tiny_wizard/items/hearts/full_heart.tres" id="2_w24rq"]
+
+[node name="FullHeart" instance=ExtResource("1_4vlia")]
+item = ExtResource("2_w24rq")

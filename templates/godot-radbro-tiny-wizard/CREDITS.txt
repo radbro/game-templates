@@ -1,0 +1,30 @@
+RADBRO TINY WIZARD
+
+Adapted from Tiny Wizard Demo by Quiver.
+https://github.com/quiver-dev/tiny-wizard-demo
+Source commit: a3a75489e8b4e1e43b5a03b9bf954642fe216862
+
+The vendored top-down-shooter-core is also by Quiver.
+https://github.com/quiver-dev/top-down-shooter-core
+Source commit: d36f5532b4bfdfeb79e4110d273dcba1f09fc873
+
+Quiver code: MIT. Keep LICENSE.txt and top-down-shooter-core/LICENSE.txt.
+Quiver art, music, and sound: Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+Keep both LICENSE_ASSETS.txt files. The upstream room, doors, enemies,
+projectiles, pickups, shadows, and icons remain Quiver art.
+No claim of Quiver endorsement is made.
+
+Radcat sprites: Radbro. Radbro Community Asset Permission.
+Source: https://radbro.gg/shared-assets/radcat-motion-v2/radcat-motion-v2-source.zip
+Keep assets/radcat-motion-v2/LICENSE.txt and SPRITE-PERMISSION.txt.
+Sprite pixels and timing stay unchanged. The renderer scales and mirrors one view.
+This is not new four-direction art.
+
+Radbro changes: a two-wave room, key-gated exit, win/loss/restart/pause,
+keyboard/mouse/touch controls, Radcat visual adapter, source manifest, and tests.
+The Godot 4.6 migration updates property names, resource paths, and legacy types.
+It removes stale external resource UIDs and fixes action-object ownership.
+No private Radclaw review art is part of the public project or web build.
+
+Godot Engine: MIT. https://godotengine.org/license/

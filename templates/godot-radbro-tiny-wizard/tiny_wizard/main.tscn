@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=3 uid="uid://cxl7rbtvsb5nc"]
+
+[ext_resource type="Script" path="res://tiny_wizard/tiny_wizard_main.gd" id="1_5rjdy"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/player/player_character.tscn" id="2_5wjcq"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_3.tscn" id="3_fw0kv"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room.tscn" id="3_rkala"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_4.tscn" id="4_dpuob"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_8.tscn" id="5_p25wi"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_6.tscn" id="6_nh7qh"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_5.tscn" id="7_mobuj"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_7.tscn" id="8_076cv"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_9.tscn" id="12_2njgv"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/gui/gui.tscn" id="13_ucw2f"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_1.tscn" id="14_cw4nu"]
+[ext_resource type="Resource" path="res://tiny_wizard/player/inventory/inventory.tres" id="14_ui8tp"]
+[ext_resource type="PackedScene" path="res://tiny_wizard/room/room_types/room_2.tscn" id="16_mqrf6"]
+
+[node name="TinyWizardDemo" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_5rjdy")
+metadata/_edit_vertical_guides_ = [0.0]
+
+[node name="Character" parent="." instance=ExtResource("2_5wjcq")]
+position = Vector2(536, 592)
+gui_path = NodePath("../Camera2D/GUI")
+
+[node name="Rooms" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Room" parent="Rooms" instance=ExtResource("3_fw0kv")]
+position = Vector2(3072, -400)
+
+[node name="Room2" parent="Rooms" instance=ExtResource("4_dpuob")]
+position = Vector2(1024, 1400)
+
+[node name="Room3" parent="Rooms" instance=ExtResource("5_p25wi")]
+position = Vector2(3072, 200)
+
+[node name="Room4" parent="Rooms" instance=ExtResource("6_nh7qh")]
+position = Vector2(2048, 200)
+
+[node name="Room_1_-1" parent="Rooms" instance=ExtResource("7_mobuj")]
+position = Vector2(1024, -400)
+
+[node name="Room6" parent="Rooms" instance=ExtResource("8_076cv")]
+position = Vector2(0, 1400)
+
+[node name="Room_0_0" parent="Rooms" instance=ExtResource("3_rkala")]
+hide_down_door = true
+hide_left_door = true
+hide_up_door = true
+
+[node name="Room_1_0" parent="Rooms" instance=ExtResource("14_cw4nu")]
+position = Vector2(1024, 200)
+hide_right_door = true
+
+[node name="Room_1_1" parent="Rooms" instance=ExtResource("16_mqrf6")]
+position = Vector2(1024, 800)
+hide_right_door = true
+hide_down_door = true
+hide_left_door = true
+
+[node name="Room5" parent="Rooms" instance=ExtResource("12_2njgv")]
+position = Vector2(-1024, 200)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="GUI" parent="Camera2D" instance=ExtResource("13_ucw2f")]
+inventory = ExtResource("14_ui8tp")

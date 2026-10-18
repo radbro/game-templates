@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "repository": "https://github.com/quiver-dev/tiny-wizard-demo",
+      "commit": "a3a75489e8b4e1e43b5a03b9bf954642fe216862",
+      "directory": ".",
+      "codeLicense": "MIT",
+      "assetLicense": "CC-BY-4.0",
+      "copyright": "2022 Quiver",
+      "notices": [
+        "LICENSE.txt",
+        "LICENSE_ASSETS.txt"
+      ]
+    },
+    {
+      "repository": "https://github.com/quiver-dev/top-down-shooter-core",
+      "commit": "d36f5532b4bfdfeb79e4110d273dcba1f09fc873",
+      "directory": "top-down-shooter-core/",
+      "codeLicense": "MIT",
+      "assetLicense": "CC-BY-4.0",
+      "copyright": "2022 Quiver",
+      "notices": [
+        "top-down-shooter-core/LICENSE.txt",
+        "top-down-shooter-core/LICENSE_ASSETS.txt"
+      ]
+    }
+  ],
+  "radbroAssets": {
+    "pack": "radcat-motion-v2",
+    "source": "../../assets/catalog.json",
+    "permission": "assets/radcat-motion-v2/SPRITE-PERMISSION.txt",
+    "reviewOnlyRadclawAssetsIncluded": false
+  },
+  "modifications": [
+    "Godot 4.6 property and type migration",
+    "Correct case-sensitive asset paths",
+    "Strip stale external resource UIDs; keep original paths",
+    "Use RefCounted for QuiverCharacterAction to prevent leaked action objects",
+    "Remove the stale editor tool script behavior from interactable_object.gd and room.gd",
+    "Keep hidden room exits closed after the last enemy leaves",
+    "Free temporary arrow icon preview node",
+    "Replace player visual/input adapters; keep movement and shooting core",
+    "Add small campaign, controls, source audit, asset preparation, and tests",
+    "Tune the public room projectile speed to 900 and player fire delay to 0.22 seconds"
+  ]
+}

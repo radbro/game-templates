@@ -1,0 +1,7 @@
+.godot/
+assets/
+.local-assets/
+*.import
+local-assets/
+.review-assets/
+review-assets/

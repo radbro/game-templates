@@ -1,0 +1,1279 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "LICENSE.txt",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "577cadb70e7838996e43d0b0b4ef6d0a643cc81d",
+      "sha256": "9865090bfe5d87f947db5b973a7ce768465d556998af025a05739ea56b98350c",
+      "changed": false
+    },
+    {
+      "path": "LICENSE_ASSETS.txt",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "75131bc20b48be97551574ecd86d750bd1f7c4e1",
+      "sha256": "57264b5ef34b9f2dc7ae9af68a8783dd941fb254e5c1bda26e79a99c7e039e7a",
+      "changed": false
+    },
+    {
+      "path": "README.md",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "3b16c768bbe1a8ac707db887cbdddf15bf16301c",
+      "sha256": "601e3a54e1c8fdb53e855da06e4ca5f5707b70d85d15bb719a29857813183d32",
+      "changed": true
+    },
+    {
+      "path": "icon.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "af0410b78e1ee123618f575d6c8f1a697d2b9561",
+      "sha256": "1d99bc69b05c6a8fb3b082488134cadf4c097d033ea38afad5bc373171a55dc9",
+      "changed": false
+    },
+    {
+      "path": "project.godot",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "249a0b82452274a61f378b8f1bb8a064728bfcd5",
+      "sha256": "350321de04beea501f9e749ae48132d427477411e0d9cca596937305865ff784",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/assets/art/arrow.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "c1d8d8fa624735da6e37b4ec7b700ebea4e63b56",
+      "sha256": "988b033a4e3595dd14780b55ae7edb1538851862399251981de10fe92b5bfd1b",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/bomb_explode.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "047ea8aa83120a65031c7db751906c8ebe7a6789",
+      "sha256": "a1d07fccb2ffe838ed6d22ecf7d8b123236d87047d7c2f66dfff41bc3158b48a",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/hat.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "9a2aaffa8ba5c630f709accbeddcb05b1de33f21",
+      "sha256": "b4d345893526b409351fd6a99a8b94c294503a21847655b3ad527ca735f0ff92",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/hole_tileset.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "272b03989626b83509289a5019de7ba2958e42e4",
+      "sha256": "748967551a2486cdd164dd0d0d4e873210aa45505a8bd4cf61eb6a17c438cd62",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/playerbody.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "08f1b32e4083c123b91f21ceee5b9af3f365f1eb",
+      "sha256": "c06703acfd63537fa3967ce9c5bd6b81b4f2cd3b22c5d8a9638a238fce8b17ba",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/playerface.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "d1056cd521fa7ae6947a343283196336c0451581",
+      "sha256": "fab7c870d3b5766d396ff739740bc8703af7f51e00f05a2d7d4bda3d84d836d9",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/room.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "35d2872e3c58b87e7a509a736fe6a9f370492539",
+      "sha256": "d47e719b4d6a33799541f31613893c74ae9edc82392cf084b749982847cfc328",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/art/violet_arrow.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "8c16c296fbb29b8395aca0f18b63dc32a67bc2f3",
+      "sha256": "c87c76796a8e11477d3f499aff6c2116e9004e8b6355326673adaae93d484a60",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/chests/gold_chest_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a9e7a88386dd831f795accf4d7e76823c4a0d78d",
+      "sha256": "bc50b01d91a0846a35ef680bca3b509704b8c3525c76baf985af785f680a73b2",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/chests/gold_chest_open.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "7e9a9bee0c505dd173653f751b087b83b14b8983",
+      "sha256": "1c5d17d51dcbd3437224244b93900541a7996deeac3a870ff08e38b05a505ebc",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/chests/normal_chest_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "73495b837bc8928f929d1084f8ef5eab4d6f8cd0",
+      "sha256": "5c59bc72618ccb14bd992663612d3ed93972706ac7f04853551cfc67f1ab9b25",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/chests/normal_chest_open.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "c90dbfa4d483320a83a9133b7c700f81b5a3b61c",
+      "sha256": "2426a84c474b592f670a465b141bd784693b8300ec31e8f5d14e4f174e57942a",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/cirle_particle.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "cb3409b1480c5b520191d204ab52b78d6d7d728e",
+      "sha256": "5fc5c4d0bba496e74d94c4c7a306f5ceb88ea3b03f0b8ac814a57201b60ccac0",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/down_door.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "766911be295c255847442393665000386be8b141",
+      "sha256": "cb952c13fbf26ae9ae371a5f7b1b4ffc3f9d4ed6b7c228a87bb3c78762d11e3e",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/down_door_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a0f1846d85876fe55f1e325b745d217ba9f29634",
+      "sha256": "13e9c450231cb4843749c68361cf83c021e6bf49e8cd6f02fea56390fa8fa011",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/left_door.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "23342fdecd7307a06a466c7274b3b1a1f75dc5d8",
+      "sha256": "b054dc0c5f79625de3c89d7a28823059d2579706b55f43bdb83767220b81f4f8",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/left_door_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "12a86864022e131b2e1826403ce985e7db3d06b2",
+      "sha256": "41f634f9de169f73ec6187c0232d47f4f93479a3cedaf2de60085a2a06442809",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/right_door.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "256f7cd4cd5f89d2938c835b34c3594c0dd5b7f9",
+      "sha256": "94e609d62054c508adc0ad312f45553a7ec304f646ac6c226945e488174453fa",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/right_door_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "95ae72574e38d8ae2cf97b6672667abf1c9cb7d5",
+      "sha256": "26613a87ac73bdac7ff9bb9f36929a444b276d5bc2d4d2c0f14fe966eff7126c",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/up_door.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "820965af02af864e097e4a3083fdbe77a36b197d",
+      "sha256": "095a7d4db52fc80b5b374342ca4da2119cbd10494de9d5c0f0eb6c2089281dda",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/doors/up_door_closed.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "74db792c50527718fa8d691471e41b7ce74de6ba",
+      "sha256": "3bc000e74fa99650e304fab5de112075c335b1e046ccb543be525cb5d18f24da",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/fly.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "864f46ce39b6f746ac836ba9f5ee561470692561",
+      "sha256": "2181d1c46b595009c875467d15b437a72c3f5acf8ab792f98f1c05a714f8d936",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/ground_bomb_trace.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "d0674f42b9a03b95c4bcce1d73f8bd5f2f057865",
+      "sha256": "4770116e6a01ad25c7a0975e939401151e83f5f5872e0df90191996bcd429208",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/bomb_icon.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "7ab28c6b162d3214a88cb9943d4ae5f329a3156a",
+      "sha256": "494e5774028827da77edec43b3147cbab772ee02889a4f0a515e997f7c43debc",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/box.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "321d47bad6d18ac14598853f8c11d89b86c27066",
+      "sha256": "12295d1d5e9cc70876e3c25d4acad3ea1634982f578a63142a8d0af41760cff4",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/coin.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "fdb8a97ac6855b0c0129f0ff451326eb688afb9f",
+      "sha256": "87b36cc6b15284f5e4b0c458c579677d4d46a378f911fbf44012560e899045ed",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/cross.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "91ac8ab64afa4477bfdfae3e4a909d30c431da74",
+      "sha256": "1dd1176b6ad94172f91ab5e73f5bf36fdaadc0d0805dce96c1b0b9db635999c2",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/empty_heart.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0bd4ad166540e9fbc3c782cbbfa2ebec73c7fc75",
+      "sha256": "60600fafc785fcee94f3b0337a4d47ee5bccd70b741dba97ca270d45a534c4aa",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/half_heart.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "303f3f66150f24514354b898c1a91d39f53e2fcd",
+      "sha256": "00187d17d78b8002d59d35977ec56aa69e945dd359cbaa4b6e499609ee1e1269",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/half_shield.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b348e6226e6a95dfb7ee710d40956f2e52502da4",
+      "sha256": "9756e33c0cba66e9487c82bee2eca16f23a08fd60e6f93de7bf0649c40bf24cc",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/heart.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "770147669e0d0ca490496bf33722874156235fbb",
+      "sha256": "f36314bc4bc37b9a689f7025c8a607a1a3a468a9f76cb74eeaad7d1c98a02bef",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/key.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b63a426f69fd720ab1b262540165beb7f3998efb",
+      "sha256": "bc7b8d0387f6461cf1dcd60965190a41fe2956647d2f53aa28a3b1f3550f666c",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/room_dark.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "c3d4ee88ed484fe8833d918751863f915c0b935f",
+      "sha256": "6670a2e08d655c7ee89fd178ebc726285189b0e9b7c952f3199707688330c88a",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/room_light.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "7f7f949a93b738fc8d37ca3240b6a6c91e573cc6",
+      "sha256": "1836a5261a131f778a72110a03434e63a4d46e3ccd78665471d80813159795f5",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/shield.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "92bec7552f280b6c37bebf2496b08e98c89fd8a8",
+      "sha256": "3f3272cf65371edc0c1878b5e1239b9510c0419115f2620121f45d6b8e1d1b29",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/step_indicator.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "4c03679c821db109c356fdcf5081f88ae06d0a70",
+      "sha256": "4f5fd8c8dea01e50a3694c9d4916a7350472b31384e5a8d073f7633155d7587c",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/gui/ui_background.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "ca1c236ca58b9bc65ce81724ff5807b601a022ed",
+      "sha256": "c461d4d9e6b883466f50b2ba85f29b401419ead347647d27061e22e81bd9eb8f",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/hole_tileset.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a84a8c82f28de41dbb80f7c92cacbeca832d3d8a",
+      "sha256": "de471919984d9fb1b4d86d7be0c178507576cbf1f5bc16bb208a8502cf90a059",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/icon.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "119b28931063bd582324d879528d5946abbb99ba",
+      "sha256": "fda9bd1e6b5f6f4c17cd5620f73e2ae39cb439765db47273a2d3e7dd9213be88",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/icon_mini.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "26c8da35df5ff9c6e5f0d503c9684a316de04456",
+      "sha256": "32147c9b080bc8ec8764f0eb0bbe3c958a6f221277acf71eb64908ef79ee8865",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/bomb.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "97812cf52df4c2a4896f148d968fdc901c635ee3",
+      "sha256": "b81d7032803ddd9a32683249dfd959495da9fcb239763260a4938a7e0ef5e7b4",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/coin.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "555b4fcb9d7695cb52feac7b62ae13ad6b4f3b91",
+      "sha256": "f44f83c45f29d371f9872fc60d26bdf73207550eea220e19c47423daf1e98bdc",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/heart_full.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "445de13e9c84e41533a1078fec70f567f7f0b548",
+      "sha256": "5dfc807020a6bb4c6bba37edf6173a91bc9fa47913f212fd2ee1ed07c1800e1e",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/heart_half.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0e11b39ce721c2e5b070c50c9523ceb8e7c69cfd",
+      "sha256": "8f4e8e674d2da6f04f86d4d45d4f1de1921a0e3e7276a62aaa17439ca4fa57ad",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/key.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "79b2231e499046467780b1a53a2058517832f45a",
+      "sha256": "fdc0ea5aca8dcec584216c1a085647dcefa49ec9033d68e2c12716249b80d146",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/shield_full.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "943491f7adb74f7b4712026e8f5463e85282b911",
+      "sha256": "5f14377041b58186c4324e88fa5ed4af507b970fc5adc0153d5b8f0a29320fce",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/items/shield_half.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "69b3f16087b56262ff54c93411b1ea8a7af277a9",
+      "sha256": "444311ad07e0811eeb8ac62f6d51dbc634d02be3be5b9c6ebdf0749ba6ad53e2",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/red_fly.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0f2aae9e53a2f778013b19a08876ef2f740dfbfe",
+      "sha256": "845b9c433fc6f0b4b81669f6d7e975640f2b9a30096417c0526dc0957ccda8b4",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/assets/placeholder_art/shadow.png",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "567b959b92d5e752b654150f0286ca67a9fd9a43",
+      "sha256": "b25bb93992c255b98c1865e317e4343f69346f2f9f8b5a3d4bdc49d3a1c9e4a9",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/enemies/black_fly/Visual.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "257a7b327206d30d0ae45e60577d547be296a70e",
+      "sha256": "89bdef1d01e23497cb51800101a0ec1e20303e697959d20df51be856888b78ad",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/enemies/black_fly/black_fly.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "11bd7e63f1fb5cf81b6911eacdb61536a501985d",
+      "sha256": "7807b4fb9f050b8e6cf2133885a3c4da0e9935a416bdb0d431ad9276714eb289",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/enemies/black_fly/black_fly_behavior.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "ab8059b7401c23d39acb265fabae6c03ae1be426",
+      "sha256": "aa9140a8c0c56381d1223f8c5c20f4b2d3862b25d09de02405387ac78a4fc8dc",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/enemies/black_fly/black_fly_weapon.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "445883f2cb71defe03d0ab936da254bbf55e892f",
+      "sha256": "78bc480ad7c7785a5596612a2a3327f0d13142dbb7b06ce1dcdf23e191d85866",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/enemies/red_fly/red_fly.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "8bf52ac5538e28402f8829b391f9317e28bf8274",
+      "sha256": "1cb7dac2fd5ba68e9a9cb99a9981242a02f7683d7ec755c9f649bc38337e7fd1",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/enemies/red_fly/red_fly_behavior.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0d194dce289c850d609852deffa477d519d32997",
+      "sha256": "0b4af8c68391e78336c28f546cc5c6c9b820a11fb6a7552c43103d6d322ade74",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/enemies/red_fly/red_fly_weapon.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "34f022c0c151a17d4bc569a8f026a2e78b5a6542",
+      "sha256": "c6f26a06262b5ea225beb311f563d523e49b49c4d0e70b3946fcabedb218dc23",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/gui/gui.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "eb65fe5c32673aac680674b28a61c7058ace128a",
+      "sha256": "e4439ccc03705b23bc8ece466243d9ba5468cba8d6a3e53c1d64a75510aba60e",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/gui/inventory_ui/inventory_ui.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "3131788ab1db92b0f8fc45c9d25c166261af0e79",
+      "sha256": "c56aaac42d4023d12a69d1bcb88dca3ca65adc9e8330c5503de9fc41da25fec5",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/gui/inventory_ui/inventory_ui.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "5189b20f39d87cca3e75ce57eb62de4b1eaca3c0",
+      "sha256": "2c90386d1bc1e75c3903b9cab741932c0bded4076d55670ed0b5518163cb2bb5",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/gui/life_ui/heart/heart.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "3170758bb44409b0605d5ef888d70b2377fddc2b",
+      "sha256": "816ba490e3ed66227b35afdd11f5dad0becc54fe19771b4e0978c5c4380783c6",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/gui/life_ui/heart/heart.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "42be87868aedea2e5d80a117211abfd20d5eee01",
+      "sha256": "3709c76700b8ccc35766f75e813e035f60978cad22867378c4f7bc45337925e4",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/gui/life_ui/hearts_ui.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "86b802c0d88bdf085e73b507cc8f3a58718281f6",
+      "sha256": "ad0426f4d85648c7d040a0ea726f72ecbdb4b8d0b2ce113743eb804ddce4373e",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/gui/life_ui/hearts_ui.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "45c024539503f5cbd0be3296e56b160e430ae723",
+      "sha256": "989d504893a7109c701e00aa017a9d68dec2f88d7254a0402ec8ce1c180420a5",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/gui/ui_manager.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "ee2cd5a4bda62ca1efed8e655b44ad21e8306ab4",
+      "sha256": "eb0efa3643908d8acad970c5f3b4da23c7a8be3eec552680bc61f9c873467cb1",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/bump_animation.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "648e2924f118afa490726680d0a26bf3992d2d53",
+      "sha256": "708f5f129d32873ff5d9bfa24a43773d819fcb58ffa6b4d26732064f9bf83046",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/chests/chest.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "e80dc7d87611e6c308ba28cc719e363a9257ad81",
+      "sha256": "3a8943ab3b8417a4503a91638715f35a90f874a8386bfc2d7237a7207a8e72d0",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/chests/chest.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "778e77c2dfb7058ebb2ddb94554459df7d9d8d85",
+      "sha256": "1d1550cb66d4a74a28e34fd584b6bf890ee06af0602e42e3db61b769717c8232",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/chests/chest_sprite.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b1edc6db006dc55b5a2f6d4fa24335e7c2d55240",
+      "sha256": "37079323e488122b096052cbcd63bcf1e1c3f7fe6d4890acd5f23d08e50245ba",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/chests/locked_chest.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "95693f924360fbfc5403558a15c5578e4415e9ee",
+      "sha256": "ba9f1fd39a511ee3d1a87fc39076b4edc2eb099f6344511b6a5c87a51ee104a8",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/chests/open_chest.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "66d3d6c3e4ef815df4ff1ec0e8c21fc0922f2f62",
+      "sha256": "75e7f84a5c0d0d047a8182a061a8587892399ee92c87a5ed45d9f216cb9b36c0",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/default_interactable_object/interact_on_collide.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0aea1549db09531b1ed412606d1f38f8321157e8",
+      "sha256": "ecbe4145bbb18e0df6b375fd39a24405c2c9f8029f4fe5f5dcd20e56899396bd",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/interactable_objects/objects_anim_lib.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "61b21fa896b7946979d236b7a0f44c6e47043678",
+      "sha256": "d1bfd25c4fb18b201cef4dcff3128f0cc49b8c6fdbfb56ce57677e6f1f774428",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/coin/coin.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a326177ea3cb4b696a016b82c49d84b303a82fb8",
+      "sha256": "4d60c47b2e856a0ee5b3e28832e902e3bc56ef9ff3b67d16089f82160e816a34",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/coin/coin.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "2706281e95f37006e322d211e199de937aca65c9",
+      "sha256": "2e778e4844dac8f0349736a9b822aa47f326e9861cdfd41fdff78b8783bb87a9",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/default_items/default_add_to_inventory_item.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "5456c59f7c4f9c4b2cb02a1042fffe45d48136e9",
+      "sha256": "3bebec58f4ffbe5e738250a0866e1d528818008d39d837fd82f45211c7d74b0e",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/default_items/default_health_item.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b9d72f692d2621dd9c279341f6d5109780ab8ab4",
+      "sha256": "82dd691cefa1021fa9c3d9f552f116976bae1c12c365750903b4955f249296c6",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/default_items/default_item.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "1fe56990574a74318f0fd06aadea5feb2e2eaeff",
+      "sha256": "36d58f91121b06e7a7c4e97345f5eba7eb5905f6adb849b74df6bb58e41605f1",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/default_items/heart.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "532e8703370e391ec9bd598fc5f677bb78a3021a",
+      "sha256": "4499ab8de63698f020208965653be4c6cc8c4c91f0715201d59c813fa4805e61",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/hearts/full_heart.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0665b254bc1d4f26d9eec1df2fc2ce9bc434e575",
+      "sha256": "5050120f1833ae97574b5b5a419c8350f9b2e591bbbbccdbb88022249015f6fd",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/hearts/full_heart.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0a2f06470b6c1e7ca767c25594c6b32a65a0ea75",
+      "sha256": "fad6d05f502262b9eb2944c9739f472f27d54694d86515b190d8ff8ba81e14d1",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/hearts/full_shield.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "588dd0ad25639be93d776f2a0fded29ae811bed8",
+      "sha256": "f0aef9734f63a501b2437dde1341f1b8fcf6c8a32ac2d8e709022c7ffe51d4dd",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/hearts/full_shield.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "499f4876fc1ff29e9b2745860650ca0d3be591b8",
+      "sha256": "041205141632e89ab78369779e469e13c091bf87dce29826e96c7e0ee6d08675",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/hearts/half_heart.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "fd7858738bd868168972afaf195876199af3224c",
+      "sha256": "ab46cbaef7b38412c370efe2ae4577b7cac00ef1b224b57441059e64ed3e81bd",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/hearts/half_heart.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "612b0a21b71fc1402ea3dc29ef7645da61aa704b",
+      "sha256": "eeb712a01daec184de27f362419b4f24924f9c5747380d3c5fd147c6aae70d43",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/hearts/half_shield.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "c3d4da23e8530b26dbdf4469ca2db244e4f34da8",
+      "sha256": "91197d918b1bbe5f8eb2a5dd532115e37d73decc022aca86593afc823b9c24df",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/hearts/half_shield.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "cda731df475b0fe4050ee12fd44e196b93b66077",
+      "sha256": "7172dbd62947d6cfca9ae958887e227cb09d61cb36ef7b91f66fe070ec48eff5",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/key/key.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "5af2c889d1cdfcd5da66d73b5a6bf942f1e4ff39",
+      "sha256": "f5cd6430a73a9ffdd36903214760f96890368b8a00dff268f289c39ae4169236",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/key/key.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "f440b5cc70720dab57e0ed5ddefee2618b1e112a",
+      "sha256": "b0c3542aaf7a1f4a6662df96d303e37af512497686714140b311f3ea9f94008b",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/pickable_bomb/bomb.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "93b5641edf99b86c06c2de2186963b6aa26452d3",
+      "sha256": "2c551e5be18ef80f8f357ab2f2d164f52b98991e6b234d501f5176b29c76d877",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/pickable_bomb/exploding_bomb/exploding_bomb.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "c1f8d2a0a04410d77d3b4f35e657ca5e0277899a",
+      "sha256": "5dffd2069e43272e1be08ec509433a215ac27eb772a24633353047f0b852dfe5",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/pickable_bomb/exploding_bomb/exploding_bomb.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "1b2a87b246494df40f1e622a141e807a16d81dde",
+      "sha256": "211cd422b38cde770dd695368dcecdd2e05594af37da21b8bea661cca3ba5f7f",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/pickable_bomb/pickable_bomb.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "d3e00c5def66aa4fbbeee7d583cdafd8093ed342",
+      "sha256": "10c324e4af8ad74fdec1aae214603a5fe58513ddb94fc60db3d95c53c4bf2a24",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/violet_arrow/equip_bullet.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "61279ee8d1669012e220fda0fa4770a8737b8b9e",
+      "sha256": "2f21fe5b6e30da72ed9b004562f97f6119d47a17457e1b6ab5c54b50ba3d41cf",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/items/violet_arrow/violet_arrow.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "836cca8321ddb607656b69efd3854ffca94cdb5a",
+      "sha256": "6949ab89a19819dcd2fbda79bef1231c909844085217c03deede931e557faac6",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/items/violet_arrow/violet_arrow.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "2c491b109ccaea2c04bfab9c35fbbb0e19dbb609",
+      "sha256": "59001fa16507a41fef0f144fe2e9c036896588d5ec18d79ceb17c5647261c5cd",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/main.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0dfeccad131a060f35947ca788592d14950403f6",
+      "sha256": "1db9fc974ac33cbbfcd9a4b4e6f9f026333dde8bd175935580f65225eb585510",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/character_visual.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "4d0eec4bea70b7ba568edcd666bab24869044291",
+      "sha256": "d757247b4f0a7c21db4eca3e4b48c2a78e7870fc2cd78eba8f2338b18d30083b",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/inventory/inventory.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a7326648ac8a2ee5d91d9b35938bab6aefaebf21",
+      "sha256": "509d380002add7a9a6c195e5ddcc5c9ef6279c820f4661aed1e3d54524db3b0b",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/player/player_character.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "8641189fc8b94a88326e8fa30340b9f41e8b0328",
+      "sha256": "bd75b2794b3d0b02c813a43a742b7337caa5ebe24973d4e03df1eae76acdc66a",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/player_character.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0c4f1dbb71f2f31c76ec51c0aa34137352491eac",
+      "sha256": "44eac35b921f27602443d3b42fb8d88acf6a28e3b8983a062cd234853962f0b0",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/player_input.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "2800934c3bbf9f13422ada017ca422b43fa826a0",
+      "sha256": "38b9665985667f39a9205b112776f012d485bf61fcfda64b8159f681d52cc05c",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/player_stats.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b1f3a0537dacf8b4f962fba08a27203cce33aba7",
+      "sha256": "0fa5cf3afeaaa262979fb923b5bc71971d2a5e98743a551d4dc72b4f3c4f6a63",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/player/player_stats.tres",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "38b0ada37f4a0078be4982e26d073d2dc2ff8b55",
+      "sha256": "e63e03af706c3117a6800a4f4939ecc0197c4a099fb240ee9b7949f7c0105778",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/player/weapon/arrow_shooter.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0b26ceb32fccb75e954ccaf6dcfa4c7d4c6261b3",
+      "sha256": "ec06b225477e833c8b51688bf5e69f88f9038993cf5ada68945235f24b9e0696",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/weapon/bullet/arrow.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "b3965e9891fe16cc91dcdc2f7506abaadc855d03",
+      "sha256": "6523a532103239c7b37918c8d8a96b087ca2a590e8a0ce76977a36289e307614",
+      "changed": false
+    },
+    {
+      "path": "tiny_wizard/player/weapon/bullet/arrow.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "d726d787da545d713d75211324ec06729b6fdce8",
+      "sha256": "fe72b03f5933d2f8bf207eb998e53cb77124452dbb12b0a2c476f99dadbfee80",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/player/weapon/bullet/violet_arrow.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "62af3f3c0635fdd04fcdb3960dbf4f02eece9733",
+      "sha256": "bd0aa0515ffef73ed12b7362f0c4fdc1abaa6a5d637044680737909b2e4ed12c",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "780acef9dab0153f9ee682ca46e2afcc0b74f254",
+      "sha256": "2c79d6c8e0dddc086638c383936c8661b5667f12d22ef819028e0a94da7963ef",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "1fc7cc4b20bcc3777a3a81f2ebac4a1cb4a09671",
+      "sha256": "1fae0fea03e374ddfbb58285c1ec3cebc404c4aea2d7e9cfb0b067ea78c49aa8",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_1.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "470acfcbe3d383ca2d66d3445e75de9809d3b022",
+      "sha256": "7db900a93098140b51a4c50ab4ecd1bd02bc255082bf5b79853ea0acd59d6e76",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_2.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "a98985e76f45f56ef5dbb766031c7b5ec4320afe",
+      "sha256": "0d89ead69799eae8c76ef1bea95a9531466edf14d8447eb48518408402cdd90b",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_3.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "0bcf81596d2203497f0a92f5a428c65931365645",
+      "sha256": "3c7381ec0e1daac2fb2bb1b56c1f6fd226623977e426e9f65916f46816865d39",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_4.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "6dbf739a40f00497f29b99747a7c5e3791961888",
+      "sha256": "fc8eb88432f503bc3b86e9f98d9256366146150befd984ce693c00f4d16f2e12",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_5.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "cd98bde8974c76aa419760f87bd2bfbd01c998cb",
+      "sha256": "680daa6d583898a62b1a9d50b9e16830747e59ac924719b7a47ec8a4e8c0f8ec",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_6.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "941119b5e383283ecbbfa52b2e7dd3afb4c526de",
+      "sha256": "05c3326f8910c815c39e8ed827a65c3bf18c481751ada9a57c6f270bed9a022a",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_7.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "43640c21728a2b64315b6a11fcfa2eba6bfaaa10",
+      "sha256": "3874f8d81b76d00c5bb0322e18699a2c9e6fb903e706946bbb2d67967a0f9f6f",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_8.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "edb1f732e89948017f0346f9052f097370d850eb",
+      "sha256": "9cc81eeee0833b345a29ee6341c1fa1a2914f4a0c7acf3006cf221c856c56709",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/room/room_types/room_9.tscn",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "d92cf557f32c31b78663547dee128dbe36e41ceb",
+      "sha256": "4f5ec8be243d9fc618fe9f1cdeb101fb414392c9ba7a8223cea730f2338d995b",
+      "changed": true
+    },
+    {
+      "path": "tiny_wizard/tiny_wizard_main.gd",
+      "source": "quiver-dev/tiny-wizard-demo",
+      "upstreamGitBlobSha": "5a666eecaacf15f3d7ecfe3ac986c9073d1a6c00",
+      "sha256": "64f66eef18c754bce2ee49e91583e49f92ec2a8fe9e05fc9d9488e1591ef6fd9",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/LICENSE.txt",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "577cadb70e7838996e43d0b0b4ef6d0a643cc81d",
+      "sha256": "9865090bfe5d87f947db5b973a7ce768465d556998af025a05739ea56b98350c",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/LICENSE_ASSETS.txt",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "75131bc20b48be97551574ecd86d750bd1f7c4e1",
+      "sha256": "57264b5ef34b9f2dc7ae9af68a8783dd941fb254e5c1bda26e79a99c7e039e7a",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/README.md",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "cb55b7aead7bb3fddba0cb9edcb8c97db377c3d4",
+      "sha256": "beb015d61118602188d4d70efbc38775e72eba674c5cf03d947b2b199570beba",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/assets/editor_icons/pickable_item.png",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "72ddf25058d64da1c66fb8b79febfbe4432cfb96",
+      "sha256": "8a3ca43fb5cdfcd652ff4166fbedf6765b3100fad8ed9e5ce23c5557f27fbd53",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/assets/editor_icons/pickable_item.svg",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6c69f41fc9a4265c15346d20bf2f84d6222d85f3",
+      "sha256": "c92e68ff7e0755582b8974b71ce84081686790723bb03022ac6c8c69f20a8427",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/bullet.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "f632d3445c2ed100893a2377e341ed9e4a99eb08",
+      "sha256": "58f33c5f962d6922d6f15ff409e4f16d57c748ca4b609fe7018f214b28cada86",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/bullet.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6a4245b87f9454db8e804ebf85e0fae4b092a336",
+      "sha256": "73538f9dfaa1387cfe8ad833b7f4e493cc500807f1f8b38a383a7e02d59230b5",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/impacts/impact.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "69d189e32240122a83acaee73cedbd60665ddbff",
+      "sha256": "d10327bb47921f999325842c9909723b5d17cdd189ab1e5d0f58946ad792390e",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/impacts/impact.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "4f5e8b96362d551aa779da20d5313308aebcb411",
+      "sha256": "2b4893582f20d795132cb00cafe38f4a8afc08b6acf409bb371481d7f86c19ba",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/impacts/impact_texture.png",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "cb546d526a69876ecaf1eb2cf9c13b19056b73c8",
+      "sha256": "ff44e78613fe132879fc6cef0dc1f640adcbea50b36093249d40e58495342173",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/bullets/impacts/sprite_impact.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "1131c8a5ab127adc32acf8baee44bb2815b64150",
+      "sha256": "fd3ed5bc0c6a5bc0777a978547f09d2270c8ce54fb73ddf9fc72fc43ed3ab4e4",
+      "changed": true
+    },
+    {
+      "path": "top-down-shooter-core/character/behavior/behavior.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "0e9e20bfa715f23fb7e95e06264d2312a048933f",
+      "sha256": "eaae5a590d559e27642cc8d4dd978c89c235974b73be9dcb930236550a632771",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/behavior/behavior_modules/player_detector.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "858c947e14ab54df854d5d7371f6acb53363da0d",
+      "sha256": "638719cfe5eb6c2fa85306eff48b009161280c6c308408d77ee2c9d81d960daf",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/behavior/behavior_modules/player_detector.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6f9205972203ea6c10928e8ed5a0707b2903f560",
+      "sha256": "748981501d53ed96812508fbb544c0ac01a77d5933b84bc0c90edceb0e0925bc",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/behavior/player_input_behavior.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "38ad4115fcd25b95f2d40cf83c7d02e7c992cc2e",
+      "sha256": "bd209680f26678b6460608fea07965063c5dcd23714c84664e82bfa401d706ae",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/character.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6f7ddd41744f42a61159cb5ecd28cd9555aeba0d",
+      "sha256": "7af83a7cb899e68e389ccc2bfd8d0147847144062b953c739ac45805959d2915",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/character.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "12a84360e1b5cfc4a4b273decd3e8f2fd7a9a2f8",
+      "sha256": "1441e3fec88b6e0c05f3e3c9f982bf1fa55cd685e2d835982766018317b11ae5",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/character_action.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "12d24b5f36c1d300e528ff801e93e0d8e92c80c2",
+      "sha256": "9d27a85108b6e0ac24147f21c54f1b45c4b08dfa6612d44d98beec8b0f44877d",
+      "changed": true
+    },
+    {
+      "path": "top-down-shooter-core/character/character_stats/character_stats.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "ffe8b00b21dd60642379c7949e58a9bad157f9ee",
+      "sha256": "cd9f7c51338dfe2c2e1b681358eb3ec2244088dc5393e5dc8a76df3f5d7fb1ef",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/character_stats/physics_stats.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "39a8b62f914b86c4782e3d8821b4559c93d09be9",
+      "sha256": "bc949aa38e83008208518f75f23ce25da2d59110728d8374e26f954b9a6884dc",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/visual/animated.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "453672517a67e71b27c1a4e72d78f7d2af24abed",
+      "sha256": "c043fede35bd1383c60a95496a848abe1c2315e9f27560177d92d8f4075a949d",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/visual/animated_sprite.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "2c2d2dc0c91dd3b3e284699e5f930add2858b9b4",
+      "sha256": "fff4e3668837c06d260d16701c15bd8bfe800a1af4429cc9d04961c27b9e58b9",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/visual/head_body.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "86c2e62656a76a32d17fef3f5c9d917238833bc0",
+      "sha256": "374f44618a85871ed52113fedd690da465350ad6a2ab1f6c5d5e128f06f2ee3f",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/character/visual/visual.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "a821933b70e0b8b8162678638f8b0507d62a92e9",
+      "sha256": "cb3dd0b0963513d5f55d839eb70cfc9963491063f84fe882f35b01b529b96b55",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/crosshair/crosshair_manager.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "09af3a8418578c14dcbafb646dc3f00ec19abb08",
+      "sha256": "1608956ce7cc71dd583c222525e322515ab945e3cccd93e6149284124b690076",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/crosshair/crosshair_manager.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "033a6fddb4582eafa65e9bf635ae6334ca1b77fc",
+      "sha256": "8abd34d96f405e2fda6042ce59df2602db3f070308b7f01a7abfa10bf27eec21",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/game_over_ui/game_over_ui.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "dd331ead8e05bdb4dcf8031d8c77b32babfd23c8",
+      "sha256": "528e53f3c9728a0aaff030639165355499c9d217dbb8af2c4d5a9f89cf6af63a",
+      "changed": true
+    },
+    {
+      "path": "top-down-shooter-core/gui/game_over_ui/game_over_ui.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "817d9d936d47d90fe19a6add50435c8a33ab6db8",
+      "sha256": "b4f03f93e34458068d5d760817233c2a7d103ed74b22d9db855c4d44f10a5d25",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/magazine_ui/label_magazine_ui.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "2cf0dd254c33293ce26a0739e6f34b87cee8afe0",
+      "sha256": "ed0e81ade009c35b09728764e9093b10c7003084400a18c08b33df3f73e410e0",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/magazine_ui/label_magazine_ui.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "acb1f96cd9909f79a133be10041d7e7db52925ff",
+      "sha256": "934c2ca2e41d02ea52fd69574b1095861317c7df2387aa8dddd6c1849f2023b6",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/magazine_ui/magazine_ui.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "3dabd283d82dd9b3931fd4974ad41478a8b06893",
+      "sha256": "c3feb4f65fcdb8f6a2cd50a9f2633d50b00a97fec4e1815957df4734fab92740",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/magazine_ui/magazine_ui.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "539e593327956895a558304cf4256a076a54bf30",
+      "sha256": "f554de3498c95842dbad7d0b77726bce27c01abaa2d0800665c22031c2e8ecfa",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/player_ui/label_player_ui.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "28f332f41a8b7afb144030dc5104502e5128ed51",
+      "sha256": "edd03396ddbf310aadc4125d82b9ac43350a7f06d33282f1701af5dd1f98dadc",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/player_ui/label_player_ui.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "f20d04825c9fb561966e09cc27b30bccba6b82bc",
+      "sha256": "ec1561cb9c5c9dd543757a0fa9aa15df4db6a7cde24c03a992112362eb97832e",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/player_ui/player_ui.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "5211f50c694978feed54702aa89f3e84688f6b0c",
+      "sha256": "baa00a0bc5b2882e3ef64c493af8e24a647a55e127b5f5a9b4e22840abea3386",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/gui/player_ui/player_ui.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "993d0217a302330a5a4baac5abc7abe1aafbde58",
+      "sha256": "237d149b64ea56624c9d9226d1c55e7d27f881f3168b1b70920b11345d3e4f21",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/actions/_action.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "42ba1042f60d988cf4a7ed3d3c592f2a9c880091",
+      "sha256": "f0a36fa84345bc75a473022f185230da533947a92f4bf26245a940768fb33afb",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/actions/destroy_object.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "09d6c950f5e27db97b3ee78a920c22b6fa0076db",
+      "sha256": "231b0b2b65bb1a27918d7bcfdd7decf79f2831fe0d7af361193f9b6ba0f08c50",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/actions/play_animation.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "58c37fac6c604e08a739a4b095936a573cb21ffa",
+      "sha256": "b197a3ce602300c9abcf95eb06767b160c5594ac5d90e096e6b4c3b945acfce1",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/interact_mechanics/_interact_mechanic.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6f45241b46507b0da2b286f5c7fa67784636616d",
+      "sha256": "bf2833da22ffb89ee78a54dc61b5e8343ab04a5ae732420a8a1ef9f4c6d78396",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/interact_mechanics/interact_on_collide.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "1a058b540b60a597083e0cca9710a6f8399c4d5c",
+      "sha256": "05863d13f859d8284d197f199f6e9b761c62d371f6702377ae111a7e37dc0a8b",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/interactable_object.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "dbd78941bbd35a7b8f0ef42054c1d0ee503fc8ec",
+      "sha256": "d9ba531a0b2109c0cc5c706b0b39e68e08bae32a8187f8cd7eed8dd163e38d6a",
+      "changed": true
+    },
+    {
+      "path": "top-down-shooter-core/interactable_objects/interactable_object.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "e53d91082503f13760b7d278ba705372bf15f53e",
+      "sha256": "76884190b1377a2ea918df5c8e6e06ac6048ad2c8a6569ef7bd0e892eafbb395",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/inventory/inventory_.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "4383363cf0f9edd6aa3e6a40781d3146dac54958",
+      "sha256": "b600ea7bfdde49fb3d876aa343395cd37ef9c0250e5bcf4b8d1b97adf76e514d",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/item.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "02b8279fda2aed46bf2f98b5246c1ee4aa5dc744",
+      "sha256": "83f273f19b10cdc5af6f59a7c92787fa32cd5a1a6e9a2d53916e81cc7ee49707",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/pickable_items/pick_item_actions/_pick_item_action.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "d7ad288bda7e15f2542f45d0c3f8c9865fcda6c4",
+      "sha256": "074a6b84899f228daca383262567d08098485fe3245e098084bcea5cb114b73c",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/pickable_items/pick_item_actions/add_to_inventory.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "29ea5e78407853f8fb29a7c248f1681ebd3b341a",
+      "sha256": "f4e7efd7df208c6a50f8768cefd323d733d1c5cc8413c0012e078af2acc8fd50",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/pickable_items/pick_item_actions/use_item.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "301d35503ca82f62f51279c256cfa10ea5cc69f6",
+      "sha256": "14c14dca2b4c8a3edccbeb9fdf89adc97d07898e9331281f34c04926e6f5dd84",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/pickable_items/pickable_item.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "3ced6ab0dc8958f62de9ef9d669ddb80611070d5",
+      "sha256": "873e85437cc03f1ee02743fdad64c86a354b6e4667098aaa1278159d9f69607d",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/pickable_items/pickable_item.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "2c471201a34c5a75cb3b8b5789223aa102b70853",
+      "sha256": "af0b4a9dc90abfcd8fa3a5af0a33efa794a4902c25ad7a62e4cdb74f5aa511b2",
+      "changed": true
+    },
+    {
+      "path": "top-down-shooter-core/items/use_actions/_use_action.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "f2d5963c4c9f01bf806fa4001eb25ea1cced5255",
+      "sha256": "d9c9f9b115ead94fb273043106d580e79557f3235d8bcf17136a6ef3c27a7f55",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/use_actions/heal_character.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "7d4aebe0d75f28403c4a610a6e1e63a7e70af718",
+      "sha256": "f49bcad01c300bf924bc743f29231cadb5e6a6bb260dad4ccdd7bbe2326076c4",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/items/use_actions/spawn_a_scene.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "18f2bd88edcf2714f6f51410cfd1ee3ba7b50160",
+      "sha256": "cf89204725e1bc2566eedb634ba9abe5db46cb28b803eaf8c7560c38425f6cb0",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/weapons/distance_weapon.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "fe9f8f08e3119deccb10fdb28cbfc5abfe14890e",
+      "sha256": "100108f1a07d940bb1827b1bc0601f72a9770a25f9aa35f52a37ef41c8484652",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/weapons/distance_weapon.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "a3ccbc902e2b3b7fe83305582b1bd336eebe915c",
+      "sha256": "96546447fa5306253aa110871fa878ba97f72e6f5ea457f807ae473d8eaecf04",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/weapons/magazine.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "6b97bb1d0de28ab274480275487b6ed49f864e58",
+      "sha256": "d05b1e7486d269db2a33e833a4adcee7a3c088077c3dc78952a40a6cddf01478",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/weapons/melee_weapon.gd",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "9aa698608fb3e19dacd6051c01966c28f64c4f63",
+      "sha256": "ea07dd49a9a3c4981267574b50e159c9fb6fa7a27816e1d23f2fb7008bfc4c30",
+      "changed": false
+    },
+    {
+      "path": "top-down-shooter-core/weapons/melee_weapon.tscn",
+      "source": "quiver-dev/top-down-shooter-core",
+      "upstreamGitBlobSha": "04ed0c754bbce9176a65595c43c02a7ae4f88a61",
+      "sha256": "e55804fa4a466da445e09cc5329bac58e1b334e128788cc2b44be653da454390",
+      "changed": false
+    }
+  ]
+}

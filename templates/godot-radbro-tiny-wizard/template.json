@@ -1,0 +1,16 @@
+{
+  "id": "godot-radbro-tiny-wizard",
+  "title": "Radbro Tiny Wizard",
+  "engine": "Godot 4.6.2",
+  "genre": "2D room shooter",
+  "path": "templates/godot-radbro-tiny-wizard",
+  "assets": ["radcat-motion-v2"],
+  "entry": "project.godot",
+  "assetFiles": {
+    "radcat-motion-v2": [
+      "LICENSE.txt", "SPRITE-PERMISSION.txt", "pack.json",
+      "sprites/animation-manifest.json", "sprites/idle-sheet.png",
+      "sprites/idle-sheet.json", "sprites/walk-sheet.png", "sprites/walk-sheet.json"
+    ]
+  }
+}

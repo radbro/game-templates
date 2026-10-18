@@ -1,0 +1,2 @@
+# Keep these hash-pinned upstream script snapshots byte-for-byte.
+*.gd.txt -whitespace

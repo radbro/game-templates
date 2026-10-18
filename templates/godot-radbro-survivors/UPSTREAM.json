@@ -1,0 +1,43 @@
+{
+  "repository": "https://github.com/gdquest-demos/getting-started-with-godot-4",
+  "commit": "940f23e54e0207cc1135c2f6dc7fdd1ce5b52127",
+  "directory": "2d-project-completed",
+  "codeLicense": "MIT",
+  "copyright": "Copyright (c) 2023-present GDQuest",
+  "upstreamAssetLicense": "CC-BY-NC-SA-4.0",
+  "upstreamAssetsIncluded": false,
+  "reusedLogic": {
+    "player.gd": "CharacterBody2D directional movement, velocity, move_and_slide, contact damage and health_depleted signal.",
+    "mob.gd": "CharacterBody2D pursuit and take_damage method.",
+    "gun.gd": "Automatic target tracking and projectile instantiation; nearest target replaces first overlap.",
+    "bullet_2d.gd": "Rotated movement, accumulated range, damage and disposal; swept contact replaces Area2D overlap.",
+    "game.gd": "Repeated mob spawn and health-depleted game-over flow."
+  },
+  "replacements": "All upstream images, models, animation scenes and effects were omitted. Environment, sentries, projectiles, XP and UI are original Godot drawing code. Default hero uses published Radcat pack.",
+  "sourceFiles": {
+    "2d-project-completed/gun.gd": {
+      "snapshot": "upstream/gun.gd.txt",
+      "sha256": "045fe45ac613295a4808bf86cd26f3a079014fc244521a7a1f2ff8077d877fa6"
+    },
+    "2d-project-completed/bullet_2d.gd": {
+      "snapshot": "upstream/bullet_2d.gd.txt",
+      "sha256": "985a887bc8bbbcc0f8c878111500986fa5af0e405eaf45139637f586e7855cc3"
+    },
+    "2d-project-completed/mob.gd": {
+      "snapshot": "upstream/mob.gd.txt",
+      "sha256": "eba70d6aa2a0fb4d091135ec9c6b603e94a0146d5ecce6e9f9f7bbbce927b4ff"
+    },
+    "2d-project-completed/game.gd": {
+      "snapshot": "upstream/game.gd.txt",
+      "sha256": "b25bcb685307abd533e238bd7d9f8367f4133b0bdf823b7623b036aca423933b"
+    },
+    "LICENSE": {
+      "snapshot": "upstream/LICENSE.txt",
+      "sha256": "c298531e638430618d5f68ca9e1be23d3e6510173aa764068c3f7e3fcf25d140"
+    },
+    "2d-project-completed/player.gd": {
+      "snapshot": "upstream/player.gd.txt",
+      "sha256": "02f76ec1e34bb6b15c035e277c1b51b4c7eecad97f775ee396e2d65b3b8c5d28"
+    }
+  }
+}

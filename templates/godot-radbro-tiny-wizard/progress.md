@@ -60,3 +60,18 @@ The small room and all retained third-party assets still need the user's art sel
 New 64 by 64 modular pixel art needs a separate adapter and engine proof after approval.
 The parent must integrate template.json, build the portable source ZIP,
 add the game to the catalog, and select its publication target.
+
+## Source completeness correction
+
+The first lane commit omitted 51 upstream media files.
+An unanchored assets/ ignore pattern matched nested upstream asset folders.
+Local files masked that omission during the first engine checks.
+The template now ignores only /assets/ at its root.
+The 51 audited upstream media and editor icon files are tracked with unchanged bytes.
+check-source.py now checks Git index paths and bytes when it runs in this repository.
+Use --git-index to require that check explicitly.
+Outside Git, the source ZIP still uses the mandatory file hash audit.
+A fresh staged Git archive and a separately extracted portable ZIP both pass
+source hashes, clean Godot editor import, and headless collision/game-loop smoke.
+Those checks reject any ERROR text even when Godot exits with code zero.
+No private files, import caches, or generated root assets were staged.

@@ -10,6 +10,25 @@ import package
 
 
 class ReleasePackageTests(unittest.TestCase):
+    def test_template_attribution_survives_packaging(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            source = root / 'templates/phaser-test'
+            source.mkdir(parents=True)
+            (source / 'index.html').write_text('Public game')
+            (source / 'CREDITS.md').write_text('Required upstream attribution')
+            (root / 'LICENSE').write_text('MIT')
+            (root / 'CREDITS.md').write_text('Shared repository credits')
+            entry = {'id': 'phaser-test', 'path': 'templates/phaser-test'}
+            with patch.object(package, 'ROOT', root), \
+                    patch.object(package, 'DIST', root / 'dist'), \
+                    patch.object(package, 'prepare'), \
+                    patch.object(package, 'templates', return_value=[entry]):
+                package.package()
+            with ZipFile(root / 'dist/phaser-test-source.zip') as archive:
+                self.assertEqual(archive.read('CREDITS.md'), b'Required upstream attribution')
+                self.assertEqual(archive.read('CREDITS.repository.md'), b'Shared repository credits')
+
     def test_review_assets_stay_out_of_source_folder_and_zip(self):
         with tempfile.TemporaryDirectory() as temp:
             root = Path(temp)

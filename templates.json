@@ -6,6 +6,7 @@
       "title": "Radcat Courier",
       "engine": "Phaser 3.90.0",
       "genre": "2D collection game",
+      "description": "Collect energy cells. Dodge the sparks. Return to the gate. Includes animated sprites, wall collision, keyboard input, and touch controls.",
       "path": "templates/phaser-radcat-courier",
       "assets": [
         "radcat-motion-v2",
@@ -42,6 +43,7 @@
       "title": "Radcat Relay",
       "engine": "Godot 4.6.2",
       "genre": "3D collection game",
+      "description": "Run and hop through a 3D playground. Collect four cells and return to the gate. Includes a rigged character, reusable props, an editable scene, and web export settings.",
       "path": "templates/godot-radcat-relay",
       "assets": [
         "radcat-motion-v2",

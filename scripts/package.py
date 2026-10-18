@@ -38,7 +38,8 @@ def package():
         shutil.copytree(ROOT / item['path'], folder,
                         ignore=shutil.ignore_patterns(*IGNORED, '*.import', 'progress.md'))
         shutil.copy2(ROOT / 'LICENSE', folder / 'LICENSE.code.txt')
-        shutil.copy2(ROOT / 'CREDITS.md', folder / 'CREDITS.md')
+        credit_name = 'CREDITS.repository.md' if (folder / 'CREDITS.md').exists() else 'CREDITS.md'
+        shutil.copy2(ROOT / 'CREDITS.md', folder / credit_name)
         if item['id'].startswith('godot-'):
             shutil.copytree(ROOT / 'licenses', folder / 'licenses', dirs_exist_ok=True)
         output = DIST / f"{item['id']}-source.zip"

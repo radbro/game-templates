@@ -57,7 +57,8 @@ A wave animation must not stand in for a hop animation.
 ## Modular Radbro equipment
 
 The paperdoll contract is `radbro-paperdoll-v1`.
-Its current rig is `radbro64-front-v1`.
+The current local revision is 2 and uses rig `radbro64-front-v2`.
+Read the live pack before importing it. Do not assume that an older rig is current.
 Read the actual `pack.json` for item IDs, slots, parts, and presets.
 
 Use one clock and one frame index for the entire character.

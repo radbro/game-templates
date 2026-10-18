@@ -32,5 +32,6 @@ def check_zip(path, entry, asset_ids, godot=False):
 for item in templates():
     path = ROOT / 'dist' / f"{item['id']}-source.zip"
     check_zip(path, item['entry'], item['assets'], item['id'].startswith('godot-'))
-web = ROOT / 'dist/godot-radcat-relay-web.zip'
-check_zip(web, 'index.html', ['radcat-motion-v2', 'radcat-playground'], True)
+for item in templates():
+    web = ROOT / 'dist' / f"{item['id']}-web.zip"
+    check_zip(web, 'index.html', item['assets'], item['id'].startswith('godot-'))

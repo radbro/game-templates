@@ -62,6 +62,96 @@
           "radcat-playground.glb"
         ]
       }
+    },
+    {
+      "id": "godot-radbro-survivors",
+      "title": "Radbro Survivors",
+      "engine": "Godot 4.6.2",
+      "genre": "2D survival arena",
+      "path": "templates/godot-radbro-survivors",
+      "assets": [
+        "radcat-motion-v2"
+      ],
+      "entry": "project.godot",
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "SPRITE-PERMISSION.txt",
+          "pack.json",
+          "sprites/animation-manifest.json",
+          "sprites/idle-sheet.json",
+          "sprites/idle-sheet.png",
+          "sprites/walk-sheet.json",
+          "sprites/walk-sheet.png"
+        ]
+      },
+      "description": "Survive enemy waves for 90 seconds. Gather XP, select upgrades, and keep moving. Includes an optional local modular Radbro art proof."
+    },
+    {
+      "id": "godot-radbro-tiny-wizard",
+      "title": "Radbro Tiny Wizard",
+      "engine": "Godot 4.6.2",
+      "genre": "2D room shooter",
+      "path": "templates/godot-radbro-tiny-wizard",
+      "assets": [
+        "radcat-motion-v2"
+      ],
+      "entry": "project.godot",
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "SPRITE-PERMISSION.txt",
+          "pack.json",
+          "sprites/animation-manifest.json",
+          "sprites/idle-sheet.png",
+          "sprites/idle-sheet.json",
+          "sprites/walk-sheet.png",
+          "sprites/walk-sheet.json"
+        ]
+      },
+      "description": "Clear two enemy waves. Upgrade your weapon. Find the key and leave through the north door. Uses Quiver combat systems."
+    },
+    {
+      "id": "godot-radbro-3d-platformer",
+      "title": "Radbro Sky Run",
+      "engine": "Godot 4.6.2",
+      "genre": "3D double-jump platformer",
+      "path": "templates/godot-radbro-3d-platformer",
+      "assets": [
+        "radcat-motion-v2"
+      ],
+      "entry": "project.godot",
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "pack.json",
+          "radcat-motion-v2.glb"
+        ]
+      },
+      "description": "Double jump across a sky course. Collect six coins and reach the finish. Includes the full rigged Radcat character."
+    },
+    {
+      "id": "phaser-radbro-dungeon-crawler",
+      "title": "Radbro Dungeon Crawler",
+      "engine": "Phaser 3.90.0",
+      "genre": "2D dungeon crawler",
+      "path": "templates/phaser-radbro-dungeon-crawler",
+      "entry": "index.html",
+      "assets": [
+        "radcat-motion-v2"
+      ],
+      "assetFiles": {
+        "radcat-motion-v2": [
+          "LICENSE.txt",
+          "pack.json",
+          "SPRITE-PERMISSION.txt",
+          "sprites/idle-sheet.png",
+          "sprites/idle-sheet.json",
+          "sprites/walk-sheet.png",
+          "sprites/walk-sheet.json"
+        ]
+      },
+      "description": "Explore the dungeon. Throw weapons at roaming enemies. Loot three chests and return to the exit."
     }
   ]
 }

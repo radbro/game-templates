@@ -3,6 +3,9 @@
 The next four games use separate branches and checkouts.
 Each game must support a playable web build and an editable source package.
 Survivors is the first priority.
+All four initial playable proofs are committed locally.
+Each has browser keyboard, touch, outcome, and restricted iframe checks.
+The new games have not been published.
 
 | Game | Source and revision | Branch | Local preview port |
 | --- | --- | --- | --- |
@@ -31,6 +34,8 @@ An agent supplies a `template.json` registration record for integration.
 The project title can use Radbro while the first public-safe proof uses Radcat.
 The final character choice remains part of the art review.
 Do not describe a local proof as a published game.
+Each template has an `ART_REQUESTS.md` file for the next art batch.
+Read [Initial game prototype checks](prototype-verification.md) for the proof and its limits.
 
 ## Asset review
 

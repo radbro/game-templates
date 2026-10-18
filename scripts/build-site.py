@@ -36,9 +36,14 @@ def build():
             patch(destination)
             for name in ['GODOT-LICENSE.txt', 'GODOT-COPYRIGHT.txt']:
                 shutil.copy2(ROOT / 'licenses' / name, destination / name)
-            for name in ['CREDITS.md', 'CREDITS.repository.md', 'LICENSE.code.txt']:
-                if (source / name).is_file():
-                    shutil.copy2(source / name, destination / name)
+            for notice in source.rglob('*'):
+                name = notice.name.lower()
+                is_notice = name.startswith(('credits', 'license', 'copying', 'copyright'))
+                is_notice = is_notice or name in {'ofl.txt', 'notice', 'notice.txt', 'upstream.json', 'source_audit.json'}
+                if notice.is_file() and is_notice:
+                    target = destination / notice.relative_to(source)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copy2(notice, target)
             for pack_id in item['assets']:
                 for name in ['LICENSE.txt', 'pack.json', 'SPRITE-PERMISSION.txt']:
                     notice = source / 'assets' / pack_id / name

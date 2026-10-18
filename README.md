@@ -19,6 +19,24 @@ Both games include start, pause, success, failure, and restart states.
 The source games need no account or API key.
 Runtime assets and the Phaser library are local files.
 
+## New local prototypes
+
+Four adaptations now have a first playable version.
+They are not part of the published v0.1.1 demo release yet.
+
+| Game | Source project | Play loop |
+| --- | --- | --- |
+| Radbro Survivors | [Godot project](templates/godot-radbro-survivors) | Survive 90 seconds, gather XP, and select upgrades |
+| Radbro Tiny Wizard | [Godot project](templates/godot-radbro-tiny-wizard) | Clear two waves, find a key, and reach the exit |
+| Radbro Sky Run | [Godot project](templates/godot-radbro-3d-platformer) | Double jump, collect six coins, and finish the sky course |
+| Radbro Dungeon Crawler | [Phaser project](templates/phaser-radbro-dungeon-crawler) | Fight enemies, loot three chests, and return to the exit |
+
+These projects use the published Radcat assets as their working default.
+Survivors also supports an optional private modular Radbro proof.
+Draft character art stays outside the public source and browser packages.
+The final art direction remains open.
+Read [Game template work](docs/parallel-games.md) for the source revisions and asset process.
+
 ## Run Phaser
 
 Install Python 3.10 or later. Clone or download this repository.
@@ -73,6 +91,8 @@ python3 scripts/build-site.py
 
 The site and demos are in `dist/site/`.
 The Godot browser ZIP is `dist/godot-radcat-relay-web.zip`.
+Each registered template also gets `<template-id>-source.zip` and `<template-id>-web.zip`.
+Export every registered Godot project before running `scripts/build-site.py`.
 Its `index.html` is at the ZIP root.
 Keep all exported `.wasm`, `.pck`, `.js`, image, and license files together.
 Use the source ZIP to edit the game. Use the web ZIP to host it.

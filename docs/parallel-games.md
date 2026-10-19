@@ -48,6 +48,9 @@ The study does not approve the draft assets for public release.
 
 The local Godot comparison has a **Style** button above the arena.
 Press **T**, click the button, or tap it to change the hero and sentry art.
+The same switch changes the ground, weapon, shots, XP, and feedback effects.
+The native style uses its original pixel tile and icon atlas.
+The illustrated style uses a new mossy slate tile and smooth glow effects.
 The same round continues. The switch preserves positions, health, XP, and upgrades.
 It also works during pause and upgrade selection.
 The native hero retains its separate layers and source frame timing.
@@ -58,10 +61,12 @@ Build the normal demo site first. Then build the local art comparison:
 ```sh
 python3 scripts/build_survivors_review.py \
   --study ../radclaw/runs/2026-10-18-survivors-dual-style \
+  --look-pack ../radclaw/runs/2026-10-19-survivors-full-look \
   --preview-site
 ```
 
-This command verifies 56 source files against the Radclaw study records.
+This command verifies 58 source files against the Radclaw study and look-pack records.
+The ground PNG remains unchanged. Alternate mirrored tiles prevent hard joins.
 It copies them into an isolated project under ignored `build/local-review/`.
 Only that project enables the `art_review` export feature.
 The command replaces the locally served Survivors files under `dist/site/`.

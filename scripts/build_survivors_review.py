@@ -63,8 +63,32 @@ def review_files(study):
     return files
 
 
-def stage_project(study, project):
+def look_files(folder):
+    manifest = read_json(folder / 'manifest.json')
+    if not manifest.get('reviewOnly') or manifest.get('published'):
+        raise ValueError('Expected an unpublished local look pack.')
+    records = {entry['path']: entry for entry in manifest['files']}
+
+    def verify(relative):
+        source = checked_path(folder, relative)
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        if relative not in records or digest != records[relative]['sha256']:
+            raise ValueError(f'Look pack hash mismatch: {relative}')
+        return source, Path('look-kit') / relative, digest
+
+    files = [verify('pack.json')]
+    pack = read_json(files[0][0])
+    image = pack['ground']['image']
+    if Path(image).name != image or not image.endswith('.png'):
+        raise ValueError('Expected a local ground PNG filename.')
+    files.append(verify(image))
+    return files
+
+
+def stage_project(study, project, look_pack=None):
     files = review_files(study)  # Validate every file before creating the project.
+    if look_pack is not None:
+        files.extend(look_files(look_pack))
     if project.exists():
         shutil.rmtree(project)
     shutil.copytree(ROOT / 'templates' / TEMPLATE, project,
@@ -93,13 +117,13 @@ def run_godot(godot, project, arguments, log):
         raise RuntimeError(f'Godot failed. Read {log}.')
 
 
-def build(study, godot, preview_site=False):
+def build(study, godot, preview_site=False, look_pack=None):
     prepare(TEMPLATE)
     work = ROOT / 'build/local-review'
     work.mkdir(parents=True, exist_ok=True)
     project = work / 'survivors-project'
     output = work / TEMPLATE
-    receipt = stage_project(study.resolve(), project)
+    receipt = stage_project(study.resolve(), project, look_pack.resolve() if look_pack else None)
     output.mkdir(exist_ok=True)
     run_godot(godot, project, ['--editor', '--import'], work / 'import.log')
     run_godot(godot, project, ['--script', 'res://tests/smoke.gd', '--', '--art-review'], work / 'smoke.log')
@@ -124,5 +148,6 @@ if __name__ == '__main__':
     parser.add_argument('--study', type=Path, required=True, help='Radclaw dual-style run folder')
     parser.add_argument('--godot', default=shutil.which('godot') or '/Applications/Godot.app/Contents/MacOS/Godot')
     parser.add_argument('--preview-site', action='store_true', help='Overlay only the local dist/site game')
+    parser.add_argument('--look-pack', type=Path, help='Optional hash-checked Radclaw ground pack')
     args = parser.parse_args()
-    build(args.study, args.godot, args.preview_site)
+    build(args.study, args.godot, args.preview_site, args.look_pack)

@@ -11,6 +11,16 @@ import build_survivors_review as review
 
 
 class SurvivorsReviewTests(unittest.TestCase):
+    def look_pack(self, root):
+        folder = root / 'look'
+        folder.mkdir()
+        (folder / 'ground.png').write_bytes(b'Exact generated ground bytes')
+        (folder / 'pack.json').write_text(json.dumps({'ground': {'image': 'ground.png', 'worldTileSize': 128}}))
+        files = [{'path': name, 'sha256': hashlib.sha256((folder / name).read_bytes()).hexdigest()}
+                 for name in ['pack.json', 'ground.png']]
+        (folder / 'manifest.json').write_text(json.dumps({'reviewOnly': True, 'published': False, 'files': files}))
+        return folder
+
     def study(self, root):
         study = root / 'study'
         records = []
@@ -74,3 +84,35 @@ class SurvivorsReviewTests(unittest.TestCase):
             (root / 'outside.png').write_bytes(b'Not in this study')
             with self.assertRaisesRegex(ValueError, 'Invalid review source'):
                 review.checked_path(study, '../outside.png')
+
+    def test_look_pack_preserves_original_bytes_and_import_destination(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            folder = self.look_pack(root)
+            files = review.look_files(folder)
+            image, target, digest = files[1]
+            self.assertEqual(image.read_bytes(), b'Exact generated ground bytes')
+            self.assertEqual(target.as_posix(), 'look-kit/ground.png')
+            self.assertEqual(digest, hashlib.sha256(image.read_bytes()).hexdigest())
+
+    def test_modified_look_cannot_replace_existing_project(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            study = self.study(root)
+            folder = self.look_pack(root)
+            (folder / 'ground.png').write_bytes(b'Modified art')
+            project = root / 'project'
+            project.mkdir()
+            (project / 'keep.txt').write_text('Existing review')
+            with self.assertRaisesRegex(ValueError, 'Look pack hash mismatch'):
+                review.stage_project(study, project, folder)
+            self.assertEqual((project / 'keep.txt').read_text(), 'Existing review')
+
+    def test_published_look_pack_is_not_a_local_draft(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder = self.look_pack(Path(temp))
+            manifest = json.loads((folder / 'manifest.json').read_text())
+            manifest['published'] = True
+            (folder / 'manifest.json').write_text(json.dumps(manifest))
+            with self.assertRaisesRegex(ValueError, 'unpublished local look pack'):
+                review.look_files(folder)

@@ -19,8 +19,11 @@ const waitStyle = (value, target=page) => target.waitForFunction(value=>JSON.par
 function gameplay(snapshot) {
   const copy = structuredClone(snapshot);
   delete copy.art_style;
+  delete copy.visual_style;
+  delete copy.active_fx;
   delete copy.player.paperdoll;
   for(const enemy of copy.enemies) delete enemy.art_style;
+  for(const projectile of copy.projectiles) delete projectile.art_style;
   return JSON.stringify(copy);
 }
 let outcome;
@@ -28,6 +31,7 @@ try {
   await page.goto(url);
   await page.waitForFunction(() => typeof window.render_game_to_text==='function',null,{timeout:60000});
   check(JSON.stringify((await state()).available_art_styles)===JSON.stringify(['native','illustrated']),'both real-game styles load');
+  check((await state()).visual_style.ground_texture_loaded,'native ground texture loads');
   const ready=await state();
   await page.keyboard.press('t');
   await waitStyle('illustrated');
@@ -44,6 +48,7 @@ try {
     check(after.player.facing===facing && (after.player.x!==before.player.x || after.player.y!==before.player.y),`movement and ${facing} facing`);
   }
   await page.waitForTimeout(2200);
+  await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).active_fx.kinds.defeat>0);
   await page.screenshot({path:`${out}/native-playing.png`});
   const running=await state();
   await page.mouse.click(820,100);
@@ -51,16 +56,23 @@ try {
   const switched=await state();
   check(switched.state==='playing' && switched.art_style==='illustrated' && switched.player.node_id===running.player.node_id && switched.elapsed>=running.elapsed && switched.kills>=running.kills,'click changes art during the same live round');
   check(switched.enemies.every(e=>e.art_style==='illustrated'),'existing enemies switch together');
+  check(switched.visual_style.floor==='illustrated' && switched.visual_style.ground_texture_loaded && switched.visual_style.gun==='illustrated','illustrated ground and weapon load together');
+  check(switched.projectiles.every(p=>p.art_style==='illustrated') && switched.active_fx.style==='illustrated','in-flight shots and effects use the selected style');
   await page.screenshot({path:`${out}/illustrated-playing.png`});
+  await page.waitForFunction(()=>{const s=JSON.parse(window.render_game_to_text());return s.active_fx.events.some(e=>e.age<0.05) && s.projectiles.length>0;});
   await page.keyboard.press('p');
   await waitState('paused');
   const frozen=await state();
+  check(frozen.active_fx.events.length>0 && frozen.projectiles.length>0,'paused comparison contains live effects and in-flight shots');
   await page.keyboard.press('t');
   await waitStyle('native');
   const frozenNative=await state();
   check(frozenNative.state==='paused' && frozenNative.art_style==='native' && gameplay(frozen)===gameplay(frozenNative),'paused toggle preserves all gameplay fields and node IDs');
+  check(frozenNative.visual_style.floor==='native' && frozenNative.visual_style.gun==='native' && frozenNative.projectiles.every(p=>p.art_style==='native') && frozenNative.active_fx.style==='native','paused toggle restyles the complete scene');
+  check(JSON.stringify(frozen.active_fx.events)===JSON.stringify(frozenNative.active_fx.events),'active effect IDs and ages survive the toggle');
   await page.waitForTimeout(250);
   check(gameplay(frozenNative)===gameplay(await state()),'toggle keeps pause active');
+  check(JSON.stringify(frozenNative.active_fx)===JSON.stringify((await state()).active_fx),'pause freezes all effect clocks and lifetimes');
   const cdp=await context.newCDPSession(page);
   await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:820,y:100,id:1}]});
   await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
@@ -106,6 +118,8 @@ try {
   await page.keyboard.up(directions[direction]);
   check(['won','lost'].includes(outcome.state),'art comparison reaches a genuine game outcome');
   check(outcome.kills>0 && upgradeCount>0 && toggleCount>5,'combat XP and upgrades work through repeated style switches');
+  check(['muzzle','hit','defeat','pickup','upgrade'].every(kind=>outcome.active_fx.emitted[kind]>0),'all five feedback effects occur through real gameplay');
+  check(outcome.active_fx.count<=outcome.active_fx.limit,'live effects stay within their fixed budget');
   const final=await state(); await page.keyboard.press('t');
   await waitStyle(final.art_style==='native'?'illustrated':'native');
   check(gameplay(final)===gameplay(await state()),'outcome toggle preserves the result');

@@ -34,8 +34,8 @@ func _init() -> void:
     if native_enemy.is_empty() or illustrated_enemy.is_empty():
         return
     styles = {
-        "native": {"pack": native_pack, "textures": native_textures, "enemy": native_enemy},
-        "illustrated": {"pack": illustrated_pack, "textures": illustrated_textures, "enemy": illustrated_enemy},
+        "native": {"pack": native_pack, "textures": native_textures, "enemy": native_enemy, "look": read_look("native")},
+        "illustrated": {"pack": illustrated_pack, "textures": illustrated_textures, "enemy": illustrated_enemy, "look": read_look("illustrated")},
     }
 
 func read_json(path: String) -> Dictionary:
@@ -72,3 +72,28 @@ func read_enemy(style: String) -> Dictionary:
     enemy["texture"] = texture
     enemy["display_scale"] = 32.0 / visible_height
     return enemy
+
+func read_look(style: String) -> Dictionary:
+    var folder := ROOT + ("native-kit/" if style == "native" else "look-kit/")
+    var pack := read_json(folder + "pack.json")
+    var look: Dictionary = {"world_tile_size": 64.0 if style == "native" else 128.0}
+    if pack.get("ground", {}).has("image"):
+        var ground: Dictionary = pack.ground
+        look["ground"] = read_texture(folder + ground.image)
+        look["world_tile_size"] = float(ground.get("worldTileSize", look.world_tile_size))
+        look["mirror_alternate"] = str(ground.get("repeat", "")).begins_with("mirrored")
+    if style == "native" and pack.get("icons", {}).has("image"):
+        var texture := read_texture(folder + pack.icons.image)
+        if texture != null:
+            var pixels := texture.get_image()
+            if pixels.is_compressed():
+                pixels.decompress()
+            var regions: Dictionary = {}
+            for name in pack.icons.regions:
+                var rect: Dictionary = pack.icons.regions[name]
+                var region := Rect2(rect.x, rect.y, rect.w, rect.h)
+                var visible := pixels.get_region(Rect2i(region)).get_used_rect()
+                regions[name] = {"region": region, "visible_width": maxf(1.0, visible.size.x), "visible_height": maxf(1.0, visible.size.y)}
+            look["icons"] = texture
+            look["regions"] = regions
+    return look

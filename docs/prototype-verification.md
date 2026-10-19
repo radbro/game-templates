@@ -94,3 +94,33 @@ The art remains unpublished. Final art choice, physical devices, Safari, and Fir
 The illustrated hero holds its first walk pose while idle. It has no separate idle clip yet.
 See [the local build command](parallel-games.md#play-both-styles-in-survivors).
 Evidence: ignored `evidence/survivors-art-toggle/` and `build/local-review/` logs.
+
+## Full-look comparison, 2026-10-19
+
+The same Style button now changes ground tiles, weapons, live shots, XP, and effects.
+Native art uses the existing Radclaw tile and icon atlas unchanged.
+Illustrated art uses a new imagegen slate tile with alternating reflected tiles.
+Original Godot drawing code supplies muzzle, hit, defeat, pickup, and upgrade feedback.
+The effect queue has a limit of 64 events. It freezes with the round and clears on restart.
+
+Fresh Godot imports passed without engine errors.
+The local review passed 28 art checks and 18 gameplay checks.
+The public fallback passed seven art checks and 17 gameplay checks.
+The extracted source ZIP also passed fresh import, gameplay, and fallback checks.
+
+Chromium passed 34 final comparison checks with no console or page errors.
+One real-input round won at 90.02 seconds with 122 kills, six upgrades, and 34 style changes.
+All five feedback event types occurred in that round.
+Live shots and effect ages survived a paused style change.
+Touch movement, touch style changes, and opaque iframe play passed.
+The standard game client ran in both styles. Their gameplay captures were inspected.
+The first reflected-floor export had gaps. The corrected export passed a 1482-point floor coverage check.
+No sampled floor gap or spill below the arena remained.
+
+The importer verified 58 unchanged source files, including the new illustrated ground.
+The public PCK has zero review files. The web ZIP contains that public PCK.
+All 12 release ZIPs pass entry, notice, and path checks.
+The root checks pass 19 Python tests and 17 JavaScript tests.
+Only the local served game uses the full-look review PCK.
+The illustrated idle limit and physical-device/browser limits above still apply.
+Evidence: ignored `evidence/survivors-full-look/`.

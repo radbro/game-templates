@@ -8,6 +8,15 @@ var interval := 0.45
 var damage := 1
 var shots := 0
 var active := false
+var art_style := "radcat"
+var art_data: RefCounted
+var effects: Node2D
+
+func set_art_style(style: String, data: RefCounted) -> void:
+    art_style = style
+    art_data = data
+    texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST if style == "native" else CanvasItem.TEXTURE_FILTER_LINEAR
+    queue_redraw()
 
 func _physics_process(delta: float) -> void:
     if not active:
@@ -35,9 +44,25 @@ func shoot() -> void:
     new_bullet.rotation = rotation
     new_bullet.damage = damage
     new_bullet.mobs = mobs
+    new_bullet.effects = effects
+    new_bullet.set_art_style(art_style, art_data)
     projectiles.add_child(new_bullet)
     shots += 1
+    if effects != null:
+        effects.emit_effect("muzzle", new_bullet.position, rotation)
 
 func _draw() -> void:
+    if art_style == "native":
+        draw_rect(Rect2(11, -16, 18, 8), Color("456f77"))
+        draw_rect(Rect2(25, -14, 8, 4), Color("b4ebbd"))
+        draw_rect(Rect2(12, -12, 5, 8), Color("263e4d"))
+        draw_line(Vector2(18, -13), Vector2(23, -13), Color("6bf3d1"), 2)
+        return
+    if art_style == "illustrated":
+        draw_line(Vector2(12, -11), Vector2(29, -11), Color("254b43"), 10, true)
+        draw_line(Vector2(15, -13), Vector2(29, -13), Color("c4dcb1"), 3, true)
+        draw_circle(Vector2(12, -8), 5, Color("527461"))
+        draw_circle(Vector2(30, -11), 3, Color("e3e5b1"))
+        return
     draw_line(Vector2(12, -11), Vector2(28, -11), Color("9de3d0"), 7)
     draw_circle(Vector2(12, -11), 5, Color("496f83"))

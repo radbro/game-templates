@@ -5,6 +5,7 @@ const MOB = preload("res://scripts/mob.gd")
 const GUN = preload("res://scripts/gun.gd")
 const CHARACTER = preload("res://scripts/character.gd")
 const ART_STYLES = preload("res://scripts/art_styles.gd")
+const EFFECTS = preload("res://scripts/effects.gd")
 @export var round_seconds := 90.0
 var state := "ready"
 var elapsed := 0.0
@@ -18,6 +19,7 @@ var gems: Array[Vector2] = []
 var player: CharacterBody2D
 var gun: Node2D
 var projectiles: Node2D
+var effects: Node2D
 var hud: Label
 var message: Label
 var action: Button
@@ -36,6 +38,11 @@ var credit_label: Label
 func _ready() -> void:
     rng.seed = 314159
     _inputs()
+    effects = Node2D.new()
+    effects.name = "VisualEffects"
+    effects.set_script(EFFECTS)
+    effects.z_index = 4
+    add_child(effects)
     projectiles = Node2D.new()
     add_child(projectiles)
     player = CharacterBody2D.new()
@@ -52,6 +59,7 @@ func _ready() -> void:
     gun.set_script(GUN)
     gun.mobs = mobs
     gun.projectiles = projectiles
+    gun.effects = effects
     player.add_child(gun)
     art_data = ART_STYLES.new()
     if art_data.styles.has("native") and art_data.styles.has("illustrated"):
@@ -100,6 +108,7 @@ func restart() -> void:
     mobs.clear()
     for projectile in projectiles.get_children(): projectile.queue_free()
     gems.clear()
+    effects.clear()
     elapsed = 0
     spawn_clock = 0
     kills = 0
@@ -134,6 +143,12 @@ func _set_art_style(style: String) -> void:
     # Only visual data changes. Keep every gameplay node, clock, and resource.
     art_style = style
     player.visual.set_art_style(style, art_data)
+    gun.set_art_style(style, art_data)
+    effects.set_art_style(style)
+    for projectile in projectiles.get_children():
+        projectile.set_art_style(style, art_data)
+    texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST if style == "native" else CanvasItem.TEXTURE_FILTER_LINEAR
+    queue_redraw()
     for mob in mobs:
         if is_instance_valid(mob):
             mob.set_art_style(style, art_data)
@@ -141,6 +156,7 @@ func _set_art_style(style: String) -> void:
         _update_hud()
 
 func _set_active(value: bool) -> void:
+    effects.active = value
     player.active = value
     gun.active = value
     player.visual.set_process(value)
@@ -166,12 +182,14 @@ func _physics_process(delta: float) -> void:
         if distance < 95:
             gems[index] = gems[index].move_toward(player.position, delta * 250)
         if distance < 23:
+            effects.emit_effect("pickup", gems[index])
             gems.remove_at(index)
             xp += 1
             if xp >= level * 4:
                 xp -= level * 4
                 level += 1
                 state = "upgrade"
+                effects.emit_effect("upgrade", player.position + Vector2(0, -24))
                 _set_active(false)
                 break
     _update_hud()
@@ -198,6 +216,7 @@ func spawn_mob() -> CharacterBody2D:
 func _mob_died(location: Vector2, mob: Node2D) -> void:
     kills += 1
     gems.append(location)
+    effects.emit_effect("defeat", location + Vector2(0, -14))
     mobs.erase(mob)
 
 func choose_upgrade(index: int) -> void:
@@ -218,6 +237,11 @@ func _on_player_health_depleted() -> void:
     _update_hud()
 
 func _draw() -> void:
+    if art_style in ["native", "illustrated"]:
+        _draw_review_floor()
+        for point in gems:
+            _draw_review_xp(point)
+        return
     draw_rect(Rect2(20, 130, 920, 420), Color("122d3b"))
     for x in range(20, 941, 40):
         draw_line(Vector2(x, 130), Vector2(x, 550), Color("193847"))
@@ -226,6 +250,58 @@ func _draw() -> void:
     draw_rect(Rect2(20, 130, 920, 420), Color("39717d"), false, 3)
     for point in gems:
         draw_colored_polygon(PackedVector2Array([point + Vector2(0, -7), point + Vector2(5, 0), point + Vector2(0, 7), point + Vector2(-5, 0)]), Color("72f4c5"))
+
+func _draw_review_floor() -> void:
+    var look: Dictionary = art_data.styles[art_style].get("look", {})
+    var tile: Texture2D = look.get("ground")
+    var bounds := Rect2(20, 130, 920, 420)
+    if tile != null:
+        var size := maxf(16.0, float(look.get("world_tile_size", 64.0)))
+        var y := bounds.position.y
+        var row := 0
+        while y < bounds.end.y:
+            var x := bounds.position.x
+            var column := 0
+            while x < bounds.end.x:
+                var extent := Vector2(minf(size, bounds.end.x - x), minf(size, bounds.end.y - y))
+                var source_size := Vector2(tile.get_width(), tile.get_height())
+                var source_extent := source_size * extent / size
+                var source_start := Vector2.ZERO
+                var destination := Rect2(Vector2(x, y), extent)
+                if look.get("mirror_alternate", false):
+                    if column % 2 == 1:
+                        source_start.x = source_size.x - source_extent.x
+                        destination.size.x = -extent.x
+                    if row % 2 == 1:
+                        source_start.y = source_size.y - source_extent.y
+                        destination.size.y = -extent.y
+                draw_texture_rect_region(tile, destination, Rect2(source_start, source_extent))
+                x += size
+                column += 1
+            y += size
+            row += 1
+    else:
+        # Optional look assets can arrive after the hero/enemy review packs.
+        draw_rect(bounds, Color("283d32") if art_style == "native" else Color("394640"))
+        for y in range(130, 551, 64):
+            draw_line(Vector2(20, y), Vector2(940, y), Color(0.65, 0.66, 0.48, 0.06), 1)
+    draw_rect(bounds, Color("496a59") if art_style == "native" else Color("7b8067"), false, 2)
+
+func _draw_review_xp(point: Vector2) -> void:
+    var look: Dictionary = art_data.styles[art_style].get("look", {})
+    if art_style == "native" and look.has("icons") and look.get("regions", {}).has("xp"):
+        var icon: Dictionary = look.regions.xp
+        var factor := 14.0 / float(icon.visible_height)
+        var size: Vector2 = icon.region.size * factor
+        draw_texture_rect_region(look.icons, Rect2(point - size / 2.0, size), icon.region)
+        return
+    if art_style == "illustrated":
+        draw_circle(point, 11, Color(0.65, 0.93, 0.57, 0.05))
+        draw_circle(point, 8, Color(0.65, 0.93, 0.57, 0.08))
+        draw_colored_polygon(PackedVector2Array([point + Vector2(0, -7), point + Vector2(5, 0), point + Vector2(0, 7), point + Vector2(-5, 0)]), Color("b5e69b"))
+        draw_colored_polygon(PackedVector2Array([point + Vector2(0, -7), point + Vector2(5, 0), point]), Color("e1efba"))
+    else:
+        draw_rect(Rect2(point.round() - Vector2(3, 5), Vector2(6, 10)), Color("92efac"))
 
 func _button(text: String, callback: Callable, width: float = 140) -> Button:
     var button := Button.new()
@@ -323,8 +399,8 @@ func _update_hud() -> void:
     message.text = "Move through XP. Keep clear of the sentries."
     if available_art_styles.size() > 1:
         style_button.text = "Style: %s [T]" % art_style.capitalize()
-        message.text = "PRIVATE ART REVIEW · T or Style swaps hero + sentries."
-        credit_label.text = "Same round and gameplay · T: art style · F: fullscreen\n" + ("Native: one mirrored view · original clip timing" if art_style == "native" else "Illustrated: 4 walk phases · idle holds a pose")
+        message.text = "PRIVATE ART REVIEW · T or Style swaps the full game look."
+        credit_label.text = "Same round and gameplay · T: art style · F: fullscreen\n" + ("Native: crisp tiles + sparks · one mirrored hero view" if art_style == "native" else "Illustrated: soft trails + wisps · idle holds a pose")
     else:
         credit_label.text = "WASD / arrows / touch · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
     overlay.visible = state != "playing"
@@ -347,7 +423,7 @@ func state_text() -> String:
     var enemies: Array = []
     for mob in mobs:
         if is_instance_valid(mob): enemies.append({"node_id": mob.get_instance_id(), "art_style": mob.art_style, "x": snappedf(mob.position.x, 0.1), "y": snappedf(mob.position.y, 0.1), "health": mob.health})
-    return JSON.stringify({"game": "radbro-survivors", "state": state, "art_style": art_style, "available_art_styles": available_art_styles, "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": mini(3, 1 + int(elapsed / 30)), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": level * 4, "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
+    return JSON.stringify({"game": "radbro-survivors", "state": state, "art_style": art_style, "available_art_styles": available_art_styles, "visual_style": {"floor": art_style, "ground_texture_loaded": art_data.styles.get(art_style, {}).get("look", {}).get("ground") != null, "ground_mirror_alternate": art_data.styles.get(art_style, {}).get("look", {}).get("mirror_alternate", false), "gun": gun.art_style, "projectile_style": art_style}, "active_fx": effects.snapshot(), "projectiles": projectiles.get_children().filter(func(p): return not p.is_queued_for_deletion()).map(func(p): return {"node_id": p.get_instance_id(), "art_style": p.art_style, "x": snappedf(p.position.x, 0.1), "y": snappedf(p.position.y, 0.1), "distance": snappedf(p.travelled_distance, 0.1)}), "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": mini(3, 1 + int(elapsed / 30)), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": level * 4, "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
 
 func _install_bridge() -> void:
     if not OS.has_feature("web"): return

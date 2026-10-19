@@ -40,6 +40,8 @@ func run() -> void:
     for i in 4: game.gems.append(game.player.position)
     for frame in 3: await physics_frame
     check(game.state == 'upgrade' and game.level == 2, 'XP triggers paused upgrade')
+    if game.available_art_styles.size() == 2:
+        check(['muzzle', 'hit', 'defeat', 'pickup', 'upgrade'].all(func(kind): return game.effects.event_counts.get(kind, 0) > 0), 'combat and XP emit all five feedback kinds')
     var time: float = game.elapsed
     for frame in 5: await physics_frame
     check(game.elapsed == time, 'upgrade freezes round')
@@ -66,6 +68,7 @@ func run() -> void:
     check(game.state == 'lost', 'contact damage causes game over')
     game.restart()
     check(game.player.health == 100 and game.level == 1 and game.kills == 0, 'restart clears round')
+    check(game.effects.events.is_empty() and game.effects.event_counts.is_empty(), 'restart clears bounded visual feedback')
     game.elapsed = game.round_seconds - 0.02
     for frame in 5: await physics_frame
     check(game.state == 'won', 'survival timer wins')

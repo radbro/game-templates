@@ -158,7 +158,8 @@ The button also works during pause and an upgrade choice.
 The switch changes the hero and all current sentries. New sentries use the selected style.
 It keeps the same player, enemy, projectile, and weapon nodes.
 It does not reset positions, health, XP, upgrades, timers, damage, fire rate, or random state.
-Ground, projectiles, XP, and UI stay shared for the comparison.
+The same toggle also changes the floor, gun, in-flight projectiles, XP, and feedback.
+Game rules and UI geometry stay the same.
 
 This feature requires the `art_review` export feature or the `--art-review` native argument.
 It also requires both complete private packs in the isolated project's `review-art/` directory.
@@ -199,3 +200,51 @@ Run the same test in the public project without private packs to check the Radca
 The native test proves node and gameplay-state preservation at the instant of each switch.
 Browser, touch, and final Web export checks remain separate verification steps.
 Private draft art must stay out of all public source ZIPs and PCKs.
+
+
+## Matching local full looks
+
+Native uses the existing private ground and icon PNGs from `native-kit`.
+The floor repeats its 64px tile. XP and projectile regions keep their original PNG bytes.
+Visible alpha extents set their display sizes. The source cells stay untrimmed.
+The gun, trail, and feedback use crisp original Godot shapes.
+
+Illustrated uses the optional `review-art/look-kit/pack.json` contract:
+
+```json
+{"ground":{"image":"illustrated-ground.png","worldTileSize":128,"repeat":"mirrored alternate tiles"}}
+```
+
+The loader reads that PNG once. The renderer alternates X and Y reflections at draw time.
+Partial tiles are cropped at the arena border. The source PNG is not edited.
+If the optional ground is absent, the style uses a quiet original floor drawing.
+Hero and enemy review still work. No new public asset dependency is added.
+The illustrated gun, projectile, XP, glow, and wisps use original Godot drawing code.
+Both styles keep the same bullet speed, damage, collision, range, and fire interval.
+
+One `VisualEffects` node owns short muzzle, hit, defeat, pickup, and upgrade events.
+The active list has a hard limit of 64 events. Lifetimes range from 0.18 to 0.52 seconds.
+The effects use deterministic geometry. They never consume the gameplay random generator.
+A style switch redraws existing effects and bullets immediately.
+It preserves their node IDs, event IDs, positions, ages, remaining lifetimes, and counters.
+Effects freeze during pause, upgrade selection, victory, and defeat.
+They resume with the round. Restart clears the list and counters.
+The public Radcat fallback keeps its original floor, gun, projectile, and XP look.
+It does not emit these private-look effects.
+
+The browser snapshot keeps render evidence in these fields:
+
+- `visual_style`: floor, loaded ground state, mirror mode, gun, and projectile style.
+- `projectiles`: live node IDs, style, position, and travelled distance.
+- `active_fx`: current style, bounded count, clock, active event IDs/kinds/ages, and emitted counts.
+
+Emitted counts remain after an effect fades. Restart resets them.
+This lets real-input browser tests prove that each feedback hook ran.
+These fields do not add a debug interface to the game.
+
+The updated art regression test checks in-flight bullets, active effect restyling,
+state preservation, pause/upgrade/outcome freeze, resume, the event bound, expiry,
+restart cleanup, and the public fallback.
+An explicit `--art-review` test fails if both private style packs do not load.
+Run the editor import before native tests after preparing or restaging assets.
+Headless checks do not replace final browser, touch, sandbox, or physical-device proof.

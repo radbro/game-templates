@@ -37,6 +37,13 @@ Do not describe a local proof as a published game.
 Each template has an `ART_REQUESTS.md` file for the next art batch.
 Read [Initial game prototype checks](prototype-verification.md) for the proof and its limits.
 
+For Survivors, the user chose to keep native pixels and illustrated Radbro for another comparison.
+The next study uses one shared scene, clock, layout, and character height.
+It compares new sentry beetle kits with the existing Radclaw hero sources.
+Keep both directions active. Neither is selected for final production.
+The local source run is `radclaw/runs/2026-10-18-survivors-dual-style`.
+The study does not approve the draft assets for public release.
+
 ## Asset review
 
 Follow [the Radclaw workflow](radclaw-workflow.md).

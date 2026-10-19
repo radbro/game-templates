@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
     position = position.clamp(arena.position, arena.end)
     visual.moving = velocity.length() > 0.0
     if direction.x != 0:
-        visual.scale.x = -absf(visual.scale.x) if direction.x < 0 else absf(visual.scale.x)
+        visual.face_horizontal(direction.x)
     var overlapping_mobs := 0
     for mob in mobs:
         if is_instance_valid(mob) and position.distance_to(mob.position) < 24:

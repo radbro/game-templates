@@ -20,6 +20,12 @@ func _ready() -> void:
     if not using_paperdoll:
         for name in ["idle", "walk"]:
             textures[name] = load("res://assets/radcat-motion-v2/sprites/" + name + "-sheet.png")
+    face_horizontal(1.0)
+
+func face_horizontal(direction: float) -> void:
+    # Radcat's source sheet faces left. The paperdoll keeps its own facing rule.
+    var mirrored := direction < 0.0 if using_paperdoll else direction > 0.0
+    scale.x = -absf(scale.x) if mirrored else absf(scale.x)
 
 func equip(ids: Array) -> void:
     # Last selected item wins in each slot. Apply hides before merging and sorting.

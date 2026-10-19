@@ -1,5 +1,7 @@
 Original prompt: Build Radbro Survivors from the GDQuest completed 2D template. Use Radclaw assets. Support a public game and source template. Keep unapproved art private. Add art comparisons later.
 
+2026-10-18 facing fix: The published Radcat sheets face left. Reverse their horizontal mirroring for right travel and the initial idle pose. Keep the private paperdoll facing rule unchanged. Verify the engine smoke and both travel directions in the rebuilt local browser game.
+
 2026-10-18: Pinned GDQuest source at 940f23e54e0207cc1135c2f6dc7fdd1ce5b52127. Kept five exact MIT logic snapshots and the original license. Downloaded no upstream art. Adapted movement, pursuit, shooting, projectile range, spawn and health flow. Added a 90-second loop, three waves, XP, rapid fire/power/speed-heal choices, pause, restart, touch pads and browser state bridge.
 
 Default art uses the published Radcat idle and walk sprites. Original Godot drawing supplies arena, sentries and effects. Private paperdoll import is hash-checked and ignored. Current live rig is radbro64-front-v2. Local adapter keeps a shared clock, native 64px frames, anchor, slot rules, hides and z/id order.
@@ -27,3 +29,5 @@ Handoff limits and next work:
 - No physical phone/tablet, Safari, Firefox, installed app, or live host proof.
 - This is a small prototype. The observed run is not a broad balance test. Audio and finished environment/enemy art remain absent.
 - Final Radbro art direction and release permission remain user decisions. ART_REQUESTS.md has comparison briefs. Keep .local-assets and all review aliases out of source packages and Web PCKs.
+
+Facing fix verified: Godot import, native gameplay smoke, web export, 13 Python checks, 17 JavaScript checks and all 12 package checks pass. Standard browser client screenshots show right travel at x579 facing right and left travel at x423 facing left. No browser errors were recorded. The local hub build and both download ZIPs are updated.

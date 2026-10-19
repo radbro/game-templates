@@ -4,6 +4,7 @@ const PLAYER = preload("res://scripts/player.gd")
 const MOB = preload("res://scripts/mob.gd")
 const GUN = preload("res://scripts/gun.gd")
 const CHARACTER = preload("res://scripts/character.gd")
+const ART_STYLES = preload("res://scripts/art_styles.gd")
 @export var round_seconds := 90.0
 var state := "ready"
 var elapsed := 0.0
@@ -26,6 +27,11 @@ var overlay: PanelContainer
 var callbacks: Array = []
 var browser: JavaScriptObject
 var rng := RandomNumberGenerator.new()
+var art_data: RefCounted
+var art_style := "radcat"
+var available_art_styles: Array[String] = ["radcat"]
+var style_button: Button
+var credit_label: Label
 
 func _ready() -> void:
     rng.seed = 314159
@@ -47,6 +53,13 @@ func _ready() -> void:
     gun.mobs = mobs
     gun.projectiles = projectiles
     player.add_child(gun)
+    art_data = ART_STYLES.new()
+    if art_data.styles.has("native") and art_data.styles.has("illustrated"):
+        available_art_styles = ["native", "illustrated"]
+        _set_art_style("native")
+    elif player.visual.using_paperdoll:
+        art_style = "native-local"
+        available_art_styles = ["native-local"]
     _ui()
     _install_bridge()
     _update_hud()
@@ -68,6 +81,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
                 if state == "ready": start()
             KEY_P, KEY_ESCAPE: toggle_pause()
             KEY_R: restart()
+            KEY_T: toggle_art_style()
             KEY_1: choose_upgrade(0)
             KEY_2: choose_upgrade(1)
             KEY_3: choose_upgrade(2)
@@ -108,6 +122,23 @@ func toggle_pause() -> void:
     elif state == "paused":
         start()
     _update_hud()
+
+func toggle_art_style() -> void:
+    if available_art_styles.size() < 2:
+        return
+    _set_art_style("illustrated" if art_style == "native" else "native")
+
+func _set_art_style(style: String) -> void:
+    if not art_data.styles.has(style):
+        return
+    # Only visual data changes. Keep every gameplay node, clock, and resource.
+    art_style = style
+    player.visual.set_art_style(style, art_data)
+    for mob in mobs:
+        if is_instance_valid(mob):
+            mob.set_art_style(style, art_data)
+    if style_button != null:
+        _update_hud()
 
 func _set_active(value: bool) -> void:
     player.active = value
@@ -155,6 +186,7 @@ func spawn_mob() -> CharacterBody2D:
     var points := [Vector2(25, rng.randf_range(150, 540)), Vector2(935, rng.randf_range(150, 540)), Vector2(rng.randf_range(40, 920), 130), Vector2(rng.randf_range(40, 920), 550)]
     new_mob.position = points[side]
     new_mob.player = player
+    new_mob.set_art_style(art_style, art_data)
     new_mob.speed = 45 + elapsed * 0.38
     new_mob.elite = elapsed >= 30 and rng.randf() < 0.24
     new_mob.health = 4 if new_mob.elite else 2
@@ -226,6 +258,10 @@ func _ui() -> void:
     pause_button = _button("Pause [P]", toggle_pause, 120)
     pause_button.position = Vector2(666, 20)
     root.add_child(pause_button)
+    style_button = _button("Style: Native [T]", toggle_art_style, 200)
+    style_button.position = Vector2(718, 80)
+    style_button.visible = available_art_styles.size() > 1
+    root.add_child(style_button)
     var reset := _button("Restart [R]", restart, 140)
     reset.position = Vector2(796, 20)
     root.add_child(reset)
@@ -277,15 +313,20 @@ func _ui() -> void:
         label.mouse_filter = Control.MOUSE_FILTER_IGNORE
         button.add_child(label)
         pad.add_child(button)
-    var credit := Label.new()
-    credit.position = Vector2(370, 576)
-    credit.text = "WASD / arrows / touch · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
-    credit.add_theme_font_size_override("font_size", 14)
-    root.add_child(credit)
+    credit_label = Label.new()
+    credit_label.position = Vector2(370, 576)
+    credit_label.add_theme_font_size_override("font_size", 14)
+    root.add_child(credit_label)
 
 func _update_hud() -> void:
     hud.text = "HP %03d    %02d:%02d left    Wave %d / 3    Kills %d    Level %d · XP %d/%d" % [ceili(player.health), int(maxf(0, round_seconds - elapsed)) / 60, int(maxf(0, round_seconds - elapsed)) % 60, mini(3, 1 + int(elapsed / 30)), kills, level, xp, level * 4]
     message.text = "Move through XP. Keep clear of the sentries."
+    if available_art_styles.size() > 1:
+        style_button.text = "Style: %s [T]" % art_style.capitalize()
+        message.text = "PRIVATE ART REVIEW · T or Style swaps hero + sentries."
+        credit_label.text = "Same round and gameplay · T: art style · F: fullscreen\n" + ("Native: one mirrored view · original clip timing" if art_style == "native" else "Illustrated: 4 walk phases · idle holds a pose")
+    else:
+        credit_label.text = "WASD / arrows / touch · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
     overlay.visible = state != "playing"
     action.visible = state in ["ready", "paused", "won", "lost"]
     choices.visible = state == "upgrade"
@@ -305,8 +346,8 @@ func _update_hud() -> void:
 func state_text() -> String:
     var enemies: Array = []
     for mob in mobs:
-        if is_instance_valid(mob): enemies.append({"x": snappedf(mob.position.x, 0.1), "y": snappedf(mob.position.y, 0.1), "health": mob.health})
-    return JSON.stringify({"game": "radbro-survivors", "state": state, "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": mini(3, 1 + int(elapsed / 30)), "player": {"x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": level * 4, "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
+        if is_instance_valid(mob): enemies.append({"node_id": mob.get_instance_id(), "art_style": mob.art_style, "x": snappedf(mob.position.x, 0.1), "y": snappedf(mob.position.y, 0.1), "health": mob.health})
+    return JSON.stringify({"game": "radbro-survivors", "state": state, "art_style": art_style, "available_art_styles": available_art_styles, "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": mini(3, 1 + int(elapsed / 30)), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": level * 4, "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
 
 func _install_bridge() -> void:
     if not OS.has_feature("web"): return
@@ -315,4 +356,4 @@ func _install_bridge() -> void:
     callbacks.append(callback)
     browser.set("__survivorsSnapshot", callback)
     JavaScriptBridge.eval("window.render_game_to_text=function(){window.__survivorsSnapshot();return window.__survivorsState};window.advanceTime=function(ms){return new Promise(function(resolve){setTimeout(function(){resolve(window.render_game_to_text())},Math.max(0,Math.min(Number(ms)||0,60000)))})};", true)
-    JavaScriptBridge.eval("window.parent.postMessage({type:'radbro:game-ready',game:'godot-radbro-survivors',title:'Radbro Survivors',controls:['WASD / arrows / touch: move','P: pause','R: restart','1 / 2 / 3: upgrade']},'*')", true)
+    JavaScriptBridge.eval("window.parent.postMessage({type:'radbro:game-ready',game:'godot-radbro-survivors',title:'Radbro Survivors',controls:['WASD / arrows / touch: move','P: pause','R: restart','1 / 2 / 3: upgrade','T / Style: switch local review art when available']},'*')", true)

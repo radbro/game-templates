@@ -11,6 +11,11 @@ func run() -> void:
     root.add_child(game)
     await process_frame
     check(game.state == 'ready', 'starts at ready')
+    var visual_id: int = game.player.visual.get_instance_id()
+    var starting_style: String = game.art_style
+    game.toggle_art_style()
+    game.toggle_art_style()
+    check(game.player.visual.get_instance_id() == visual_id and game.art_style == starting_style, 'art toggle preserves the player visual node')
     game.start()
     var origin: Vector2 = game.player.position
     Input.action_press('move_right')

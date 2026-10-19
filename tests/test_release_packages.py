@@ -35,7 +35,7 @@ class ReleasePackageTests(unittest.TestCase):
             source = root / 'templates/phaser-test'
             source.mkdir(parents=True)
             (source / 'index.html').write_text('Playable public game')
-            for name in ['.local-assets', '.review-assets', 'review-assets']:
+            for name in ['.local-assets', '.review-assets', 'review-assets', 'review-art']:
                 private = source / name
                 private.mkdir()
                 (private / 'unreleased.png').write_bytes(b'Private art candidate')

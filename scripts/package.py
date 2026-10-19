@@ -10,7 +10,7 @@ from prepare import prepare, templates
 
 DIST = ROOT / 'dist'
 IGNORED = {'.omx', '.godot', '.git', 'evidence', '__pycache__',
-           '.local-assets', 'local-assets', '.review-assets', 'review-assets',
+           '.local-assets', 'local-assets', '.review-assets', 'review-assets', 'review-art',
            'node_modules', 'build', 'dist'}
 
 

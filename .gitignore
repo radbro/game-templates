@@ -10,3 +10,4 @@ evidence/
 /templates/*/assets/
 /templates/*/.local-assets/
 /templates/*/.review-assets/
+/templates/*/review-art/

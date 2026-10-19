@@ -18,8 +18,7 @@ func _physics_process(delta: float) -> void:
     move_and_slide()
     position = position.clamp(arena.position, arena.end)
     visual.moving = velocity.length() > 0.0
-    if direction.x != 0:
-        visual.face_horizontal(direction.x)
+    visual.face_direction(direction)
     var overlapping_mobs := 0
     for mob in mobs:
         if is_instance_valid(mob) and position.distance_to(mob.position) < 24:

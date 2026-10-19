@@ -44,6 +44,31 @@ Keep both directions active. Neither is selected for final production.
 The local source run is `radclaw/runs/2026-10-18-survivors-dual-style`.
 The study does not approve the draft assets for public release.
 
+### Play both styles in Survivors
+
+The local Godot comparison has a **Style** button above the arena.
+Press **T**, click the button, or tap it to change the hero and sentry art.
+The same round continues. The switch preserves positions, health, XP, and upgrades.
+It also works during pause and upgrade selection.
+The native hero retains its separate layers and source frame timing.
+The illustrated hero uses four walk views. It holds a walk pose while idle.
+
+Build the normal demo site first. Then build the local art comparison:
+
+```sh
+python3 scripts/build_survivors_review.py \
+  --study ../radclaw/runs/2026-10-18-survivors-dual-style \
+  --preview-site
+```
+
+This command verifies 56 source files against the Radclaw study records.
+It copies them into an isolated project under ignored `build/local-review/`.
+Only that project enables the `art_review` export feature.
+The command replaces the locally served Survivors files under `dist/site/`.
+It does not change the release export or either download ZIP.
+Run `scripts/build-site.py` again to restore the default local demo.
+The public source template keeps the toggle code and uses Radcat without review packs.
+
 ## Asset review
 
 Follow [the Radclaw workflow](radclaw-workflow.md).
@@ -51,6 +76,7 @@ Use actual current pack metadata instead of copying an older rig description.
 The source pack controls the frame grid, anchor, timing, and layer rules.
 
 Private engine proofs must use `.local-assets/` inside the template.
+The separate art-comparison builder uses `review-art/` only inside its ignored build project.
 Keep that directory ignored by Git and excluded from release exports.
 The source ZIP packager also excludes local review asset directories.
 Godot export presets must exclude these files separately.

@@ -31,3 +31,16 @@ Handoff limits and next work:
 - Final Radbro art direction and release permission remain user decisions. ART_REQUESTS.md has comparison briefs. Keep .local-assets and all review aliases out of source packages and Web PCKs.
 
 Facing fix verified: Godot import, native gameplay smoke, web export, 13 Python checks, 17 JavaScript checks and all 12 package checks pass. Standard browser client screenshots show right travel at x579 facing right and left travel at x423 facing left. No browser errors were recorded. The local hub build and both download ZIPs are updated.
+
+2026-10-18 local real-game art toggle:
+- Added scripts/art_styles.gd to load both private hero and enemy packs once. Loading requires art_review or --art-review plus complete calibration, hero data and enemy data. The main source project does not receive review-art files.
+- Added T and a visible Style button to the actual Godot survival game. Switching updates render data on the same hero and sentry nodes. New sentries inherit the selected style. Ground, projectiles, XP and UI stay shared.
+- Kept native layers, hide rules, z/id order, source timings and shared character clock. The comparison defaults to the base outfit. Illustrated art uses real down/right/up/left frames; idle holds phase zero. Both styles keep constant calibrated scales. Illustrated enemy registration uses its declared per-frame anchors.
+- Kept the published Radcat facing correction and older --radbro-review local proof path. Missing or disabled review data hides the Style button and leaves T as a no-op.
+- Browser state adds art_style, available_art_styles, facing and live node IDs.
+- Default Godot editor import and original gameplay smoke passed before the regression addition. Fallback art tests then passed five checks, including Radcat facing and unavailable-toggle behavior.
+- Isolated review import passed. Thirteen art regression checks passed. They cover key/button toggles; existing/new sentry art; exact player/mob/projectile node and gameplay-state preservation; animation clocks; up-facing; pause; upgrade state; and browser state fields. Updated review smoke passed sixteen gameplay checks.
+- Parent owns isolated asset staging, public/private export separation, Web build, browser/touch/sandbox proof and shared root checks. This lane did not claim those checks or commit changes.
+- Known art limits remain: native has one mirrored view; illustrated has four walk phases, no true idle/hurt/attack, and enemy body-shape drift. Art review approval remains separate from this engine feature.
+
+Final in-game style proof: 25 Chromium checks pass. A 90.02-second round won with 123 kills, six upgrades and 34 style changes. Real touch, paused state, outcomes and opaque iframe pass. The standard skill client ran and screenshots were inspected for both styles. Root checks: 16 Python and 17 JavaScript tests. All 12 release ZIPs pass package checks. Fresh source-ZIP import/smoke/fallback pass. Public PCK has zero review files. The local hub at port8780 now overlays the review PCK; release export and ZIPs remain separate. Physical devices, Safari, Firefox and a true illustrated idle clip remain outside this proof.

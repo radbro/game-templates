@@ -149,3 +149,53 @@ godot --path templates/godot-radbro-survivors --fixed-fps 60 --script tests/capt
 
 The captures go to the ignored root `evidence/survivors/` folder.
 Keep the Radbro review capture local until its art release is approved.
+
+## Switch art inside the local Godot game
+
+The isolated local review build can switch between Native and Illustrated art.
+Press T or select the visible Style button while you play.
+The button also works during pause and an upgrade choice.
+The switch changes the hero and all current sentries. New sentries use the selected style.
+It keeps the same player, enemy, projectile, and weapon nodes.
+It does not reset positions, health, XP, upgrades, timers, damage, fire rate, or random state.
+Ground, projectiles, XP, and UI stay shared for the comparison.
+
+This feature requires the `art_review` export feature or the `--art-review` native argument.
+It also requires both complete private packs in the isolated project's `review-art/` directory.
+The public source project must not contain that directory.
+Without the flag and complete data, the game keeps the published Radcat default.
+It hides the Style button. T then has no effect.
+The older native `--radbro-review` paperdoll proof remains available separately.
+
+The parent build script supplies this private contract:
+
+- `review-art/calibration.json`: exact study calibration and source records.
+- `review-art/native-hero/pack.json`: current native paperdoll pack with relative PNG planes.
+- `review-art/illustrated-hero/source-manifest.json`: original 16 walk frames and their relative PNG files.
+- `review-art/native-kit/pack.json`: native enemy metadata and image.
+- `review-art/illustrated-kit/pack.json`: illustrated enemy metadata and original image.
+
+Imported PNGs load through Godot's resource loader. Native raw files use an image fallback.
+The native hero keeps its separate planes, source frame durations, hide rules, and complete-stack mirror.
+The default comparison uses the base character without equipment.
+The illustrated hero uses its four real directional walk frames at 240 ms per frame.
+Its idle state holds the first walk pose. A true idle clip is still absent.
+Its display anchor is one common (256,512) baseline. The source metadata stays unchanged.
+Both hero renderers use a constant target scale from the saved calibration.
+The enemy renderer uses one constant clip scale and the declared per-frame floor anchors.
+The illustrated enemy still has source body-shape drift. Registration does not repair its pixels.
+The native enemy uses one fixed floor anchor. Neither style changes game collision or damage ranges.
+
+The browser snapshot adds `art_style`, `available_art_styles`, and `player.facing`.
+Player and enemy node IDs help verify that the toggle preserves live entities.
+
+Run this regression test in the isolated review project:
+
+```sh
+godot --headless --path build/local-review/survivors-project --fixed-fps 60 --script tests/art-styles.gd -- --art-review
+```
+
+Run the same test in the public project without private packs to check the Radcat fallback.
+The native test proves node and gameplay-state preservation at the instant of each switch.
+Browser, touch, and final Web export checks remain separate verification steps.
+Private draft art must stay out of all public source ZIPs and PCKs.

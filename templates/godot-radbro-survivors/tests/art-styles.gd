@@ -135,4 +135,8 @@ func run() -> void:
         game.restart()
         check(game.effects.events.is_empty() and game.effects.event_counts.is_empty() and game.effects.elapsed == 0.0, "restart clears all feedback events and counters")
     print("ART_STYLES ", "PASS" if failures.is_empty() else failures)
+    game.queue_free()
+    await process_frame
+    OS.delay_msec(150)
+    await process_frame
     quit(0 if failures.is_empty() else 1)

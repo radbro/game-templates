@@ -6,6 +6,7 @@ import json
 import re
 import shutil
 import subprocess
+import zipfile
 from pathlib import Path
 
 from catalog import ROOT
@@ -85,10 +86,31 @@ def look_files(folder):
     return files
 
 
-def stage_project(study, project, look_pack=None):
+def animation_files(folder):
+    manifest = read_json(folder / 'manifest.json')
+    if not manifest.get('reviewOnly') or manifest.get('published'):
+        raise ValueError('Expected an unpublished local animation pack.')
+    records = {entry['path']: entry for entry in manifest['files']}
+    pack = read_json(folder / 'pack.json')
+    image = pack['image']
+    if pack.get('schema') != 'radbro-survivors-animation-v1' or Path(image).name != image or not image.endswith('.png'):
+        raise ValueError('Invalid local animation contract.')
+    files = []
+    for name in ['pack.json', image]:
+        source = checked_path(folder, name)
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        if name not in records or digest != records[name]['sha256']:
+            raise ValueError(f'Animation hash mismatch: {name}')
+        files.append((source, Path('animation-kit') / name, digest))
+    return files
+
+
+def stage_project(study, project, look_pack=None, animation_pack=None):
     files = review_files(study)  # Validate every file before creating the project.
     if look_pack is not None:
         files.extend(look_files(look_pack))
+    if animation_pack is not None:
+        files.extend(animation_files(animation_pack))
     if project.exists():
         shutil.rmtree(project)
     shutil.copytree(ROOT / 'templates' / TEMPLATE, project,
@@ -117,22 +139,68 @@ def run_godot(godot, project, arguments, log):
         raise RuntimeError(f'Godot failed. Read {log}.')
 
 
-def build(study, godot, preview_site=False, look_pack=None):
+def package_review(project, output, work, receipt):
+    """Keep the playable draft and editable draft together, outside public downloads."""
+    private_root = (ROOT / 'build/local-review').resolve()
+    if any(not path.resolve().is_relative_to(private_root) for path in [project, output, work]):
+        raise ValueError('Local review packages must stay inside build/local-review.')
+    note = ('# Local Survivors art review\n\n'
+            'This package contains unpublished Radbro art. Do not publish or redistribute it.\n'
+            'The root MIT license covers code. It does not approve the draft art for release.\n'
+            'Both art directions remain open for review. Press T or use Style to compare them.\n'
+            'Press M or use Sound to mute. Start unlocks audio.\n\n'
+            'For the source project, use Godot 4.6.2. Run with --art-review.\n'
+            'The Web export preset also sets the art_review feature.\n'
+            'Serve the browser package over HTTP. Do not open index.html as a local file.\n'
+            'LOCAL_ART_REVIEW.json records the source paths and exact imported asset hashes.\n')
+    for folder in [project, output]:
+        (folder / 'REVIEW_ONLY.md').write_text(note)
+        (folder / 'LOCAL_ART_REVIEW.json').write_text(json.dumps(receipt, indent=2) + '\n')
+        shutil.copy2(ROOT / 'LICENSE', folder / 'LICENSE.code.txt')
+        shutil.copy2(ROOT / 'CREDITS.md', folder / 'CREDITS.repository.md')
+    shutil.copytree(ROOT / 'licenses', project / 'licenses', dirs_exist_ok=True)
+    artifacts = []
+    for kind, folder in [('source', project), ('web', output)]:
+        target = work / f'radbro-survivors-local-review-{kind}.zip'
+        # Public zip_folder must keep rejecting review-art. Only this private path includes it.
+        with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+            for path in sorted(folder.rglob('*')):
+                relative = path.relative_to(folder)
+                if not path.is_file() or any(part in IGNORED - {'review-art'} for part in relative.parts):
+                    continue
+                if path.suffix in {'.import', '.uid', '.pyc'} or path.name == 'progress.md':
+                    continue
+                info = zipfile.ZipInfo(relative.as_posix(), date_time=(2026, 1, 1, 0, 0, 0))
+                info.compress_type = zipfile.ZIP_DEFLATED
+                info.external_attr = 0o100644 << 16
+                archive.writestr(info, path.read_bytes())
+        artifacts.append({'file': target.name, 'bytes': target.stat().st_size,
+                          'sha256': hashlib.sha256(target.read_bytes()).hexdigest()})
+    (work / 'review-downloads.json').write_text(json.dumps({
+        'reviewOnly': True, 'published': False, 'artifacts': artifacts}, indent=2) + '\n')
+    return artifacts
+
+
+def build(study, godot, preview_site=False, look_pack=None, animation_pack=None):
     prepare(TEMPLATE)
     work = ROOT / 'build/local-review'
     work.mkdir(parents=True, exist_ok=True)
     project = work / 'survivors-project'
     output = work / TEMPLATE
-    receipt = stage_project(study.resolve(), project, look_pack.resolve() if look_pack else None)
+    receipt = stage_project(study.resolve(), project, look_pack.resolve() if look_pack else None,
+                            animation_pack.resolve() if animation_pack else None)
     output.mkdir(exist_ok=True)
     run_godot(godot, project, ['--editor', '--import'], work / 'import.log')
     run_godot(godot, project, ['--script', 'res://tests/smoke.gd', '--', '--art-review'], work / 'smoke.log')
     run_godot(godot, project, ['--script', 'res://tests/art-styles.gd', '--', '--art-review'], work / 'art-styles.log')
+    if animation_pack is not None:
+        run_godot(godot, project, ['--fixed-fps', '60', '--script', 'res://tests/release.gd', '--', '--art-review'], work / 'release.log')
     run_godot(godot, project, ['--export-release', 'Web', str(output / 'index.html')], work / 'export.log')
     patch(output)
     (output / 'LOCAL_ART_REVIEW.json').write_text(json.dumps(receipt, indent=2) + '\n')
     for name in ['GODOT-LICENSE.txt', 'GODOT-COPYRIGHT.txt']:
         shutil.copy2(ROOT / 'licenses' / name, output / name)
+    package_review(project, output, work, receipt)
     if preview_site:
         destination = ROOT / 'dist/site' / TEMPLATE
         if not (destination / 'index.html').is_file():
@@ -149,5 +217,6 @@ if __name__ == '__main__':
     parser.add_argument('--godot', default=shutil.which('godot') or '/Applications/Godot.app/Contents/MacOS/Godot')
     parser.add_argument('--preview-site', action='store_true', help='Overlay only the local dist/site game')
     parser.add_argument('--look-pack', type=Path, help='Optional hash-checked Radclaw ground pack')
+    parser.add_argument('--animation-pack', type=Path, help='Optional hash-checked Radclaw idle pack')
     args = parser.parse_args()
-    build(args.study, args.godot, args.preview_site, args.look_pack)
+    build(args.study, args.godot, args.preview_site, args.look_pack, args.animation_pack)

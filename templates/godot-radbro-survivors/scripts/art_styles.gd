@@ -37,6 +37,31 @@ func _init() -> void:
         "native": {"pack": native_pack, "textures": native_textures, "enemy": native_enemy, "look": read_look("native")},
         "illustrated": {"pack": illustrated_pack, "textures": illustrated_textures, "enemy": illustrated_enemy, "look": read_look("illustrated")},
     }
+    var idle := read_idle()
+    if not idle.is_empty():
+        styles.illustrated["idle"] = idle
+
+func read_idle() -> Dictionary:
+    var folder := ROOT + "animation-kit/"
+    var pack := read_json(folder + "pack.json")
+    if pack.get("schema") != "radbro-survivors-animation-v1" or float(pack.get("visibleHeight", 0)) <= 0:
+        return {}
+    var texture := read_texture(folder + str(pack.get("image", "")))
+    if texture == null:
+        return {}
+    for direction in ["down", "right", "up", "left"]:
+        var frames: Array = pack.get("clips", {}).get(direction, [])
+        if frames.size() != 4:
+            return {}
+        for frame in frames:
+            var rect: Dictionary = frame.get("rect", {})
+            if float(frame.get("duration", 0)) <= 0 or not frame.has("anchor"):
+                return {}
+            if float(rect.get("w", 0)) <= 0 or float(rect.get("h", 0)) <= 0:
+                return {}
+            if float(rect.x) < 0 or float(rect.y) < 0 or float(rect.x + rect.w) > texture.get_width() or float(rect.y + rect.h) > texture.get_height():
+                return {}
+    return {"pack": pack, "texture": texture}
 
 func read_json(path: String) -> Dictionary:
     if not FileAccess.file_exists(path):

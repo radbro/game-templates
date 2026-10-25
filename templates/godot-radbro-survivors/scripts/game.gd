@@ -6,7 +6,9 @@ const GUN = preload("res://scripts/gun.gd")
 const CHARACTER = preload("res://scripts/character.gd")
 const ART_STYLES = preload("res://scripts/art_styles.gd")
 const EFFECTS = preload("res://scripts/effects.gd")
-@export var round_seconds := 90.0
+const BALANCE = preload("res://scripts/balance.gd")
+const AUDIO = preload("res://scripts/audio.gd")
+@export var round_seconds := BALANCE.ROUND_SECONDS
 var state := "ready"
 var elapsed := 0.0
 var spawn_clock := 0.0
@@ -34,10 +36,18 @@ var art_style := "radcat"
 var available_art_styles: Array[String] = ["radcat"]
 var style_button: Button
 var credit_label: Label
+var audio: Node
+var sound_button: Button
+var wave_label: Label
+var announced_wave := 0
+var wave_notice := 0.0
 
 func _ready() -> void:
     rng.seed = 314159
     _inputs()
+    audio = Node.new()
+    audio.set_script(AUDIO)
+    add_child(audio)
     effects = Node2D.new()
     effects.name = "VisualEffects"
     effects.set_script(EFFECTS)
@@ -54,12 +64,14 @@ func _ready() -> void:
     player.add_child(player.visual)
     player.mobs = mobs
     player.health_depleted.connect(_on_player_health_depleted)
+    player.damaged.connect(_on_player_damaged)
     add_child(player)
     gun = Node2D.new()
     gun.set_script(GUN)
     gun.mobs = mobs
     gun.projectiles = projectiles
     gun.effects = effects
+    gun.audio = audio
     player.add_child(gun)
     art_data = ART_STYLES.new()
     if art_data.styles.has("native") and art_data.styles.has("illustrated"):
@@ -90,6 +102,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
             KEY_P, KEY_ESCAPE: toggle_pause()
             KEY_R: restart()
             KEY_T: toggle_art_style()
+            KEY_M: toggle_sound()
             KEY_1: choose_upgrade(0)
             KEY_2: choose_upgrade(1)
             KEY_3: choose_upgrade(2)
@@ -100,6 +113,7 @@ func _unhandled_key_input(event: InputEvent) -> void:
 func start() -> void:
     state = "playing"
     _set_active(true)
+    _announce_wave()
     _update_hud()
 
 func restart() -> void:
@@ -109,17 +123,22 @@ func restart() -> void:
     for projectile in projectiles.get_children(): projectile.queue_free()
     gems.clear()
     effects.clear()
+    audio.restart()
     elapsed = 0
     spawn_clock = 0
     kills = 0
     xp = 0
     level = 1
     upgrades.clear()
+    announced_wave = 0
+    wave_notice = 0.0
     player.position = Vector2(480, 340)
-    player.health = 100
-    player.speed = 180
-    gun.interval = 0.45
-    gun.damage = 1
+    player.health = BALANCE.PLAYER_HEALTH
+    player.speed = BALANCE.PLAYER_SPEED
+    player.hurt_clock = 0.0
+    player.visual.hurt_remaining = 0.0
+    gun.interval = BALANCE.GUN_INTERVAL
+    gun.damage = BALANCE.GUN_DAMAGE
     gun.cooldown = 0
     gun.shots = 0
     start()
@@ -136,6 +155,18 @@ func toggle_art_style() -> void:
     if available_art_styles.size() < 2:
         return
     _set_art_style("illustrated" if art_style == "native" else "native")
+
+func toggle_sound() -> void:
+    audio.set_enabled(not audio.enabled)
+    _update_hud()
+
+func _announce_wave() -> void:
+    var current := BALANCE.wave_number(elapsed)
+    if current == announced_wave:
+        return
+    announced_wave = current
+    wave_notice = 2.0
+    audio.play_event("wave")
 
 func _set_art_style(style: String) -> void:
     if not art_data.styles.has(style):
@@ -156,6 +187,7 @@ func _set_art_style(style: String) -> void:
         _update_hud()
 
 func _set_active(value: bool) -> void:
+    audio.set_round_active(value)
     effects.active = value
     player.active = value
     gun.active = value
@@ -168,35 +200,40 @@ func _physics_process(delta: float) -> void:
     if state != "playing":
         return
     elapsed += delta
+    wave_notice = maxf(0.0, wave_notice - delta)
     if elapsed >= round_seconds:
         state = "won"
         _set_active(false)
+        audio.play_event("win")
         _update_hud()
         return
+    _announce_wave()
     spawn_clock -= delta
     if spawn_clock <= 0:
         spawn_mob()
-        spawn_clock = maxf(0.32, 1.05 - elapsed * 0.007)
+        spawn_clock = BALANCE.spawn_interval(elapsed)
     for index in range(gems.size() - 1, -1, -1):
         var distance := gems[index].distance_to(player.position)
         if distance < 95:
             gems[index] = gems[index].move_toward(player.position, delta * 250)
         if distance < 23:
             effects.emit_effect("pickup", gems[index])
+            audio.play_event("pickup")
             gems.remove_at(index)
             xp += 1
-            if xp >= level * 4:
-                xp -= level * 4
+            if xp >= BALANCE.xp_threshold(level):
+                xp -= BALANCE.xp_threshold(level)
                 level += 1
                 state = "upgrade"
                 effects.emit_effect("upgrade", player.position + Vector2(0, -24))
                 _set_active(false)
+                audio.play_event("upgrade")
                 break
     _update_hud()
     queue_redraw()
 
 func spawn_mob() -> CharacterBody2D:
-    if mobs.size() >= 70:
+    if mobs.size() >= BALANCE.MAX_MOBS:
         return null
     var new_mob := CharacterBody2D.new()
     new_mob.set_script(MOB)
@@ -205,9 +242,11 @@ func spawn_mob() -> CharacterBody2D:
     new_mob.position = points[side]
     new_mob.player = player
     new_mob.set_art_style(art_style, art_data)
-    new_mob.speed = 45 + elapsed * 0.38
-    new_mob.elite = elapsed >= 30 and rng.randf() < 0.24
-    new_mob.health = 4 if new_mob.elite else 2
+    var elites := mobs.filter(func(m): return is_instance_valid(m) and not m.is_queued_for_deletion() and m.elite).size()
+    var chance := BALANCE.elite_chance(elapsed)
+    new_mob.elite = chance > 0.0 and elites < BALANCE.MAX_ELITES and rng.randf() < chance
+    new_mob.speed = BALANCE.enemy_speed(elapsed, new_mob.elite)
+    new_mob.health = BALANCE.enemy_health(new_mob.elite)
     new_mob.died.connect(_mob_died.bind(new_mob))
     add_child(new_mob)
     mobs.append(new_mob)
@@ -234,7 +273,13 @@ func choose_upgrade(index: int) -> void:
 func _on_player_health_depleted() -> void:
     state = "lost"
     _set_active(false)
+    audio.play_event("loss")
     _update_hud()
+
+func _on_player_damaged() -> void:
+    audio.play_event("hurt")
+    player.visual.hurt_remaining = 0.16
+    effects.emit_effect("hurt", player.position + Vector2(0, -24))
 
 func _draw() -> void:
     if art_style in ["native", "illustrated"]:
@@ -323,8 +368,16 @@ func _ui() -> void:
     title.text = "RADBRO SURVIVORS"
     title.add_theme_font_size_override("font_size", 28)
     root.add_child(title)
+    sound_button = _button("Sound: On [M]", toggle_sound, 154)
+    sound_button.position = Vector2(500, 12)
+    root.add_child(sound_button)
+    wave_label = Label.new()
+    wave_label.position = Vector2(36, 143)
+    wave_label.add_theme_font_size_override("font_size", 20)
+    wave_label.add_theme_color_override("font_color", Color("fff0b1"))
+    root.add_child(wave_label)
     hud = Label.new()
-    hud.position = Vector2(24, 56)
+    hud.position = Vector2(24, 61)
     hud.add_theme_font_size_override("font_size", 19)
     root.add_child(hud)
     message = Label.new()
@@ -332,14 +385,14 @@ func _ui() -> void:
     message.add_theme_color_override("font_color", Color("9fc4c8"))
     root.add_child(message)
     pause_button = _button("Pause [P]", toggle_pause, 120)
-    pause_button.position = Vector2(666, 20)
+    pause_button.position = Vector2(666, 12)
     root.add_child(pause_button)
     style_button = _button("Style: Native [T]", toggle_art_style, 200)
     style_button.position = Vector2(718, 80)
     style_button.visible = available_art_styles.size() > 1
     root.add_child(style_button)
     var reset := _button("Restart [R]", restart, 140)
-    reset.position = Vector2(796, 20)
+    reset.position = Vector2(796, 12)
     root.add_child(reset)
     overlay = PanelContainer.new()
     overlay.position = Vector2(200, 220)
@@ -395,14 +448,17 @@ func _ui() -> void:
     root.add_child(credit_label)
 
 func _update_hud() -> void:
-    hud.text = "HP %03d    %02d:%02d left    Wave %d / 3    Kills %d    Level %d · XP %d/%d" % [ceili(player.health), int(maxf(0, round_seconds - elapsed)) / 60, int(maxf(0, round_seconds - elapsed)) % 60, mini(3, 1 + int(elapsed / 30)), kills, level, xp, level * 4]
+    sound_button.text = "Sound: %s [M]" % ("On" if audio.enabled else "Off")
+    wave_label.visible = wave_notice > 0 and state in ["playing", "paused"]
+    wave_label.text = ["WAVE 1 · Find your footing", "WAVE 2 · Sentry surge", "WAVE 3 · Hold the line"][BALANCE.wave_number(elapsed) - 1]
+    hud.text = "HP %03d    %02d:%02d left    Wave %d / 3    Kills %d    Level %d · XP %d/%d" % [ceili(player.health), int(maxf(0, round_seconds - elapsed)) / 60, int(maxf(0, round_seconds - elapsed)) % 60, BALANCE.wave_number(elapsed), kills, level, xp, BALANCE.xp_threshold(level)]
     message.text = "Move through XP. Keep clear of the sentries."
     if available_art_styles.size() > 1:
         style_button.text = "Style: %s [T]" % art_style.capitalize()
         message.text = "PRIVATE ART REVIEW · T or Style swaps the full game look."
-        credit_label.text = "Same round and gameplay · T: art style · F: fullscreen\n" + ("Native: crisp tiles + sparks · one mirrored hero view" if art_style == "native" else "Illustrated: soft trails + wisps · idle holds a pose")
+        credit_label.text = "Same round · T: art style · M: sound · F: fullscreen\n" + ("Native: crisp tiles + sparks · one mirrored hero view" if art_style == "native" else ("Illustrated: idle + blink · soft trails + wisps" if player.visual.has_illustrated_idle() else "Illustrated: soft trails + wisps · idle holds a pose"))
     else:
-        credit_label.text = "WASD / arrows / touch · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
+        credit_label.text = "WASD / arrows / touch · M: sound · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
     overlay.visible = state != "playing"
     action.visible = state in ["ready", "paused", "won", "lost"]
     choices.visible = state == "upgrade"
@@ -423,7 +479,7 @@ func state_text() -> String:
     var enemies: Array = []
     for mob in mobs:
         if is_instance_valid(mob): enemies.append({"node_id": mob.get_instance_id(), "art_style": mob.art_style, "x": snappedf(mob.position.x, 0.1), "y": snappedf(mob.position.y, 0.1), "health": mob.health})
-    return JSON.stringify({"game": "radbro-survivors", "state": state, "art_style": art_style, "available_art_styles": available_art_styles, "visual_style": {"floor": art_style, "ground_texture_loaded": art_data.styles.get(art_style, {}).get("look", {}).get("ground") != null, "ground_mirror_alternate": art_data.styles.get(art_style, {}).get("look", {}).get("mirror_alternate", false), "gun": gun.art_style, "projectile_style": art_style}, "active_fx": effects.snapshot(), "projectiles": projectiles.get_children().filter(func(p): return not p.is_queued_for_deletion()).map(func(p): return {"node_id": p.get_instance_id(), "art_style": p.art_style, "x": snappedf(p.position.x, 0.1), "y": snappedf(p.position.y, 0.1), "distance": snappedf(p.travelled_distance, 0.1)}), "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": mini(3, 1 + int(elapsed / 30)), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": level * 4, "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
+    return JSON.stringify({"game": "radbro-survivors", "state": state, "audio": audio.snapshot(), "animation": player.visual.animation_state(), "art_style": art_style, "available_art_styles": available_art_styles, "visual_style": {"floor": art_style, "ground_texture_loaded": art_data.styles.get(art_style, {}).get("look", {}).get("ground") != null, "ground_mirror_alternate": art_data.styles.get(art_style, {}).get("look", {}).get("mirror_alternate", false), "gun": gun.art_style, "projectile_style": art_style}, "active_fx": effects.snapshot(), "projectiles": projectiles.get_children().filter(func(p): return not p.is_queued_for_deletion()).map(func(p): return {"node_id": p.get_instance_id(), "art_style": p.art_style, "x": snappedf(p.position.x, 0.1), "y": snappedf(p.position.y, 0.1), "distance": snappedf(p.travelled_distance, 0.1)}), "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": BALANCE.wave_number(elapsed), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": BALANCE.xp_threshold(level), "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
 
 func _install_bridge() -> void:
     if not OS.has_feature("web"): return
@@ -432,4 +488,4 @@ func _install_bridge() -> void:
     callbacks.append(callback)
     browser.set("__survivorsSnapshot", callback)
     JavaScriptBridge.eval("window.render_game_to_text=function(){window.__survivorsSnapshot();return window.__survivorsState};window.advanceTime=function(ms){return new Promise(function(resolve){setTimeout(function(){resolve(window.render_game_to_text())},Math.max(0,Math.min(Number(ms)||0,60000)))})};", true)
-    JavaScriptBridge.eval("window.parent.postMessage({type:'radbro:game-ready',game:'godot-radbro-survivors',title:'Radbro Survivors',controls:['WASD / arrows / touch: move','P: pause','R: restart','1 / 2 / 3: upgrade','T / Style: switch local review art when available']},'*')", true)
+    JavaScriptBridge.eval("window.parent.postMessage({type:'radbro:game-ready',game:'godot-radbro-survivors',title:'Radbro Survivors',controls:['WASD / arrows / touch: move','P: pause','R: restart','1 / 2 / 3: upgrade','T / Style: switch local review art when available','M / Sound: mute or unmute']},'*')", true)

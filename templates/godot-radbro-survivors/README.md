@@ -39,6 +39,7 @@ It then opens directly without the root repository.
 | Pause or resume | P or Escape | Pause or Resume |
 | Restart | R | Restart |
 | Fullscreen | F | Browser fullscreen controls |
+| Sound on or off | M | Sound button |
 
 The four TouchScreenButton pads support simultaneous contacts.
 The blaster uses nearest-target aim. Contact with sentries reduces health.
@@ -47,7 +48,8 @@ Restart clears enemies, XP, upgrades, and projectiles.
 
 ## Edit
 
-- `scripts/game.gd`: round duration, spawn rate, upgrades, arena, and UI.
+- `scripts/balance.gd`: round duration, spawn cadence, enemy pressure, and initial player/weapon values.
+- `scripts/game.gd`: round state, upgrades, arena, audio hooks, and UI.
 - `scripts/player.gd`: movement speed, health, contact damage, and bounds.
 - `scripts/gun.gd`: target range, fire interval, and damage.
 - `scripts/mob.gd`: enemy health, pursuit, and original geometric sentry drawing.
@@ -115,7 +117,7 @@ The player position is its floor anchor.
 - Radcat: use its `LICENSE.txt`, `SPRITE-PERMISSION.txt`, and `pack.json`.
 - Sentries, arena, XP, projectiles, UI: original Godot drawing code under the repository MIT code license.
 - Font: Godot's built-in default font. Keep the engine notices.
-- Audio: none in this prototype.
+- Audio: eight original procedural cues and an original eight-second backing phrase. The source code is MIT. No external recordings or samples are used.
 - Local paperdoll: private review only. No public license or art release approval.
 
 See [ART_REQUESTS.md](ART_REQUESTS.md) for the next Radclaw briefs.
@@ -180,7 +182,7 @@ Imported PNGs load through Godot's resource loader. Native raw files use an imag
 The native hero keeps its separate planes, source frame durations, hide rules, and complete-stack mirror.
 The default comparison uses the base character without equipment.
 The illustrated hero uses its four real directional walk frames at 240 ms per frame.
-Its idle state holds the first walk pose. A true idle clip is still absent.
+The optional `animation-kit` supplies a separate four-direction idle loop with brief blinks. Without that local pack, idle holds the first walk pose. The original walk PNGs stay unchanged.
 Its display anchor is one common (256,512) baseline. The source metadata stays unchanged.
 Both hero renderers use a constant target scale from the saved calibration.
 The enemy renderer uses one constant clip scale and the declared per-frame floor anchors.
@@ -248,3 +250,32 @@ restart cleanup, and the public fallback.
 An explicit `--art-review` test fails if both private style packs do not load.
 Run the editor import before native tests after preparing or restaging assets.
 Headless checks do not replace final browser, touch, sandbox, or physical-device proof.
+
+
+## Release candidate controls and profile
+
+Sound starts after the first Start or Restart action. Press M or tap Sound to mute.
+Mute stays selected after restart. Pause and upgrade selection freeze the backing track.
+Win and loss stop the backing and play their original outcome cues.
+The audio node limits simultaneous voices to eight. It throttles repeated short cues.
+No game sound uses an external recording. Original note data and synthesis are in `scripts/audio.gd`.
+
+Edit `scripts/balance.gd` to tune the profile. The three waves begin at 0, 30, and 60 seconds.
+Each new wave has a visible announcement and a sound cue.
+The profile raises spawn pressure and movement speed. It limits live enemies to 70 and elites to six.
+The blaster starts with a 320px target range and a 0.50 second fire interval.
+XP progression and the three upgrade choices retain their original rules.
+Contact damage adds a brief character outline and an original hurt cue.
+
+For the full local animation review, add `--animation-pack ../radclaw/runs/2026-10-25-survivors-idle`
+to the root `scripts/build_survivors_review.py` command.
+The imported atlas contains 16 dedicated idle poses. It does not replace any walk PNG.
+The raw generated rows have unequal spacing. Explicit frame rectangles keep each complete pose.
+Per-frame floor anchors register the feet. A common scale preserves body proportions.
+The native paperdoll keeps its source layers, clips, durations, and frame grid.
+The new illustrated animation remains a local art review candidate.
+
+Additional optional engine checks: `tests/audio.gd`, `tests/balance.gd`, and `tests/release.gd`.
+Use `--fixed-fps 60` for the seeded balance fixtures. They use the actual game scene and real input actions.
+The browser audio and motion check is `tests/release-browser.mjs`.
+Engine Dummy-driver checks do not prove browser output or physical speakers.

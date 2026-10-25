@@ -8,6 +8,7 @@ var active := true
 var art_style := "radcat"
 var look: Dictionary = {}
 var effects: Node2D
+var audio: Node
 
 func set_art_style(style: String, data: RefCounted) -> void:
     art_style = style
@@ -25,6 +26,8 @@ func _physics_process(delta: float) -> void:
         if is_instance_valid(body) and not body.is_queued_for_deletion():
             var nearest := Geometry2D.get_closest_point_to_segment(body.position, old, position)
             if nearest.distance_to(body.position) < 17:
+                if audio != null:
+                    audio.play_event("hit")
                 if effects != null:
                     effects.emit_effect("hit", body.position + Vector2(0, -14), rotation)
                 body.take_damage(damage)

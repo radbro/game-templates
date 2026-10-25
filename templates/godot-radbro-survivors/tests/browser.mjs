@@ -1,6 +1,7 @@
 // Optional verification harness. Use an existing Playwright installation via NODE_PATH.
 import { createRequire } from 'node:module';
 import fs from 'node:fs/promises';
+import {configureAudioTestSink} from './browser-audio.mjs';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const url = process.env.GAME_URL || 'http://localhost:8781';
@@ -8,6 +9,7 @@ const out = process.env.EVIDENCE_DIR || 'evidence/survivors/browser';
 await fs.mkdir(out, { recursive: true });
 const browser = await chromium.launch({headless: true, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader']});
 const context = await browser.newContext({viewport:{width:960,height:640}, hasTouch:true});
+const audioTest = await configureAudioTestSink(context);
 const page = await context.newPage();
 const errors = [];
 page.on('pageerror', e => errors.push(e.message));
@@ -88,9 +90,9 @@ try {
   check((await gameFrame.evaluate(() => JSON.parse(window.render_game_to_text()))).state==='playing','opaque iframe starts');
   await page.screenshot({path:`${out}/iframe.png`});
   check(errors.length===0,'no browser console or page errors');
-  await fs.writeFile(`${out}/results.json`,JSON.stringify({checks,errors},null,2));
+  await fs.writeFile(`${out}/results.json`,JSON.stringify({audioTest,checks,errors},null,2));
   console.log(JSON.stringify({checks,errors}));
 } finally {
-  await fs.writeFile(`${out}/checks.json`,JSON.stringify({checks,errors},null,2));
+  await fs.writeFile(`${out}/checks.json`,JSON.stringify({audioTest,checks,errors},null,2));
   await browser.close();
 }

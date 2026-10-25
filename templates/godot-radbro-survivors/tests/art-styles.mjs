@@ -1,6 +1,7 @@
 // Optional real-input verification for the local Godot art comparison.
 import { createRequire } from 'node:module';
 import fs from 'node:fs/promises';
+import {configureAudioTestSink} from './browser-audio.mjs';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const url = process.env.GAME_URL || 'http://127.0.0.1:8780/godot-radbro-survivors/index.html';
@@ -8,6 +9,7 @@ const out = process.env.EVIDENCE_DIR || 'evidence/survivors-art-toggle';
 await fs.mkdir(out, {recursive:true});
 const browser = await chromium.launch({headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 const context = await browser.newContext({viewport:{width:960,height:640},hasTouch:true});
+const audioTest = await configureAudioTestSink(context);
 const page = await context.newPage();
 const errors = [], checks = [];
 page.on('pageerror', e => errors.push(e.message));
@@ -21,6 +23,8 @@ function gameplay(snapshot) {
   delete copy.art_style;
   delete copy.visual_style;
   delete copy.active_fx;
+  delete copy.audio;
+  delete copy.animation;
   delete copy.player.paperdoll;
   for(const enemy of copy.enemies) delete enemy.art_style;
   for(const projectile of copy.projectiles) delete projectile.art_style;
@@ -37,6 +41,10 @@ try {
   await waitStyle('illustrated');
   const readyIllustrated=await state();
   check(readyIllustrated.art_style==='illustrated' && gameplay(ready)===gameplay(readyIllustrated),'ready toggle preserves gameplay');
+  check(readyIllustrated.animation.source==='generated-idle','illustrated style has a dedicated idle clip');
+  const idleFrames=new Set();
+  for(let i=0;i<9;i++){idleFrames.add((await state()).animation.frame);await page.waitForTimeout(200);}
+  check(idleFrames.size>1,'illustrated idle advances without movement');
   await page.keyboard.press('t');
   await waitStyle('native');
   await page.keyboard.press('Enter');
@@ -90,34 +98,36 @@ try {
   // Complete a real round. Keep switching through combat and upgrade choices.
   await page.keyboard.press('r');
   await page.waitForFunction(()=>JSON.parse(window.render_game_to_text()).elapsed<1);
-  const directions=['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'];
-  let nextTurn=0, direction=0, nextStyle=3, upgradeCount=0, toggleCount=0;
+  const route=[{x:100,y:190},{x:860,y:190},{x:860,y:490},{x:100,y:490}];
+  const held=new Set();
+  const setKeys=async keys=>{for(const key of [...held])if(!keys.includes(key)){await page.keyboard.up(key);held.delete(key);}for(const key of keys)if(!held.has(key)){await page.keyboard.down(key);held.add(key);}};
+  let waypoint=0, nextStyle=3, upgradeCount=0, toggleCount=0;
   const began=Date.now();
-  await page.keyboard.down(directions[direction]);
   while(Date.now()-began<115000) {
     const s=await state(); outcome=s;
     if(['won','lost'].includes(s.state)) break;
     if(s.state==='upgrade') {
-      await page.keyboard.up(directions[direction]);
+      await setKeys([]);
       await page.keyboard.press('t'); toggleCount++;
       await waitStyle(s.art_style==='native'?'illustrated':'native');
       const upgradedStyle=await state();
       check(upgradedStyle.state==='upgrade' && gameplay(s)===gameplay(upgradedStyle),'upgrade-screen toggle preserves pending choice');
       await page.keyboard.press(String((upgradeCount%3)+1)); upgradeCount++;
-      await page.keyboard.down(directions[direction]);
     }
     if(s.elapsed>=nextStyle) {
       await page.keyboard.press('t'); toggleCount++; nextStyle=s.elapsed+3;
     }
-    if(s.elapsed>=nextTurn) {
-      await page.keyboard.up(directions[direction]); direction=(direction+1)%4;
-      await page.keyboard.down(directions[direction]); nextTurn=s.elapsed+1.7;
-    }
+    if(Math.hypot(route[waypoint].x-s.player.x,route[waypoint].y-s.player.y)<40)waypoint=(waypoint+1)%route.length;
+    const dx=route[waypoint].x-s.player.x,dy=route[waypoint].y-s.player.y, keys=[];
+    if(Math.abs(dx)>12)keys.push(dx>0?'ArrowRight':'ArrowLeft');
+    if(Math.abs(dy)>12)keys.push(dy>0?'ArrowDown':'ArrowUp');
+    await setKeys(keys);
     await page.waitForTimeout(200);
   }
-  await page.keyboard.up(directions[direction]);
+  await setKeys([]);
   check(['won','lost'].includes(outcome.state),'art comparison reaches a genuine game outcome');
   check(outcome.kills>0 && upgradeCount>0 && toggleCount>5,'combat XP and upgrades work through repeated style switches');
+  check(outcome.state==='won','moving circuit can win the tuned three-wave round');
   check(['muzzle','hit','defeat','pickup','upgrade'].every(kind=>outcome.active_fx.emitted[kind]>0),'all five feedback effects occur through real gameplay');
   check(outcome.active_fx.count<=outcome.active_fx.limit,'live effects stay within their fixed budget');
   const final=await state(); await page.keyboard.press('t');
@@ -142,7 +152,7 @@ try {
   check((await frameState()).state==='playing','opaque iframe starts the same game');
   check(errors.length===0,'no browser errors');
 } finally {
-  await fs.writeFile(`${out}/checks.json`,JSON.stringify({checks,errors},null,2));
+  await fs.writeFile(`${out}/checks.json`,JSON.stringify({audioTest,checks,errors},null,2));
   console.log(JSON.stringify({checks,errors}));
   await browser.close();
 }

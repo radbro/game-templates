@@ -13,6 +13,7 @@ var art_style := "radcat"
 var art_data: RefCounted
 var facing := "right"
 var horizontal_direction := 1.0
+var hurt_remaining := 0.0
 
 func _ready() -> void:
     texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
@@ -92,6 +93,7 @@ func equip(ids: Array) -> void:
             textures[part.image] = ImageTexture.create_from_image(Image.load_from_file(local_root + part.image))
 
 func _process(delta: float) -> void:
+    hurt_remaining = maxf(0.0, hurt_remaining - delta)
     var next_clip := "walk" if moving else "idle"
     if next_clip != clip:
         clip = next_clip
@@ -114,9 +116,41 @@ func paperdoll_frame() -> int:
             return index
     return int(spec.to)
 
+func has_illustrated_idle() -> bool:
+    return art_data != null and art_data.styles.get("illustrated", {}).has("idle")
+
+func illustrated_idle_frame() -> int:
+    var frames: Array = art_data.styles.illustrated.idle.pack.clips[facing]
+    var duration := 0.0
+    for frame in frames:
+        duration += float(frame.duration)
+    var time := fmod(clock, duration)
+    for index in frames.size():
+        time -= float(frames[index].duration)
+        if time < 0:
+            return index
+    return frames.size() - 1
+
+func animation_state() -> Dictionary:
+    var source := "source-pack"
+    var frame := paperdoll_frame() if using_paperdoll else int(clock / (300.0 if clip == "idle" else 120.0)) % 6
+    if art_style == "illustrated":
+        source = "generated-idle" if not moving and has_illustrated_idle() else "original-walk" if moving else "held-walk-pose"
+        frame = illustrated_idle_frame() if source == "generated-idle" else int(clock / 240.0) % 4 if moving else 0
+    return {"clip": clip, "facing": facing, "source": source, "frame": frame, "hurt": snappedf(hurt_remaining, 0.001)}
+
 func _draw() -> void:
     draw_circle(Vector2(0, 2), 15, Color(0, 0, 0, 0.26))
+    if hurt_remaining > 0:
+        draw_arc(Vector2(0, -24), 28, 0, TAU, 20, Color("ff8c84"), 2.0, true)
     if art_style == "illustrated":
+        if not moving and has_illustrated_idle():
+            var idle: Dictionary = art_data.styles.illustrated.idle
+            var frame: Dictionary = idle.pack.clips[facing][illustrated_idle_frame()]
+            var rect: Dictionary = frame.rect
+            var factor := 56.0 / float(idle.pack.visibleHeight)
+            draw_texture_rect_region(idle.texture, Rect2(-float(frame.anchor.x) * factor, -float(frame.anchor.y) * factor, float(rect.w) * factor, float(rect.h) * factor), Rect2(rect.x, rect.y, rect.w, rect.h))
+            return
         var manifest: Dictionary = art_data.styles.illustrated.pack
         var index := int(clock / float(manifest.frameDurationMs)) % 4 if moving else 0
         var filename := "walk_%s-%02d.png" % [facing, index]

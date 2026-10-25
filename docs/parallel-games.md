@@ -54,7 +54,9 @@ The illustrated style uses a new mossy slate tile and smooth glow effects.
 The same round continues. The switch preserves positions, health, XP, and upgrades.
 It also works during pause and upgrade selection.
 The native hero retains its separate layers and source frame timing.
-The illustrated hero uses four walk views. It holds a walk pose while idle.
+The illustrated hero uses four original walk views and four new idle views.
+The optional idle atlas adds breathing and a short blink.
+Its source PNG stays unchanged. Metadata sets frame bounds, timing, and floor anchors.
 
 Build the normal demo site first. Then build the local art comparison:
 
@@ -62,15 +64,19 @@ Build the normal demo site first. Then build the local art comparison:
 python3 scripts/build_survivors_review.py \
   --study ../radclaw/runs/2026-10-18-survivors-dual-style \
   --look-pack ../radclaw/runs/2026-10-19-survivors-full-look \
+  --animation-pack ../radclaw/runs/2026-10-25-survivors-idle \
   --preview-site
 ```
 
-This command verifies 58 source files against the Radclaw study and look-pack records.
+This command verifies 60 source files against the Radclaw study, look, and animation records.
 The ground PNG remains unchanged. Alternate mirrored tiles prevent hard joins.
 It copies them into an isolated project under ignored `build/local-review/`.
 Only that project enables the `art_review` export feature.
 The command replaces the locally served Survivors files under `dist/site/`.
-It does not change the release export or either download ZIP.
+It does not change the public release export or its download ZIPs.
+It also creates a separate local source ZIP and web ZIP in `build/local-review/`.
+Those ZIPs contain unpublished art. Keep them out of public hosting.
+See [the release review notes](survivors-release.md) for the files and test limits.
 Run `scripts/build-site.py` again to restore the default local demo.
 The public source template keeps the toggle code and uses Radcat without review packs.
 

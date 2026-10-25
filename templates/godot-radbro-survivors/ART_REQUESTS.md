@@ -55,3 +55,11 @@ For each review, save a contact sheet, a playable capture, and technical checks.
 Record the selected direction and rejected options.
 Keep unselected drafts out of public packs.
 Only add a released asset version after approval and license notices exist.
+
+## Local comparison update, 2026-10-25
+
+Both directions remain active in the actual game. T/Style changes the hero, enemies, ground, weapon, live shots, XP, and effects. The illustrated hero now has a separate four-direction idle atlas with a brief blink. The original walk PNGs and native paperdoll remain unchanged. The new atlas is in `radclaw/runs/2026-10-25-survivors-idle`. It remains unpublished.
+
+Original code supplies bounded hurt feedback, eight sound cues, and a short backing phrase. These sounds need no third-party samples. The game now has a tested three-wave balance profile.
+
+Next art work: compare the full looks during play. Then choose refinements for the enemy family, hurt/attack poses, and upgrade UI. Keep small generated pose differences and enemy identity drift visible in the review record. Final art choice and release approval remain open.

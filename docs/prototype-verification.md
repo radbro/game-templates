@@ -124,3 +124,21 @@ The root checks pass 19 Python tests and 17 JavaScript tests.
 Only the local served game uses the full-look review PCK.
 The illustrated idle limit and physical-device/browser limits above still apply.
 Evidence: ignored `evidence/survivors-full-look/`.
+
+## Survivors release preparation, 2026-10-25
+
+This update supersedes the earlier idle, sound, and balance limits for Survivors. Other game limits remain unchanged.
+
+The illustrated hero now has a dedicated four-direction idle atlas with breathing and a short blink. All 60 imported draft files match their Radclaw source hashes. Original walk PNGs and native source layers remain unchanged. Runtime rectangles use the generated atlas's uneven row spacing. Explicit floor anchors keep the feet stable.
+
+The game adds eight original procedural cues and an eight-second backing phrase. Start unlocks sound. M and the Sound button mute it. Pause and upgrade selection freeze backing. Restart keeps mute selected. Hurt feedback and wave announcements use bounded original code. The tuned profile uses a 320px range, 0.50 second base fire interval, three escalating waves, 70 live enemies, and six elites at most.
+
+The engine balance suite passes 26 checks across seven complete rounds. The integrated public release suite passes 15 checks. The private release suite passes 30 checks, including all four idle views, timing, style-clock preservation, and walk/idle transitions. Cue checks assert accepted playback, not only requests. Native tests allow a real mixer cycle before exit.
+
+Chromium passes 38 comparison checks and 18 audio/animation checks with no console or page errors. A moving run wins at 90.02 seconds with 148 kills, seven upgrades, 36 style changes, and 73.4 health. An idle run loses at 31.35 seconds. Real keyboard, simultaneous touch, pause, upgrades, outcomes, and opaque iframe play pass. The standard game client runs both styles and its screenshots pass visual inspection.
+
+Browser audio proof uses an explicit virtual sink. This machine's normal Chromium device also stalls a plain oscillator. The virtual sink measures actual graph PCM and verifies mute, pause, resume, and outcome cues. It does not prove physical speaker audibility. No virtual sink setting is shipped in the product.
+
+Root checks pass 23 Python tests and 17 JavaScript tests. All 12 public ZIPs pass package checks. The public PCK has zero private review files. Separate ignored local source and web ZIPs keep both review styles together. Their notices identify unpublished art. See [release review notes](survivors-release.md) for artifact paths and remaining decisions.
+
+Evidence: ignored `evidence/survivors-release/`, `build/local-review/`, and `dist/survivors-release/`. No public publication or final art selection is claimed.

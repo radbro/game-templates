@@ -3,6 +3,7 @@ import json
 import sys
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 from unittest.mock import patch
 
@@ -11,6 +12,44 @@ import build_survivors_review as review
 
 
 class SurvivorsReviewTests(unittest.TestCase):
+    def test_review_packages_stay_private_and_keep_original_art_and_notices(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            work = root / 'build/local-review'
+            project, output = work / 'project', work / 'web'
+            for folder in [project, output, root / 'licenses']:
+                folder.mkdir(parents=True)
+            (root / 'LICENSE').write_text('Code license')
+            (root / 'CREDITS.md').write_text('Source credits')
+            (root / 'licenses/GODOT-LICENSE.txt').write_text('Engine license')
+            (project / 'review-art').mkdir()
+            (project / 'review-art/idle.png').write_bytes(b'Exact draft pixels')
+            (project / '.godot').mkdir()
+            (project / '.godot/cache').write_bytes(b'Ignore cache')
+            (output / 'index.pck').write_bytes(b'Local review PCK')
+            receipt = {'reviewOnly': True, 'published': False, 'files': []}
+            with patch.object(review, 'ROOT', root):
+                artifacts = review.package_review(project, output, work, receipt)
+                with self.assertRaisesRegex(ValueError, 'must stay inside'):
+                    review.package_review(project, output, root / 'dist', receipt)
+            with zipfile.ZipFile(work / artifacts[0]['file']) as archive:
+                self.assertEqual(archive.read('review-art/idle.png'), b'Exact draft pixels')
+                self.assertIn('REVIEW_ONLY.md', archive.namelist())
+                self.assertIn('LICENSE.code.txt', archive.namelist())
+                self.assertIn('licenses/GODOT-LICENSE.txt', archive.namelist())
+                self.assertNotIn('.godot/cache', archive.namelist())
+            self.assertFalse((root / 'dist').exists())
+
+    def animation_pack(self, root):
+        folder = root / 'animation'
+        folder.mkdir()
+        (folder / 'idle.png').write_bytes(b'Original complete transparent atlas')
+        (folder / 'pack.json').write_text(json.dumps({'schema': 'radbro-survivors-animation-v1', 'image': 'idle.png'}))
+        files = [{'path': name, 'sha256': hashlib.sha256((folder / name).read_bytes()).hexdigest()}
+                 for name in ['pack.json', 'idle.png']]
+        (folder / 'manifest.json').write_text(json.dumps({'reviewOnly': True, 'published': False, 'files': files}))
+        return folder
+
     def look_pack(self, root):
         folder = root / 'look'
         folder.mkdir()
@@ -116,3 +155,31 @@ class SurvivorsReviewTests(unittest.TestCase):
             (folder / 'manifest.json').write_text(json.dumps(manifest))
             with self.assertRaisesRegex(ValueError, 'unpublished local look pack'):
                 review.look_files(folder)
+
+    def test_animation_import_preserves_whole_atlas_bytes(self):
+        with tempfile.TemporaryDirectory() as temp:
+            files = review.animation_files(self.animation_pack(Path(temp)))
+            self.assertEqual(files[1][1].as_posix(), 'animation-kit/idle.png')
+            self.assertEqual(files[1][0].read_bytes(), b'Original complete transparent atlas')
+
+    def test_corrupt_animation_is_rejected_before_project_is_replaced(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            study = self.study(root)
+            animation = self.animation_pack(root)
+            (animation / 'idle.png').write_bytes(b'Unexpected atlas edit')
+            project = root / 'project'
+            project.mkdir()
+            (project / 'keep.txt').write_text('Preserve old review')
+            with self.assertRaisesRegex(ValueError, 'Animation hash mismatch'):
+                review.stage_project(study, project, animation_pack=animation)
+            self.assertEqual((project / 'keep.txt').read_text(), 'Preserve old review')
+
+    def test_animation_cannot_reference_files_outside_its_pack(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder = self.animation_pack(Path(temp))
+            pack = json.loads((folder / 'pack.json').read_text())
+            pack['image'] = '../outside.png'
+            (folder / 'pack.json').write_text(json.dumps(pack))
+            with self.assertRaisesRegex(ValueError, 'Invalid local animation contract'):
+                review.animation_files(folder)

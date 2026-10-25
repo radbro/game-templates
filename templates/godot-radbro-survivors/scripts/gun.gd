@@ -1,16 +1,18 @@
 # Adapted from GDQuest gun.gd, MIT. Targets the nearest live enemy.
 extends Node2D
 const BULLET = preload("res://scripts/bullet_2d.gd")
+const BALANCE = preload("res://scripts/balance.gd")
 var mobs: Array = []
 var projectiles: Node2D
 var cooldown := 0.0
-var interval := 0.45
-var damage := 1
+var interval := BALANCE.GUN_INTERVAL
+var damage := BALANCE.GUN_DAMAGE
 var shots := 0
 var active := false
 var art_style := "radcat"
 var art_data: RefCounted
 var effects: Node2D
+var audio: Node
 
 func set_art_style(style: String, data: RefCounted) -> void:
     art_style = style
@@ -23,7 +25,7 @@ func _physics_process(delta: float) -> void:
         return
     cooldown -= delta
     var target: Node2D = null
-    var distance := 440.0
+    var distance := BALANCE.GUN_RANGE
     for enemy in mobs:
         if is_instance_valid(enemy) and not enemy.is_queued_for_deletion():
             var current := global_position.distance_to(enemy.global_position)
@@ -45,9 +47,12 @@ func shoot() -> void:
     new_bullet.damage = damage
     new_bullet.mobs = mobs
     new_bullet.effects = effects
+    new_bullet.audio = audio
     new_bullet.set_art_style(art_style, art_data)
     projectiles.add_child(new_bullet)
     shots += 1
+    if audio != null:
+        audio.play_event("fire")
     if effects != null:
         effects.emit_effect("muzzle", new_bullet.position, rotation)
 

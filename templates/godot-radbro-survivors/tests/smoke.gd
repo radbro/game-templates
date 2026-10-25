@@ -83,4 +83,8 @@ func run() -> void:
         check(visual.paperdoll_frame() == 5, 'shared variable frame clock')
         check(visual.parts.size() > 10, 'equipment stays layered')
     print('SURVIVORS_SMOKE ', 'PASS' if failures.is_empty() else failures)
+    game.queue_free()
+    await process_frame
+    OS.delay_msec(150)
+    await process_frame
     quit(0 if failures.is_empty() else 1)

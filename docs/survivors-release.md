@@ -38,3 +38,9 @@ Root checks pass 23 Python tests and 17 JavaScript tests. All six source ZIPs an
 The user has kept both directions for comparison. Final art choice and public art release approval remain open. Enemy identity refinements, dedicated attack poses, and upgrade UI art remain in the [art queue](../templates/godot-radbro-survivors/ART_REQUESTS.md). Enemies enter from outside the arena and can cross its border while entering. Physical devices, Safari, Firefox, human sound judgment, and live hosting are outside this proof.
 
 Original synthesis code and note data use MIT. No third-party recording or sample is included. Asset notices remain separate from the code license. The local candidate files do not grant public redistribution rights for draft art.
+
+## Publication authorization, 2026-10-26
+
+The user has now approved publication of the game and source template with both art styles and the toggle. This supersedes the draft-art publication limit above for the exact files in `assets/radbro-survivors-dual-style-v1`. The new pack carries its own permission and approval record. All60 runtime source files remain byte-identical. The native source includes56 Aseprite masters. Illustrated sources remain editable rasters with prompts. Both styles load by default in the normal project and export. Additional private draft files remain excluded.
+
+Current build, source package, GitHub publication, and hosted-game checks are recorded in `evidence/survivors-publication/`. Final live URLs and hashes will be recorded after upload and verification.

@@ -1,0 +1,34 @@
+{
+  "schema": "radbro-survivors-full-look-v1",
+  "id": "survivors-illustrated-ground-v1",
+  "reviewOnly": true,
+  "published": false,
+  "releaseApproval": false,
+  "sourcePixelsModified": false,
+  "ground": {
+    "image": "illustrated-ground.png",
+    "worldTileSize": 128,
+    "sourceSize": {
+      "w": 1254,
+      "h": 1254
+    },
+    "repeat": "mirrored alternate tiles",
+    "filter": "linear",
+    "notes": "Alternate reflected tiles share identical boundary pixels. Keep the source PNG unchanged."
+  },
+  "effects": {
+    "source": "game-templates/templates/godot-radbro-survivors/scripts",
+    "method": "Original Godot drawing code. Native pixel sparks and smooth illustrated glows use the same events."
+  },
+  "generation": {
+    "tool": "built-in image_gen",
+    "original": "/Users/tacopaco/.codex/generated_images/01a14b5d-9f0c-7ca0-b055-71c734bc9011/exec-9cc5ae2c-3073-4fb6-afa7-f16d48bf3dc7.png",
+    "prompt": "prompt.txt",
+    "transparentBackground": false
+  },
+  "limits": [
+    "Local art review. No public release approval.",
+    "Generated opposite tile edges are not pixel-identical. Mirrored runtime tiling avoids hard seams.",
+    "The editable artifact is the generation prompt and engine display contract. No hand-painted master."
+  ]
+}

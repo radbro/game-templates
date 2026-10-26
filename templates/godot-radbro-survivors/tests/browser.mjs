@@ -83,7 +83,7 @@ try {
   const gameFrame=await frame.contentFrame();
   await gameFrame.waitForFunction(() => typeof window.render_game_to_text==='function',null,{timeout:60000});
   const iframeReady=await gameFrame.evaluate(() => JSON.parse(window.render_game_to_text()));
-  check(iframeReady.state==='ready' && iframeReady.player.paperdoll===false,'opaque iframe boots licensed default');
+  check(iframeReady.state==='ready' && iframeReady.available_art_styles.includes('native') && iframeReady.available_art_styles.includes('illustrated'),'opaque iframe boots both released styles');
   await gameFrame.locator('canvas').click({position:{x:480,y:330}});
   await page.keyboard.press('Enter');
   await page.waitForTimeout(500);

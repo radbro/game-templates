@@ -1,0 +1,17 @@
+{
+  "id": "radbro-survivors-dual-style-v1",
+  "version": "1.0.0",
+  "title": "Radbro Survivors: Native and Illustrated",
+  "credit": "Radbro",
+  "license": "Radbro Community Game Asset Permission",
+  "source": "https://github.com/radbro/game-templates/tree/main/assets/radbro-survivors-dual-style-v1",
+  "styles": [
+    "native",
+    "illustrated"
+  ],
+  "runtimeRoot": ".",
+  "calibration": "calibration.json",
+  "provenance": "provenance.json",
+  "sourceApproval": "publication.json",
+  "notes": "Released for the game and editable template on 2026-10-26. Source PNGs, grids, anchors, layers and timings stay unchanged. Native editor masters are in source/. Illustrated assets include original raster images and prompts. Inner review flags are historical source records; publication.json records approval for this exact copy."
+}

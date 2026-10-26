@@ -127,3 +127,9 @@ Keep the source records for all retained tiles and characters.
 The retro shooter waits for the purchased files and their included license.
 Follow [the commercial game handoff](retro-shooter-handoff.md).
 Keep restricted source and raw purchased assets out of this public repository.
+
+## Survivors publication, 2026-10-26
+
+The user approved publishing Survivors and its source with both art styles and the toggle. The versioned pack `radbro-survivors-dual-style-v1` now contains all60 verified runtime files,56 Aseprite masters, illustrated source rasters and prompts, provenance, and the reuse permission. Historical Radclaw review records stay unchanged. Both styles load in a normal Godot project and public Web export. No review flag is needed. The original private review directories remain excluded from public packaging.
+
+Run `python3 scripts/prepare.py godot-radbro-survivors`. Import the project. Test and export the normal Web preset. Run `scripts/build-site.py` to package the same public dual-style game and editable source. The older private overlay commands above remain for later draft comparisons. They are not needed for this release.

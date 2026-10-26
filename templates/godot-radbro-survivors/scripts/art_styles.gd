@@ -1,17 +1,21 @@
-# Private render data. Public builds do not contain the review-art directory.
+# Released Radbro looks. Local review data remains an explicit fallback.
 extends RefCounted
-const ROOT := "res://review-art/"
+const RELEASED_ROOT := "res://assets/radbro-survivors-dual-style-v1/"
+const REVIEW_ROOT := "res://review-art/"
+var asset_root := RELEASED_ROOT
 var styles: Dictionary = {}
 var calibration: Dictionary = {}
 
 func _init() -> void:
-    if not (OS.has_feature("art_review") or "--art-review" in OS.get_cmdline_user_args()):
+    if (OS.has_feature("art_review") or "--art-review" in OS.get_cmdline_user_args()) and FileAccess.file_exists(REVIEW_ROOT + "calibration.json"):
+        asset_root = REVIEW_ROOT
+    elif not FileAccess.file_exists(RELEASED_ROOT + "publication.json"):
         return
-    calibration = read_json(ROOT + "calibration.json")
+    calibration = read_json(asset_root + "calibration.json")
     if calibration.is_empty():
         return
-    var native_pack := read_json(ROOT + "native-hero/pack.json")
-    var illustrated_pack := read_json(ROOT + "illustrated-hero/source-manifest.json")
+    var native_pack := read_json(asset_root + "native-hero/pack.json")
+    var illustrated_pack := read_json(asset_root + "illustrated-hero/source-manifest.json")
     if native_pack.get("schema") != "radbro-paperdoll-v1" or illustrated_pack.get("frames", []).size() != 16:
         return
     var native_textures: Dictionary = {}
@@ -19,13 +23,13 @@ func _init() -> void:
     for item in native_pack.items:
         all_parts.append_array(item.parts)
     for part in all_parts:
-        var texture := read_texture(ROOT + "native-hero/" + part.image)
+        var texture := read_texture(asset_root + "native-hero/" + part.image)
         if texture == null:
             return
         native_textures[part.image] = texture
     var illustrated_textures: Dictionary = {}
     for frame in illustrated_pack.frames:
-        var texture := read_texture(ROOT + "illustrated-hero/" + frame.filename)
+        var texture := read_texture(asset_root + "illustrated-hero/" + frame.filename)
         if texture == null:
             return
         illustrated_textures[frame.filename] = texture
@@ -42,7 +46,7 @@ func _init() -> void:
         styles.illustrated["idle"] = idle
 
 func read_idle() -> Dictionary:
-    var folder := ROOT + "animation-kit/"
+    var folder := asset_root + "animation-kit/"
     var pack := read_json(folder + "pack.json")
     if pack.get("schema") != "radbro-survivors-animation-v1" or float(pack.get("visibleHeight", 0)) <= 0:
         return {}
@@ -78,11 +82,11 @@ func read_texture(path: String) -> Texture2D:
     return null if image == null or image.is_empty() else ImageTexture.create_from_image(image)
 
 func read_enemy(style: String) -> Dictionary:
-    var kit := read_json(ROOT + style + "-kit/pack.json")
+    var kit := read_json(asset_root + style + "-kit/pack.json")
     if not kit.has("enemy"):
         return {}
     var enemy: Dictionary = kit.enemy.duplicate(true)
-    var texture := read_texture(ROOT + style + "-kit/" + enemy.image)
+    var texture := read_texture(asset_root + style + "-kit/" + enemy.image)
     if texture == null or enemy.get("frames", []).is_empty():
         return {}
     var visible_height := float(enemy.get("maxVisibleHeight", 0.0))
@@ -99,7 +103,7 @@ func read_enemy(style: String) -> Dictionary:
     return enemy
 
 func read_look(style: String) -> Dictionary:
-    var folder := ROOT + ("native-kit/" if style == "native" else "look-kit/")
+    var folder := asset_root + ("native-kit/" if style == "native" else "look-kit/")
     var pack := read_json(folder + "pack.json")
     var look: Dictionary = {"world_tile_size": 64.0 if style == "native" else 128.0}
     if pack.get("ground", {}).has("image"):

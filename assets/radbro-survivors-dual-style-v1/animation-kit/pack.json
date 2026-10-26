@@ -1,0 +1,365 @@
+{
+  "schema": "radbro-survivors-animation-v1",
+  "id": "illustrated-idle-four-directions-v1",
+  "reviewOnly": true,
+  "published": false,
+  "releaseApproval": false,
+  "sourcePixelsModified": false,
+  "image": "idle-sheet.png",
+  "size": {
+    "w": 1254,
+    "h": 1254
+  },
+  "visibleHeight": 292,
+  "clips": {
+    "down": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 314,
+          "h": 308
+        },
+        "duration": 500,
+        "anchor": {
+          "x": 173.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          60,
+          23,
+          290,
+          300
+        ],
+        "framePixelSha256": "cd7ad8457c758b13a64158be63bca308a449e55adbfc3fff51a88abccee6c915"
+      },
+      {
+        "rect": {
+          "x": 314,
+          "y": 0,
+          "w": 313,
+          "h": 308
+        },
+        "duration": 350,
+        "anchor": {
+          "x": 156.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          42,
+          23,
+          273,
+          300
+        ],
+        "framePixelSha256": "e98260eb4dcc75e32dbcaac9cf31e4612820092b2352c90576fb65685a890b03"
+      },
+      {
+        "rect": {
+          "x": 627,
+          "y": 0,
+          "w": 313,
+          "h": 308
+        },
+        "duration": 130,
+        "anchor": {
+          "x": 152.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          38,
+          23,
+          268,
+          300
+        ],
+        "framePixelSha256": "5896987fc898b35b07719f093a5579ff821f3f4358ef8e31982223c073d19305"
+      },
+      {
+        "rect": {
+          "x": 940,
+          "y": 0,
+          "w": 314,
+          "h": 308
+        },
+        "duration": 620,
+        "anchor": {
+          "x": 140.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          24,
+          23,
+          254,
+          300
+        ],
+        "framePixelSha256": "7a5320446d2a0f991186a9c9efdeeb1b5d185edc8a140ae5d79c6d73b4431af2"
+      }
+    ],
+    "right": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 308,
+          "w": 314,
+          "h": 310
+        },
+        "duration": 500,
+        "anchor": {
+          "x": 177.5,
+          "y": 299
+        },
+        "visibleBounds": [
+          60,
+          9,
+          292,
+          299
+        ],
+        "framePixelSha256": "132712eb677fb749f34c4842bb2a60730a9180d8e3b91c591c594dc01fbada9f"
+      },
+      {
+        "rect": {
+          "x": 314,
+          "y": 308,
+          "w": 313,
+          "h": 310
+        },
+        "duration": 350,
+        "anchor": {
+          "x": 161.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          42,
+          10,
+          269,
+          300
+        ],
+        "framePixelSha256": "57094aedb3ab6bfdfbf0d98b2bc427c900bcb0e2c25fa46109271477bf8806ab"
+      },
+      {
+        "rect": {
+          "x": 627,
+          "y": 308,
+          "w": 313,
+          "h": 310
+        },
+        "duration": 130,
+        "anchor": {
+          "x": 154.5,
+          "y": 299
+        },
+        "visibleBounds": [
+          36,
+          9,
+          268,
+          299
+        ],
+        "framePixelSha256": "b5145d9332e9fe544325fa85d82fe8c263233b0206b3a84a64b6325a9ee11228"
+      },
+      {
+        "rect": {
+          "x": 940,
+          "y": 308,
+          "w": 314,
+          "h": 310
+        },
+        "duration": 620,
+        "anchor": {
+          "x": 140.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          24,
+          9,
+          253,
+          300
+        ],
+        "framePixelSha256": "b5d6ff430f2f35e299ab8914d9b6dfbea02247ae8bfe880b9223f5ecabd23563"
+      }
+    ],
+    "up": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 618,
+          "w": 314,
+          "h": 298
+        },
+        "duration": 500,
+        "anchor": {
+          "x": 177.0,
+          "y": 291
+        },
+        "visibleBounds": [
+          57,
+          12,
+          291,
+          291
+        ],
+        "framePixelSha256": "d9441d8ac482626ea454c7545e67454dba4895dda571a7f2def75426213ad115"
+      },
+      {
+        "rect": {
+          "x": 314,
+          "y": 618,
+          "w": 313,
+          "h": 298
+        },
+        "duration": 350,
+        "anchor": {
+          "x": 159.5,
+          "y": 291
+        },
+        "visibleBounds": [
+          40,
+          10,
+          278,
+          291
+        ],
+        "framePixelSha256": "5255cee537fbb9dac88cc7ceaf2b56ed9ed453319ab5563589c1736eb2623e9f"
+      },
+      {
+        "rect": {
+          "x": 627,
+          "y": 618,
+          "w": 313,
+          "h": 298
+        },
+        "duration": 130,
+        "anchor": {
+          "x": 153.5,
+          "y": 291
+        },
+        "visibleBounds": [
+          35,
+          12,
+          271,
+          291
+        ],
+        "framePixelSha256": "05c94bccac100d925a47fd9eef069d5e8558d723eead80469dac33eb4b525e2a"
+      },
+      {
+        "rect": {
+          "x": 940,
+          "y": 618,
+          "w": 314,
+          "h": 298
+        },
+        "duration": 620,
+        "anchor": {
+          "x": 144.5,
+          "y": 291
+        },
+        "visibleBounds": [
+          24,
+          10,
+          259,
+          291
+        ],
+        "framePixelSha256": "9dfeb3ecf9c9070c06fa7a5bb82a43f3bb3ddf40b3c04f2a53f31f51c34da289"
+      }
+    ],
+    "left": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 916,
+          "w": 314,
+          "h": 338
+        },
+        "duration": 500,
+        "anchor": {
+          "x": 172.5,
+          "y": 300
+        },
+        "visibleBounds": [
+          58,
+          8,
+          290,
+          300
+        ],
+        "framePixelSha256": "ef22cce86a5981502cafe96c173eae1fdb6ccbb55bfbb0201c1c654a01568f9c"
+      },
+      {
+        "rect": {
+          "x": 314,
+          "y": 916,
+          "w": 313,
+          "h": 338
+        },
+        "duration": 350,
+        "anchor": {
+          "x": 154.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          46,
+          9,
+          277,
+          300
+        ],
+        "framePixelSha256": "adb6439ffa3fe0e55e2d56b4d6801b0a9532d3a3f5b8fce13c54de314382eed7"
+      },
+      {
+        "rect": {
+          "x": 627,
+          "y": 916,
+          "w": 313,
+          "h": 338
+        },
+        "duration": 130,
+        "anchor": {
+          "x": 152.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          41,
+          8,
+          273,
+          300
+        ],
+        "framePixelSha256": "614b07e18f051e1121fb6d546d09344cd65e79a883c79695a9226ad29e448219"
+      },
+      {
+        "rect": {
+          "x": 940,
+          "y": 916,
+          "w": 314,
+          "h": 338
+        },
+        "duration": 620,
+        "anchor": {
+          "x": 142.0,
+          "y": 300
+        },
+        "visibleBounds": [
+          33,
+          8,
+          264,
+          300
+        ],
+        "framePixelSha256": "6de73bdaa5e58232711c99d1230603215614eee736ab98dd06d62361f8d17d9b"
+      }
+    ]
+  },
+  "loop": true,
+  "durationMs": 1600,
+  "registration": "Alpha>32 foot baseline and bottom8px foot center; one constant scale for all frames. Original atlas bytes unchanged.",
+  "generation": {
+    "tool": "built-in image_gen",
+    "original": "/Users/tacopaco/.codex/generated_images/01a14b5d-9f0c-7ca0-b055-71c734bc9011/exec-b74d300e-c308-4107-aa02-7f6638847af2.png",
+    "prompt": "prompt.txt",
+    "references": "references.json"
+  },
+  "limits": [
+    "Generated idle study. Source appearance requires human art review.",
+    "Per-frame registration corrects small generated placement drift without editing pixels."
+  ],
+  "rowBoundaries": [
+    0,
+    308,
+    618,
+    916,
+    1254
+  ],
+  "layoutNote": "Generation placed rows at unequal spacing. Metadata uses transparent horizontal gaps to keep all sixteen whole poses. No atlas pixels were edited."
+}

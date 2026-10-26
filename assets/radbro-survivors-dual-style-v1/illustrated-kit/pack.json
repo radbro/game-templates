@@ -1,0 +1,156 @@
+{
+  "schema": "radbro-art-study-pack-v1",
+  "id": "illustrated-sentry-beetle-v1",
+  "reviewOnly": true,
+  "releaseApproval": false,
+  "authoredWith": "Built-in image_gen",
+  "sourcePixelsModified": false,
+  "enemy": {
+    "image": "enemy.png",
+    "atlas": "enemy.png",
+    "frameWidth": 627,
+    "frameHeight": 627,
+    "frameSize": {
+      "w": 627,
+      "h": 627
+    },
+    "columns": 2,
+    "frames": [
+      {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        "duration": 240,
+        "visibleBounds": [
+          58,
+          68,
+          567,
+          567
+        ],
+        "framePixelSha256": "b5bf795f874b1075ccbcf16043b21b613e25b48143a31a5431c229ead0657ad1",
+        "anchor": {
+          "x": 313.5,
+          "y": 567
+        }
+      },
+      {
+        "frame": {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        "duration": 240,
+        "visibleBounds": [
+          56,
+          67,
+          567,
+          567
+        ],
+        "framePixelSha256": "262e536ddc4bd411d50dc858b29a2a0ad969e04c4fe1c1f8a725ea2411126951",
+        "anchor": {
+          "x": 313.5,
+          "y": 567
+        }
+      },
+      {
+        "frame": {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        "duration": 240,
+        "visibleBounds": [
+          59,
+          45,
+          567,
+          529
+        ],
+        "framePixelSha256": "758d0d9d3da38e99dc32bc83204747a517dd52ed5e3979414917ada0a5846582",
+        "anchor": {
+          "x": 313.5,
+          "y": 529
+        }
+      },
+      {
+        "frame": {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        "duration": 240,
+        "visibleBounds": [
+          57,
+          42,
+          568,
+          532
+        ],
+        "framePixelSha256": "71d1782bef27c3860821152c2af08f65908e819dda0638e054fd18a5253aa391",
+        "anchor": {
+          "x": 313.5,
+          "y": 532
+        }
+      }
+    ],
+    "frameDurationMs": 240,
+    "anchor": {
+      "x": 313.5,
+      "y": 564
+    },
+    "view": "front only",
+    "loop": true,
+    "notes": [
+      "Generated animation study. No engine damage, hurt or death frames yet.",
+      "Use whole-sheet frame rectangles. Source image stays unchanged.",
+      "The raw generated atlas has 38 pixels of footbaseline drift. Frame metadata registers feet for the study.",
+      "An alignment-only imagegen edit still drifted by36pixels. Keep that v2 attempt as an unselected result.",
+      "Character size varies slightly across generated frames. No production art approval."
+    ],
+    "runtimeRegistration": {
+      "method": "Per-frame floor anchor from alpha bounds above 8. Keep one constant display scale across the clip.",
+      "sourcePixelsModified": false,
+      "rawFootBaselineSpreadPixels": 38,
+      "requiredForComparison": true
+    }
+  },
+  "files": [
+    {
+      "path": "enemy.png",
+      "sha256": "59da5820df3c1f98e79d9229727e9e8924476bbd4a407049471e34020fad1529",
+      "bytes": 900256
+    }
+  ],
+  "generation": {
+    "original": "/Users/tacopaco/.codex/generated_images/01a14b5d-9f0c-7ca0-b055-71c734bc9011/exec-e94079df-32a1-4965-b21d-871ab7fa447a.png",
+    "prompt": "prompt.txt",
+    "styleReference": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_down-00.png",
+    "styleReferenceSha256": "e41f32bc9bea80bbe8475d7cf32f2ea6033891dadf0782f24c3459998dfecf7f",
+    "role": "style reference only; original non-human enemy",
+    "requestedGrid": [
+      2,
+      2
+    ],
+    "actualDimensions": [
+      1254,
+      1254
+    ],
+    "background": "transparent",
+    "alphaExtrema": [
+      0,
+      255
+    ]
+  },
+  "unselectedAttempts": [
+    {
+      "file": "enemy-aligned-v2.png",
+      "analysis": "v2-analysis.json",
+      "prompt": "alignment-prompt.txt",
+      "reason": "The alignment edit still has36pixels of raw footbaseline drift."
+    }
+  ]
+}

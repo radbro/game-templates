@@ -30,14 +30,30 @@ jobs:
         run: |
           python3 scripts/prepare.py
           python3 scripts/check.py
-      - name: Import Godot assets
-        run: godot --headless --path templates/godot-radcat-relay --editor --import
-      - name: Check Godot gameplay
-        run: godot --headless --fixed-fps 60 --path templates/godot-radcat-relay --script tests/smoke.gd
-      - name: Export the Godot browser game
+      - name: Import, test, and export every Godot template
         run: |
-          mkdir -p build/godot-radcat-relay
-          godot --headless --path templates/godot-radcat-relay --export-release Web
+          python3 - <<'PYTHON'
+          import json, pathlib, re, subprocess
+          root = pathlib.Path.cwd()
+          def run(args):
+              result = subprocess.run(args, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+              print(result.stdout, flush=True)
+              if result.returncode or re.search(r'(^|\n)(?:SCRIPT )?ERROR:', result.stdout):
+                  raise SystemExit(result.returncode or 1)
+          for item in json.loads((root / 'templates.json').read_text())['templates']:
+              if not item['id'].startswith('godot-'):
+                  continue
+              project = root / item['path']
+              run(['godot', '--headless', '--path', str(project), '--editor', '--import'])
+              suites = ['smoke']
+              if item['id'] == 'godot-radbro-survivors':
+                  suites += ['art-styles', 'audio', 'balance', 'release']
+              for suite in suites:
+                  run(['godot', '--headless', '--fixed-fps', '60', '--path', str(project), '--script', f'tests/{suite}.gd'])
+              output = root / 'build' / item['id']
+              output.mkdir(parents=True, exist_ok=True)
+              run(['godot', '--headless', '--path', str(project), '--export-release', 'Web', str(output / 'index.html')])
+          PYTHON
       - name: Package source games and demos
         run: |
           python3 scripts/build-site.py

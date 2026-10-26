@@ -1,0 +1,1198 @@
+{
+  "schema": "radbro-paperdoll-v1",
+  "rig": "radbro64-front-v2",
+  "name": "OG Radbro outfit trial 01",
+  "frameSize": {
+    "w": 64,
+    "h": 64
+  },
+  "anchor": {
+    "x": 32,
+    "y": 60
+  },
+  "columns": 8,
+  "frames": [
+    {
+      "index": 0,
+      "filename": "idle-00.png",
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 500
+    },
+    {
+      "index": 1,
+      "filename": "idle-01.png",
+      "frame": {
+        "x": 64,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 240
+    },
+    {
+      "index": 2,
+      "filename": "idle-02.png",
+      "frame": {
+        "x": 128,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 3,
+      "filename": "idle-03.png",
+      "frame": {
+        "x": 192,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 240
+    },
+    {
+      "index": 4,
+      "filename": "walk-00.png",
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 5,
+      "filename": "walk-01.png",
+      "frame": {
+        "x": 320,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 6,
+      "filename": "walk-02.png",
+      "frame": {
+        "x": 384,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 7,
+      "filename": "walk-03.png",
+      "frame": {
+        "x": 448,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 8,
+      "filename": "walk-04.png",
+      "frame": {
+        "x": 0,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 9,
+      "filename": "walk-05.png",
+      "frame": {
+        "x": 64,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 10,
+      "filename": "walk-06.png",
+      "frame": {
+        "x": 128,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 11,
+      "filename": "walk-07.png",
+      "frame": {
+        "x": 192,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 120
+    },
+    {
+      "index": 12,
+      "filename": "jog-00.png",
+      "frame": {
+        "x": 256,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 13,
+      "filename": "jog-01.png",
+      "frame": {
+        "x": 320,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 14,
+      "filename": "jog-02.png",
+      "frame": {
+        "x": 384,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 15,
+      "filename": "jog-03.png",
+      "frame": {
+        "x": 448,
+        "y": 64,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 16,
+      "filename": "jog-04.png",
+      "frame": {
+        "x": 0,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 17,
+      "filename": "jog-05.png",
+      "frame": {
+        "x": 64,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 18,
+      "filename": "jog-06.png",
+      "frame": {
+        "x": 128,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 19,
+      "filename": "jog-07.png",
+      "frame": {
+        "x": 192,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 70
+    },
+    {
+      "index": 20,
+      "filename": "wave-00.png",
+      "frame": {
+        "x": 256,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 180
+    },
+    {
+      "index": 21,
+      "filename": "wave-01.png",
+      "frame": {
+        "x": 320,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 140
+    },
+    {
+      "index": 22,
+      "filename": "wave-02.png",
+      "frame": {
+        "x": 384,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 160
+    },
+    {
+      "index": 23,
+      "filename": "wave-03.png",
+      "frame": {
+        "x": 448,
+        "y": 128,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 180
+    },
+    {
+      "index": 24,
+      "filename": "wave-04.png",
+      "frame": {
+        "x": 0,
+        "y": 192,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 180
+    },
+    {
+      "index": 25,
+      "filename": "wave-05.png",
+      "frame": {
+        "x": 64,
+        "y": 192,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 180
+    },
+    {
+      "index": 26,
+      "filename": "wave-06.png",
+      "frame": {
+        "x": 128,
+        "y": 192,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 140
+    },
+    {
+      "index": 27,
+      "filename": "wave-07.png",
+      "frame": {
+        "x": 192,
+        "y": 192,
+        "w": 64,
+        "h": 64
+      },
+      "duration": 180
+    }
+  ],
+  "clips": [
+    {
+      "name": "idle",
+      "from": 0,
+      "to": 3,
+      "loop": true
+    },
+    {
+      "name": "walk",
+      "from": 4,
+      "to": 11,
+      "loop": true
+    },
+    {
+      "name": "jog",
+      "from": 12,
+      "to": 19,
+      "loop": true
+    },
+    {
+      "name": "wave",
+      "from": 20,
+      "to": 27,
+      "loop": false
+    }
+  ],
+  "palette": [
+    "#14161f",
+    "#955c43",
+    "#bf875e",
+    "#dfb581",
+    "#f2d19a",
+    "#ffebba",
+    "#362728",
+    "#533b2e",
+    "#75533a",
+    "#9b7750",
+    "#34411d",
+    "#6c842b",
+    "#aec05a",
+    "#282e3e",
+    "#465062",
+    "#69728a",
+    "#98a6b6",
+    "#d1d4d2",
+    "#f0efe2",
+    "#163574",
+    "#2754ad",
+    "#438df0",
+    "#8ac3f5",
+    "#722938",
+    "#b63c49",
+    "#f06c58",
+    "#c19935",
+    "#edd06b",
+    "#e58e45",
+    "#7d4f9e",
+    "#3e7b84",
+    "#ef8aba"
+  ],
+  "base": {
+    "id": "radbro-base",
+    "source": "sources/radbro-base.aseprite",
+    "parts": [
+      {
+        "id": "base-legs",
+        "z": 10,
+        "image": "sprites/base/base-legs.png"
+      },
+      {
+        "id": "base-far-arm",
+        "z": 20,
+        "image": "sprites/base/base-far-arm.png"
+      },
+      {
+        "id": "base-torso",
+        "z": 30,
+        "image": "sprites/base/base-torso.png"
+      },
+      {
+        "id": "base-hair-back",
+        "z": 42,
+        "image": "sprites/base/base-hair-back.png"
+      },
+      {
+        "id": "base-head",
+        "z": 45,
+        "image": "sprites/base/base-head.png"
+      },
+      {
+        "id": "base-brows",
+        "z": 46,
+        "image": "sprites/base/base-brows.png"
+      },
+      {
+        "id": "base-eye-left",
+        "z": 47,
+        "image": "sprites/base/base-eye-left.png"
+      },
+      {
+        "id": "base-eye-right",
+        "z": 47,
+        "image": "sprites/base/base-eye-right.png"
+      },
+      {
+        "id": "base-mouth",
+        "z": 48,
+        "image": "sprites/base/base-mouth.png"
+      },
+      {
+        "id": "base-hair-front",
+        "z": 53,
+        "image": "sprites/base/base-hair-front.png"
+      },
+      {
+        "id": "base-near-arm",
+        "z": 70,
+        "image": "sprites/base/base-near-arm.png"
+      }
+    ]
+  },
+  "slots": [
+    {
+      "id": "shirt",
+      "label": "Shirt"
+    },
+    {
+      "id": "neck",
+      "label": "Necklace"
+    },
+    {
+      "id": "scalp",
+      "label": "Scalp"
+    },
+    {
+      "id": "headgear",
+      "label": "Headgear"
+    },
+    {
+      "id": "cosmetics",
+      "label": "Makeup"
+    },
+    {
+      "id": "eyes",
+      "label": "Eyes"
+    },
+    {
+      "id": "patch",
+      "label": "Eye patch"
+    },
+    {
+      "id": "spectacles",
+      "label": "Spectacles"
+    },
+    {
+      "id": "laser",
+      "label": "Laser"
+    },
+    {
+      "id": "mouth",
+      "label": "Mouth"
+    },
+    {
+      "id": "toy",
+      "label": "Held item"
+    }
+  ],
+  "items": [
+    {
+      "id": "bucket-hat",
+      "slot": "headgear",
+      "label": "Bucket hat",
+      "sourceTraits": [
+        {
+          "trait_type": "Headgear",
+          "value": "bucket-hat"
+        }
+      ],
+      "reference": "references/traits/bucket-hat.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/bucket-hat.aseprite",
+      "parts": [
+        {
+          "id": "bucket-hat-front",
+          "z": 60,
+          "image": "sprites/items/bucket-hat-front.png"
+        }
+      ]
+    },
+    {
+      "id": "foil",
+      "slot": "scalp",
+      "label": "EMF Protection",
+      "sourceTraits": [
+        {
+          "trait_type": "Scalp",
+          "value": "EMF Protection"
+        }
+      ],
+      "reference": "references/traits/foil.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/foil.aseprite",
+      "parts": [
+        {
+          "id": "foil-front",
+          "z": 55,
+          "image": "sprites/items/foil-front.png"
+        }
+      ]
+    },
+    {
+      "id": "red-bandana",
+      "slot": "scalp",
+      "label": "Red bandana",
+      "sourceTraits": [
+        {
+          "trait_type": "Scalp",
+          "value": "red-bandana"
+        }
+      ],
+      "reference": "references/traits/red-bandana.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/red-bandana.aseprite",
+      "parts": [
+        {
+          "id": "red-bandana-front",
+          "z": 55,
+          "image": "sprites/items/red-bandana-front.png"
+        }
+      ]
+    },
+    {
+      "id": "blue-bandana",
+      "slot": "scalp",
+      "label": "Blue bandana",
+      "sourceTraits": [
+        {
+          "trait_type": "Scalp",
+          "value": "blue-bandana"
+        }
+      ],
+      "reference": "references/traits/blue-bandana.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/blue-bandana.aseprite",
+      "parts": [
+        {
+          "id": "blue-bandana-front",
+          "z": 55,
+          "image": "sprites/items/blue-bandana-front.png"
+        }
+      ]
+    },
+    {
+      "id": "pirate",
+      "slot": "patch",
+      "label": "Pirate patch",
+      "sourceTraits": [
+        {
+          "trait_type": "Eye Patch",
+          "value": "pirate"
+        }
+      ],
+      "reference": "references/traits/pirate.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/pirate.aseprite",
+      "parts": [
+        {
+          "id": "pirate-front",
+          "z": 62,
+          "image": "sprites/items/pirate-front.png"
+        }
+      ],
+      "hideBaseParts": [
+        "base-eye-left"
+      ]
+    },
+    {
+      "id": "blue-shades",
+      "slot": "spectacles",
+      "label": "Blue shades",
+      "sourceTraits": [
+        {
+          "trait_type": "Spectacles",
+          "value": "blue-shades"
+        }
+      ],
+      "reference": "references/traits/blue-shades.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/blue-shades.aseprite",
+      "parts": [
+        {
+          "id": "blue-shades-front",
+          "z": 64,
+          "image": "sprites/items/blue-shades-front.png"
+        }
+      ],
+      "hideBaseParts": [
+        "base-eye-left",
+        "base-eye-right"
+      ]
+    },
+    {
+      "id": "wink",
+      "slot": "eyes",
+      "label": "Wink",
+      "sourceTraits": [
+        {
+          "trait_type": "Eyes",
+          "value": "wink"
+        }
+      ],
+      "reference": "references/traits/wink.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/wink.aseprite",
+      "parts": [
+        {
+          "id": "wink-front",
+          "z": 50,
+          "image": "sprites/items/wink-front.png"
+        }
+      ],
+      "hideBaseParts": [
+        "base-eye-right"
+      ]
+    },
+    {
+      "id": "laser-right",
+      "slot": "laser",
+      "label": "Right laser eye",
+      "sourceTraits": [
+        {
+          "trait_type": "Laser",
+          "value": "laser-eye-(right)"
+        }
+      ],
+      "reference": "references/traits/laser-right.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/laser-right.aseprite",
+      "parts": [
+        {
+          "id": "laser-right-front",
+          "z": 66,
+          "image": "sprites/items/laser-right-front.png"
+        }
+      ]
+    },
+    {
+      "id": "cross",
+      "slot": "neck",
+      "label": "Cross necklace",
+      "sourceTraits": [
+        {
+          "trait_type": "Necklace",
+          "value": "cross"
+        }
+      ],
+      "reference": "references/traits/cross.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/cross.aseprite",
+      "parts": [
+        {
+          "id": "cross-front",
+          "z": 40,
+          "image": "sprites/items/cross-front.png"
+        }
+      ]
+    },
+    {
+      "id": "auryn",
+      "slot": "neck",
+      "label": "Auryn necklace",
+      "sourceTraits": [
+        {
+          "trait_type": "Necklace",
+          "value": "auryn"
+        }
+      ],
+      "reference": "references/traits/auryn.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/auryn.aseprite",
+      "parts": [
+        {
+          "id": "auryn-front",
+          "z": 40,
+          "image": "sprites/items/auryn-front.png"
+        }
+      ]
+    },
+    {
+      "id": "nobody",
+      "slot": "shirt",
+      "label": "Nobody shirt",
+      "sourceTraits": [
+        {
+          "trait_type": "Shirt",
+          "value": "nobody"
+        }
+      ],
+      "reference": "references/traits/nobody.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/nobody.aseprite",
+      "parts": [
+        {
+          "id": "nobody-far-sleeve",
+          "z": 25,
+          "image": "sprites/items/nobody-far-sleeve.png"
+        },
+        {
+          "id": "nobody-torso",
+          "z": 35,
+          "image": "sprites/items/nobody-torso.png"
+        },
+        {
+          "id": "nobody-near-sleeve",
+          "z": 75,
+          "image": "sprites/items/nobody-near-sleeve.png"
+        }
+      ]
+    },
+    {
+      "id": "overfiend",
+      "slot": "shirt",
+      "label": "Overfiend shirt",
+      "sourceTraits": [
+        {
+          "trait_type": "Shirt",
+          "value": "overfiend"
+        }
+      ],
+      "reference": "references/traits/overfiend.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/overfiend.aseprite",
+      "parts": [
+        {
+          "id": "overfiend-far-sleeve",
+          "z": 25,
+          "image": "sprites/items/overfiend-far-sleeve.png"
+        },
+        {
+          "id": "overfiend-torso",
+          "z": 35,
+          "image": "sprites/items/overfiend-torso.png"
+        },
+        {
+          "id": "overfiend-near-sleeve",
+          "z": 75,
+          "image": "sprites/items/overfiend-near-sleeve.png"
+        }
+      ]
+    },
+    {
+      "id": "vape-mod",
+      "slot": "toy",
+      "label": "Vape mod",
+      "sourceTraits": [
+        {
+          "trait_type": "Toys",
+          "value": "Vape Mod"
+        }
+      ],
+      "reference": "references/traits/vape-mod.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/vape-mod.aseprite",
+      "parts": [
+        {
+          "id": "vape-mod-front",
+          "z": 80,
+          "image": "sprites/items/vape-mod-front.png"
+        }
+      ]
+    },
+    {
+      "id": "yuky",
+      "slot": "mouth",
+      "label": "Yuky mouth",
+      "sourceTraits": [
+        {
+          "trait_type": "Mouth",
+          "value": "yuky"
+        }
+      ],
+      "reference": "references/traits/yuky.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/yuky.aseprite",
+      "parts": [
+        {
+          "id": "yuky-front",
+          "z": 49,
+          "image": "sprites/items/yuky-front.png"
+        }
+      ],
+      "hideBaseParts": [
+        "base-mouth"
+      ]
+    },
+    {
+      "id": "yuk",
+      "slot": "mouth",
+      "label": "Yuk mouth",
+      "sourceTraits": [
+        {
+          "trait_type": "Mouth",
+          "value": "yuk"
+        }
+      ],
+      "reference": "references/traits/yuk.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/yuk.aseprite",
+      "parts": [
+        {
+          "id": "yuk-front",
+          "z": 49,
+          "image": "sprites/items/yuk-front.png"
+        }
+      ],
+      "hideBaseParts": [
+        "base-mouth"
+      ]
+    },
+    {
+      "id": "panda",
+      "slot": "cosmetics",
+      "label": "Panda makeup",
+      "sourceTraits": [
+        {
+          "trait_type": "Secret",
+          "value": "panda"
+        }
+      ],
+      "reference": "references/traits/panda.png",
+      "rig": "radbro64-front-v2",
+      "source": "sources/panda.aseprite",
+      "parts": [
+        {
+          "id": "panda-front",
+          "z": 49,
+          "image": "sprites/items/panda-front.png"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "id": "og-1242",
+      "label": "Radbro #1242",
+      "sourceImage": "references/nft-1242.png",
+      "metadata": "references/nft-1242.json",
+      "metadataUrl": "https://radbro.xyz/api/v1/tokens/metadata/1242",
+      "items": [
+        "pirate",
+        "bucket-hat",
+        "cross",
+        "red-bandana"
+      ],
+      "matchedTraits": [
+        {
+          "value": "pirate",
+          "trait_type": "Eye Patch"
+        },
+        {
+          "value": "bucket-hat",
+          "trait_type": "Headgear"
+        },
+        {
+          "value": "cross",
+          "trait_type": "Necklace"
+        },
+        {
+          "value": "red-bandana",
+          "trait_type": "Scalp"
+        }
+      ],
+      "unconvertedTraits": [
+        {
+          "value": "BENELLI M4",
+          "trait_type": "Arms"
+        },
+        {
+          "value": "Bloody",
+          "trait_type": "Cosmetics"
+        },
+        {
+          "value": "crystal-palace",
+          "trait_type": "Environment"
+        },
+        {
+          "value": "wave",
+          "trait_type": "Logo"
+        },
+        {
+          "value": "SAVAGE",
+          "trait_type": "Mouth"
+        },
+        {
+          "value": "Remilio-2305",
+          "trait_type": "Remilio"
+        },
+        {
+          "value": "rad-lives",
+          "trait_type": "Shirt"
+        },
+        {
+          "value": "river",
+          "trait_type": "Street"
+        },
+        {
+          "value": "Hour of the Time Archive",
+          "trait_type": "Toys"
+        }
+      ],
+      "interpretation": "Trait subset on one shared body. Full portrait, background, and other traits are not reconstructed."
+    },
+    {
+      "id": "og-484",
+      "label": "Radbro #484",
+      "sourceImage": "references/nft-484.png",
+      "metadata": "references/nft-484.json",
+      "metadataUrl": "https://radbro.xyz/api/v1/tokens/metadata/484",
+      "items": [
+        "pirate",
+        "cross",
+        "blue-bandana",
+        "nobody",
+        "blue-shades"
+      ],
+      "matchedTraits": [
+        {
+          "value": "pirate",
+          "trait_type": "Eye Patch"
+        },
+        {
+          "value": "cross",
+          "trait_type": "Necklace"
+        },
+        {
+          "value": "blue-bandana",
+          "trait_type": "Scalp"
+        },
+        {
+          "value": "nobody",
+          "trait_type": "Shirt"
+        },
+        {
+          "value": "blue-shades",
+          "trait_type": "Spectacles"
+        }
+      ],
+      "unconvertedTraits": [
+        {
+          "value": "blood",
+          "trait_type": "Arms"
+        },
+        {
+          "value": "hello-my-name-is",
+          "trait_type": "Badge"
+        },
+        {
+          "value": "rocket-2",
+          "trait_type": "Environment"
+        },
+        {
+          "value": "ROBRO DERELICT",
+          "trait_type": "Face"
+        },
+        {
+          "value": "RAD.11 BULWARK IV",
+          "trait_type": "Headgear"
+        },
+        {
+          "value": "radball",
+          "trait_type": "Logo"
+        },
+        {
+          "value": "drool",
+          "trait_type": "Mouth"
+        },
+        {
+          "value": "D3vur",
+          "trait_type": "Outerwear"
+        },
+        {
+          "value": "Remilio-2305",
+          "trait_type": "Remilio"
+        },
+        {
+          "value": "default",
+          "trait_type": "Street"
+        },
+        {
+          "value": "Baofeng UV-82 Camo",
+          "trait_type": "Toys"
+        }
+      ],
+      "interpretation": "Trait subset on one shared body. Full portrait, background, and other traits are not reconstructed."
+    },
+    {
+      "id": "og-290",
+      "label": "Radbro #290",
+      "sourceImage": "references/nft-290.png",
+      "metadata": "references/nft-290.json",
+      "metadataUrl": "https://radbro.xyz/api/v1/tokens/metadata/290",
+      "items": [
+        "wink",
+        "laser-right",
+        "yuky",
+        "auryn",
+        "foil",
+        "overfiend",
+        "vape-mod"
+      ],
+      "matchedTraits": [
+        {
+          "value": "wink",
+          "trait_type": "Eyes"
+        },
+        {
+          "value": "laser-eye-(right)",
+          "trait_type": "Laser"
+        },
+        {
+          "value": "yuky",
+          "trait_type": "Mouth"
+        },
+        {
+          "value": "auryn",
+          "trait_type": "Necklace"
+        },
+        {
+          "value": "EMF Protection",
+          "trait_type": "Scalp"
+        },
+        {
+          "value": "overfiend",
+          "trait_type": "Shirt"
+        },
+        {
+          "value": "Vape Mod",
+          "trait_type": "Toys"
+        }
+      ],
+      "unconvertedTraits": [
+        {
+          "value": "cross",
+          "trait_type": "Arms"
+        },
+        {
+          "value": "chemtrails-2",
+          "trait_type": "Environment"
+        },
+        {
+          "value": "halo",
+          "trait_type": "Halo"
+        },
+        {
+          "value": "BLVCK-CEILING",
+          "trait_type": "Headgear"
+        },
+        {
+          "value": "Layer-76",
+          "trait_type": "Logo"
+        },
+        {
+          "value": "Remilio-2305",
+          "trait_type": "Remilio"
+        },
+        {
+          "value": "default",
+          "trait_type": "Street"
+        }
+      ],
+      "interpretation": "Trait subset on one shared body. Full portrait, background, and other traits are not reconstructed."
+    },
+    {
+      "id": "og-1435",
+      "label": "Radbro #1435",
+      "sourceImage": "references/nft-1435.png",
+      "metadata": "references/nft-1435.json",
+      "metadataUrl": "https://radbro.xyz/api/v1/tokens/metadata/1435",
+      "items": [
+        "pirate",
+        "wink",
+        "yuk",
+        "cross",
+        "foil",
+        "panda",
+        "overfiend"
+      ],
+      "matchedTraits": [
+        {
+          "value": "pirate",
+          "trait_type": "Eye Patch"
+        },
+        {
+          "value": "wink",
+          "trait_type": "Eyes"
+        },
+        {
+          "value": "yuk",
+          "trait_type": "Mouth"
+        },
+        {
+          "value": "cross",
+          "trait_type": "Necklace"
+        },
+        {
+          "value": "EMF Protection",
+          "trait_type": "Scalp"
+        },
+        {
+          "value": "panda",
+          "trait_type": "Secret"
+        },
+        {
+          "value": "overfiend",
+          "trait_type": "Shirt"
+        }
+      ],
+      "unconvertedTraits": [
+        {
+          "value": "rad",
+          "trait_type": "Arms"
+        },
+        {
+          "value": "Hot-Topic",
+          "trait_type": "Badge"
+        },
+        {
+          "value": "Astrology",
+          "trait_type": "Environment"
+        },
+        {
+          "value": "radbro-customs",
+          "trait_type": "Logo"
+        },
+        {
+          "value": "milady-bomber",
+          "trait_type": "Outerwear"
+        },
+        {
+          "value": "Remilio-2305",
+          "trait_type": "Remilio"
+        },
+        {
+          "value": "Layer-68",
+          "trait_type": "Street"
+        },
+        {
+          "value": "Kuroko",
+          "trait_type": "Toys"
+        }
+      ],
+      "interpretation": "Trait subset on one shared body. Full portrait, background, and other traits are not reconstructed."
+    }
+  ],
+  "defaults": [
+    "nobody",
+    "cross",
+    "bucket-hat",
+    "pirate"
+  ],
+  "reviewOnly": true,
+  "published": false,
+  "sourceCollection": {
+    "name": "Radbro V1",
+    "contract": "0xe83c9f09b0992e4a34faf125ed4fedd3407c4a23",
+    "referenceIndex": "references/nfts.json"
+  },
+  "limits": [
+    "64px reinterpretations of original trait art. Fine graphics and lettering are simplified.",
+    "One fixed three-quarter view is mirrored for left travel.",
+    "Full body, hidden anatomy, and all motion are interpretations.",
+    "Presets convert only the listed traits. No complete NFT reproduction is claimed.",
+    "No public release or new public license is assigned."
+  ]
+}

@@ -15,6 +15,10 @@ const errors = [], checks = [];
 page.on('pageerror', e => errors.push(e.message));
 page.on('console', m => {if(m.type()==='error') errors.push(m.text());});
 function check(pass,label) {checks.push({label,pass:!!pass});if(!pass) throw Error(label);}
+await page.addInitScript(()=>{
+  window.__survivorsMessages=[];
+  window.addEventListener('message',event=>{if(['radbro:game-ready','radbro:game-result'].includes(event.data?.type))window.__survivorsMessages.push(event.data);});
+});
 const state = () => page.evaluate(() => JSON.parse(window.render_game_to_text()));
 const waitState = value => page.waitForFunction(value=>JSON.parse(window.render_game_to_text()).state===value,value);
 const waitStyle = (value, target=page) => target.waitForFunction(value=>JSON.parse(window.render_game_to_text()).art_style===value,value);
@@ -34,6 +38,7 @@ let outcome;
 try {
   await page.goto(url);
   await page.waitForFunction(() => typeof window.render_game_to_text==='function',null,{timeout:60000});
+  check(await page.evaluate(()=>window.__survivorsMessages.some(m=>m.type==='radbro:game-ready' && m.objective && m.hint)),'host receives ready with an objective and hint');
   check(JSON.stringify((await state()).available_art_styles)===JSON.stringify(['native','illustrated']),'both real-game styles load');
   check((await state()).visual_style.ground_texture_loaded,'native ground texture loads');
   const ready=await state();
@@ -128,6 +133,8 @@ try {
   check(['won','lost'].includes(outcome.state),'art comparison reaches a genuine game outcome');
   check(outcome.kills>0 && upgradeCount>0 && toggleCount>5,'combat XP and upgrades work through repeated style switches');
   check(outcome.state==='won','moving circuit can win the tuned three-wave round');
+  await page.waitForFunction(()=>window.__survivorsMessages.some(m=>m.type==='radbro:game-result'));
+  check(await page.evaluate(kills=>{const results=window.__survivorsMessages.filter(m=>m.type==='radbro:game-result');return results.length===1 && results[0].status==='clear' && results[0].score===kills;},outcome.kills),'one real win reports the correct host result');
   check(['muzzle','hit','defeat','pickup','upgrade'].every(kind=>outcome.active_fx.emitted[kind]>0),'all five feedback effects occur through real gameplay');
   check(outcome.active_fx.count<=outcome.active_fx.limit,'live effects stay within their fixed budget');
   const final=await state(); await page.keyboard.press('t');

@@ -60,7 +60,15 @@ The default Radcat retains its 320-pixel frame grid and source timing.
 It displays in a 70-pixel rectangle. Do not relabel it as the native 64-pixel Radbro pack.
 The arena uses a fixed 960 by 640 logical viewport with proportional browser scaling.
 
-## Private Radbro proof
+## Released Radbro art
+
+Both native and illustrated Radbro art now ship with this template. Press T or use Style to change the full look during the same round. Ground, enemies, weapon, shots, XP, effects, and hero change together. Positions, health, upgrades, and clocks stay the same. Native is the default.
+
+The released pack is `assets/radbro-survivors-dual-style-v1`. It includes its own permission notice, publication approval, source hashes, 56 Aseprite editor files, illustrated raster originals, and prompts. The source ZIP includes those files. The Web export excludes the `source/` editor files.
+
+Open this project normally in Godot 4.6.2. No `--art-review` flag or external Radclaw folder is needed. Run `prepare-assets.py` from this folder if you cloned the repository. Packaged source ZIPs already include the selected assets.
+
+## Optional private Radbro proof
 
 Use only the local Radclaw review run. This command copies hash-checked runtime bytes into ignored `.local-assets/radbro/`:
 
@@ -79,7 +87,7 @@ The clip resolver also supports the pack's jog and one-shot wave definitions.
 These clips have no gameplay action yet.
 
 The Web preset excludes `.local-assets/`.
-It exports the licensed Radcat default even when private review files exist.
+It exports both released Radbro styles. Radcat remains a licensed fallback if the released pack is removed.
 Do not remove the exclusion or package private files into public source ZIPs.
 Read the root Radclaw workflow before any character release.
 
@@ -118,7 +126,8 @@ The player position is its floor anchor.
 - Sentries, arena, XP, projectiles, UI: original Godot drawing code under the repository MIT code license.
 - Font: Godot's built-in default font. Keep the engine notices.
 - Audio: eight original procedural cues and an original eight-second backing phrase. The source code is MIT. No external recordings or samples are used.
-- Local paperdoll: private review only. No public license or art release approval.
+- Released dual-style pack: Radbro Community Game Asset Permission. Keep its LICENSE.txt and publication.json.
+- Additional local paperdoll candidates: private review only. Their approval remains separate.
 
 See [ART_REQUESTS.md](ART_REQUESTS.md) for the next Radclaw briefs.
 
@@ -273,9 +282,16 @@ The imported atlas contains 16 dedicated idle poses. It does not replace any wal
 The raw generated rows have unequal spacing. Explicit frame rectangles keep each complete pose.
 Per-frame floor anchors register the feet. A common scale preserves body proportions.
 The native paperdoll keeps its source layers, clips, durations, and frame grid.
-The new illustrated animation remains a local art review candidate.
+The illustrated animation is included in the released dual-style pack. Historical draft metadata remains unchanged inside its source records. Publication approval is in the pack publication.json.
 
 Additional optional engine checks: `tests/audio.gd`, `tests/balance.gd`, and `tests/release.gd`.
 Use `--fixed-fps 60` for the seeded balance fixtures. They use the actual game scene and real input actions.
 The browser audio and motion check is `tests/release-browser.mjs`.
 Engine Dummy-driver checks do not prove browser output or physical speakers.
+
+
+## Radbro game-page integration
+
+The Web preset includes a small host bridge in `html/head_include`. It reports ready, objective, hint, and controls after the engine boots. It answers `radbro:game-ready-request` from the embedding page. A real win sends one `radbro:game-result` with `status: clear`. A loss sends `status: gameover`. Score is the sentry kill count. Restart resets the result guard. Pause, upgrades, and art changes do not submit another result.
+
+Keep the host bridge with the normal Web preset when you export this template. The game remains playable outside Radbro.

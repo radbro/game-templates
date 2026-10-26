@@ -1,0 +1,13 @@
+Radbro Community Game Asset Permission
+
+Copyright Radbro. All character ownership stays with Radbro.
+
+This notice covers the supplied PNG, JSON, Aseprite, and supporting source files
+in this pack. You may use and modify these files in personal and commercial
+games, videos, and streams. You may include and share them with those projects
+and their source templates. Credit Radbro and link to https://radbro.fun/assets
+where credits are shown. Keep this notice with the files when you share them.
+Do not claim that you made the original art or that Radbro endorses your work.
+This permission grants no ownership of the characters or Radbro marks.
+
+The files are provided as-is, without warranty.

@@ -5,6 +5,8 @@ The MIT license covers code and documentation only.
 
 Radcat Motion v2 and Radcat Playground: Radbro.
 Relay Arena 2D: Radbro. Original procedural vector art.
+Radbro Survivors Dual Style v1: Radbro. Native Aseprite art and illustrated assets.
+Its publication approval, unchanged source hashes, editor masters, and prompts accompany the pack.
 Keep each pack's `LICENSE.txt` with its files.
 The Radcat sprite files also include `SPRITE-PERMISSION.txt`. Keep that notice.
 Use these packs in personal or commercial games, videos, and streams.

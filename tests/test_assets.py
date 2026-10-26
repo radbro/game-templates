@@ -14,9 +14,27 @@ import catalog
 
 
 class AssetTests(unittest.TestCase):
+    def test_survivors_release_keeps_both_styles_and_their_source_bytes(self):
+        pack_id = 'radbro-survivors-dual-style-v1'
+        folder = ROOT / 'assets' / pack_id
+        approval = json.loads((folder / 'publication.json').read_text())
+        self.assertTrue(approval['approved'])
+        self.assertIn('source template', approval['scope'])
+        provenance = json.loads((folder / 'provenance.json').read_text())
+        self.assertEqual(provenance['runtimeFileCount'], 60)
+        self.assertFalse(provenance['sourcePixelsModified'])
+        for record in provenance['files']:
+            self.assertEqual(hashlib.sha256((folder / record['path']).read_bytes()).hexdigest(), record['sha256'])
+        templates = json.loads((ROOT / 'templates.json').read_text())['templates']
+        game = next(item for item in templates if item['id'] == 'godot-radbro-survivors')
+        selected = set(game['assetFiles'][pack_id])
+        self.assertTrue({'LICENSE.txt', 'publication.json', 'calibration.json', 'animation-kit/idle-sheet.png'} <= selected)
+        self.assertEqual(len(list((folder / 'source/native-hero').glob('*.aseprite'))), 53)
+        self.assertTrue(all(record['path'] in selected for record in provenance['files']))
+
     def test_catalog_records_all_bytes_and_licenses(self):
         data = catalog.verify()
-        self.assertEqual(len(data['packs']), 3)
+        self.assertEqual(len(data['packs']), 4)
         for pack in data['packs']:
             self.assertTrue(any(f['path'].endswith('/LICENSE.txt') for f in pack['files']))
 

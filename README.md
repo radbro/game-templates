@@ -19,10 +19,11 @@ Both games include start, pause, success, failure, and restart states.
 The source games need no account or API key.
 Runtime assets and the Phaser library are local files.
 
-## New local prototypes
+## Survivors and new prototypes
 
 Four adaptations now have a first playable version.
-They are not part of the published v0.1.1 demo release yet.
+Survivors now includes both native and illustrated Radbro art with a live style toggle.
+The other three games retain their initial Radcat prototype assets.
 
 | Game | Source project | Play loop |
 | --- | --- | --- |
@@ -31,11 +32,20 @@ They are not part of the published v0.1.1 demo release yet.
 | Radbro Sky Run | [Godot project](templates/godot-radbro-3d-platformer) | Double jump, collect six coins, and finish the sky course |
 | Radbro Dungeon Crawler | [Phaser project](templates/phaser-radbro-dungeon-crawler) | Fight enemies, loot three chests, and return to the exit |
 
-These projects use the published Radcat assets as their working default.
-Survivors also supports an optional private modular Radbro proof.
-Draft character art stays outside the public source and browser packages.
-The final art direction remains open.
+Survivors includes both approved Radbro styles in its source and browser packages.
+Press T or use Style to compare them during the same run. Press M or use Sound to mute.
+Its versioned asset pack includes editor masters, original raster art, prompts, hashes, and a permission notice.
+Other draft character assets stay outside public packages.
 Read [Game template work](docs/parallel-games.md) for the source revisions and asset process.
+
+### Survivors: one run, two styles
+
+![Native Radbro Survivors](docs/previews/survivors-native.png)
+
+![Illustrated Radbro Survivors](docs/previews/survivors-illustrated.png)
+
+[Open the Survivors source](templates/godot-radbro-survivors).
+The source ZIP includes both styles, their notices, and the editable art files.
 
 ## Run Phaser
 

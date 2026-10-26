@@ -61,12 +61,18 @@ func run() -> void:
     mob.position = game.player.position
     for frame in 3: await physics_frame
     check(game.state == "lost" and game.audio.played.loss > 0 and not game.audio.snapshot().backing_playing, "defeat stops backing and plays its outcome cue")
+    check(game.last_result == {"status": "gameover", "score": game.kills}, "defeat records the real result once")
+    var result: Dictionary = game.last_result.duplicate()
+    game._report_result("clear")
+    check(game.last_result == result, "duplicate outcome does not replace the result")
     game.restart()
+    check(game.last_result.is_empty(), "restart clears the prior result")
     game.elapsed = game.round_seconds - 0.02
     for frame in 3: await physics_frame
     check(game.state == "won" and game.audio.played.win > 0 and not game.audio.snapshot().backing_playing, "victory stops backing and plays its outcome cue")
-    if "--art-review" in OS.get_cmdline_user_args():
-        check(game.player.visual.has_illustrated_idle(), "new idle pack loads in the review build")
+    check(game.last_result == {"status": "clear", "score": game.kills}, "victory records its clear result")
+    if game.available_art_styles == ["native", "illustrated"]:
+        check(game.player.visual.has_illustrated_idle(), "dedicated illustrated idle loads with both styles")
         game._set_art_style("illustrated")
         var visual: Node2D = game.player.visual
         visual.moving = false

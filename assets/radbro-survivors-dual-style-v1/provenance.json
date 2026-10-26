@@ -1,0 +1,861 @@
+{
+  "schema": "radbro-game-asset-provenance-v1",
+  "runtimeFileCount": 60,
+  "sourcePixelsModified": false,
+  "files": [
+    {
+      "path": "native-hero/pack.json",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/pack.json",
+      "sha256": "bc719a9a0dc0e40dd42e82f387d74f714197f131b2d215fe055e08e442abf569",
+      "bytes": 24759,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-brows.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-brows.png",
+      "sha256": "c9e6e84ae68c57754e17ce0cc198c35bc40276a3506843c2bb6f136997d2e61b",
+      "bytes": 1033,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-eye-left.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-eye-left.png",
+      "sha256": "32e7c0481413ce97a25f953b056d896637fe2069fbd0547922b0ffc606285f35",
+      "bytes": 1635,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-eye-right.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-eye-right.png",
+      "sha256": "2578adb4c78ae0c27c86f68b04bc2571e4ab48a9a811f2b11fa0ca16259e6223",
+      "bytes": 1658,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-far-arm.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-far-arm.png",
+      "sha256": "c07b2c944965d6622a223d29ef280a19e47bf4982a179058b82d0a4f126cce2f",
+      "bytes": 1558,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-hair-back.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-hair-back.png",
+      "sha256": "29820a2913fada167d4a8cbf17514cff17a8e30235a3e52f1e8c73f101734308",
+      "bytes": 3710,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-hair-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-hair-front.png",
+      "sha256": "ec82a3bc5d20b4203ba67e6f8fd47d0bffda83a636810d3e9b7bb70ed4922480",
+      "bytes": 3265,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-head.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-head.png",
+      "sha256": "915760d1d960d10a422762c015fe2685d1b097b7c8d4c628fd4e3958ee9b48ee",
+      "bytes": 3855,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-legs.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-legs.png",
+      "sha256": "8b2244592123d146d6af1b45bdb90840bb0dc2744a0bde2d08d788dc8e474a68",
+      "bytes": 3073,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-mouth.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-mouth.png",
+      "sha256": "2a1122ff0d21f7bcb297a1eec04cb686eeef18d11c55781508944ae92c3063ee",
+      "bytes": 878,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-near-arm.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-near-arm.png",
+      "sha256": "f0abbf069415b41f81fa6914ec070cab12496fb9f79e9251c4c4c017fca43577",
+      "bytes": 2274,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/base/base-torso.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/base/base-torso.png",
+      "sha256": "dfd0e23ef9393dcf4ae0dc56f2784f2779dc5db82a78633ac270a81e7ab906a9",
+      "bytes": 2123,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/auryn-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/auryn-front.png",
+      "sha256": "4a9416aa715315aecd12e214813ce655849f829ce7a19fd6708444b45a556a49",
+      "bytes": 1993,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/blue-bandana-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/blue-bandana-front.png",
+      "sha256": "c001e879172d9a8d5434418b68bbe2d5f5478e751da59501c469c384c95ace90",
+      "bytes": 2433,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/blue-shades-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/blue-shades-front.png",
+      "sha256": "265e7a0969450c6f32a3882e9a646eca9ef1973926d0827538b6997404828542",
+      "bytes": 2425,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/bucket-hat-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/bucket-hat-front.png",
+      "sha256": "0319062e603013ccb41a09e419b5be745dc99c5adb0415c5cf066e0c0b4478df",
+      "bytes": 3096,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/cross-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/cross-front.png",
+      "sha256": "6800cf0e32412073958265a7d16c637ae257276f432c86145236a0567b5c6626",
+      "bytes": 1853,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/foil-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/foil-front.png",
+      "sha256": "b90f7e075f4f6ee26f91d1192be8c582d76f9fdc4683278b059a48b8a3861079",
+      "bytes": 2802,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/laser-right-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/laser-right-front.png",
+      "sha256": "e8aba9c56bf82e16ae39926fbcbf44bba4618a0f6d809f6edea4235c75a6446f",
+      "bytes": 2523,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/nobody-far-sleeve.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/nobody-far-sleeve.png",
+      "sha256": "09fcc1a68d26bb940e0c77bb6f3326751cba8f42b9d06efe228178934246372f",
+      "bytes": 1572,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/nobody-near-sleeve.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/nobody-near-sleeve.png",
+      "sha256": "51b58136cbe8688f16b33f7f8925b5e74ed6929b0aff0d4572ba898796ec813d",
+      "bytes": 2255,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/nobody-torso.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/nobody-torso.png",
+      "sha256": "b92b5dc84cd919d35e0c6900df1860ef946f061bf1a126d0a2562c1b04eee560",
+      "bytes": 2299,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/overfiend-far-sleeve.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/overfiend-far-sleeve.png",
+      "sha256": "09fcc1a68d26bb940e0c77bb6f3326751cba8f42b9d06efe228178934246372f",
+      "bytes": 1572,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/overfiend-near-sleeve.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/overfiend-near-sleeve.png",
+      "sha256": "51b58136cbe8688f16b33f7f8925b5e74ed6929b0aff0d4572ba898796ec813d",
+      "bytes": 2255,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/overfiend-torso.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/overfiend-torso.png",
+      "sha256": "3e7a355cd36706524f10ed1774758cf4b88ff6a6ea7f0f72e1a4c28d0e05c95e",
+      "bytes": 2305,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/panda-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/panda-front.png",
+      "sha256": "12b30b23b08b709b2e581fd6014654f8bcb816903157368de35c85e7b5db076a",
+      "bytes": 1822,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/pirate-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/pirate-front.png",
+      "sha256": "15fcd091d8c0fc29cd337aa9307f447f8b0d062433927056c42b456eb2004583",
+      "bytes": 2087,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/red-bandana-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/red-bandana-front.png",
+      "sha256": "4c8f8e54542e8f173dc23f887bc149bd09ac73ee0f5591002e5cdd78acdcb7a2",
+      "bytes": 2566,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/vape-mod-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/vape-mod-front.png",
+      "sha256": "f8e4f17fb7033f534eeb7b863d21f3b4345eb8f94a516f82dcbea0e20acfadd7",
+      "bytes": 1757,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/wink-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/wink-front.png",
+      "sha256": "d565189600e81e17d756811735e77ca2aafa9bea483c96be9296a1a0420a46d4",
+      "bytes": 1010,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/yuk-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/yuk-front.png",
+      "sha256": "ca5d74a7cc3f947f2e316b90329e3879dcb669b9900609da4d374c233f48effa",
+      "bytes": 1324,
+      "role": "runtime"
+    },
+    {
+      "path": "native-hero/sprites/items/yuky-front.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/native-hero/sprites/items/yuky-front.png",
+      "sha256": "ca5d74a7cc3f947f2e316b90329e3879dcb669b9900609da4d374c233f48effa",
+      "bytes": 1324,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/source-manifest.json",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/source-manifest.json",
+      "sha256": "8bf3e887cb9d603b260dfaf6ef9513ac18878f97b08829cc2208f19112d6eab9",
+      "bytes": 6995,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_down-00.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_down-00.png",
+      "sha256": "e41f32bc9bea80bbe8475d7cf32f2ea6033891dadf0782f24c3459998dfecf7f",
+      "bytes": 291536,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_down-01.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_down-01.png",
+      "sha256": "c651d77ed4c16f441b06173c27081df5ef2274001ad4490cea5193d943e124cc",
+      "bytes": 290568,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_down-02.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_down-02.png",
+      "sha256": "235dcb2398f48e2410f9e0eafa2f22ee9567f8045de01bf666606c6c1f3958d1",
+      "bytes": 293169,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_down-03.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_down-03.png",
+      "sha256": "bca1a3ee10234a15784aaf64252e7d565f589d600c3281f6713eee93b4c53da2",
+      "bytes": 294051,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_right-00.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_right-00.png",
+      "sha256": "fe39876c6c225a0cf957b35b21dd7d934821c32ba2ea7f5d228bd7b05ceadf19",
+      "bytes": 283061,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_right-01.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_right-01.png",
+      "sha256": "ecaf2a51651ad421d86e05a6ad4c26a7421bb85c97d4c10e3f74601fe5385438",
+      "bytes": 280633,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_right-02.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_right-02.png",
+      "sha256": "13b70c7ccb80ebf3d11f1cfdcf235dceeee304bccac099321a196b51f63e330f",
+      "bytes": 282528,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_right-03.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_right-03.png",
+      "sha256": "a065f79089c863ab388cf475bba0b216a72737f016c164aaea369e8942d4189f",
+      "bytes": 283046,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_up-00.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_up-00.png",
+      "sha256": "d0d7cbfbcde1a8ac704cfd26bc44ebada6a20e8b912e3b2985a25d0aebc210b3",
+      "bytes": 285798,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_up-01.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_up-01.png",
+      "sha256": "ca1a8148bca232f62bbe65977c0cd19efce1eb36df373f03dd06e5d52f5f11e9",
+      "bytes": 285153,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_up-02.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_up-02.png",
+      "sha256": "56959aac6eadba2b3aeaeaae4673e64d48a94f4d508ffb2c92cb8b8a032a02d9",
+      "bytes": 285846,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_up-03.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_up-03.png",
+      "sha256": "900abbafdd81ece991fa5c93bf481d0df4f2420fc3ba16770c0be693c650b3e4",
+      "bytes": 286478,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_left-00.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_left-00.png",
+      "sha256": "10ca6a601ae1bdef77dba540dd9d18ebd46a69c10e12b1c421e6136cb4515719",
+      "bytes": 274179,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_left-01.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_left-01.png",
+      "sha256": "21692a6d9c32b345935cd2bbe2d40bf7fb5383c6165226b2605ad6aad7832b4b",
+      "bytes": 273794,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_left-02.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_left-02.png",
+      "sha256": "af21f944e95a73a32e0390f177858ffbe4afaab641df37776ba1949c61898c24",
+      "bytes": 276905,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-hero/walk_left-03.png",
+      "source": "runs/2026-10-18-survivors-dual-style/review/assets/illustrated-hero/walk_left-03.png",
+      "sha256": "4d743a2b8b93752f1797810083f574ed39c3d21b9f9a7a8bbba4ad76154475b6",
+      "bytes": 273793,
+      "role": "runtime"
+    },
+    {
+      "path": "native-kit/pack.json",
+      "source": "runs/2026-10-18-survivors-dual-style/native/pack.json",
+      "sha256": "f8c2dba3236a7f946edab27afff7c86d7d28e33fdfa19459c7a6f54716d79ccb",
+      "bytes": 3442,
+      "role": "runtime"
+    },
+    {
+      "path": "native-kit/enemy.png",
+      "source": "runs/2026-10-18-survivors-dual-style/native/enemy.png",
+      "sha256": "303ef17c6b297c1b4a286ad9168579c4af82ce21479b85e79ff269dd6d16d64b",
+      "bytes": 1083,
+      "role": "runtime"
+    },
+    {
+      "path": "native-kit/ground.png",
+      "source": "runs/2026-10-18-survivors-dual-style/native/ground.png",
+      "sha256": "2fbae68d43b887e082dc0a041071f698c6399aa1067fafca09abe999404c1d8f",
+      "bytes": 380,
+      "role": "runtime"
+    },
+    {
+      "path": "native-kit/icons.png",
+      "source": "runs/2026-10-18-survivors-dual-style/native/icons.png",
+      "sha256": "de57f2f2bde53253f272029e5baa3f460bf259031eb995fe71b9b3abc68d1c4d",
+      "bytes": 952,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-kit/pack.json",
+      "source": "runs/2026-10-18-survivors-dual-style/illustrated/pack.json",
+      "sha256": "94a549ec51c27e327b0630f3ea85b08124d5629663384779b411055f58411412",
+      "bytes": 4045,
+      "role": "runtime"
+    },
+    {
+      "path": "illustrated-kit/enemy.png",
+      "source": "runs/2026-10-18-survivors-dual-style/illustrated/enemy.png",
+      "sha256": "59da5820df3c1f98e79d9229727e9e8924476bbd4a407049471e34020fad1529",
+      "bytes": 900256,
+      "role": "runtime"
+    },
+    {
+      "path": "calibration.json",
+      "source": "runs/2026-10-18-survivors-dual-style/review/source-hashes.json",
+      "sha256": "1b2c0f328ed051e56397027fdd77d5754a77b842f2a9bbdf26e1e8983a2e8112",
+      "bytes": 16809,
+      "role": "runtime"
+    },
+    {
+      "path": "look-kit/pack.json",
+      "source": "runs/2026-10-19-survivors-full-look/pack.json",
+      "sha256": "a9cedac100a106d1536d5830f2bec76909f5b99c6608cb1f3cf64866bd638a2c",
+      "bytes": 1264,
+      "role": "runtime"
+    },
+    {
+      "path": "look-kit/illustrated-ground.png",
+      "source": "runs/2026-10-19-survivors-full-look/illustrated-ground.png",
+      "sha256": "ff14196af8ff38da1328d9fdc1c57c3effb3af24eff57dc875d1c313432e59d9",
+      "bytes": 2100463,
+      "role": "runtime"
+    },
+    {
+      "path": "animation-kit/pack.json",
+      "source": "runs/2026-10-25-survivors-idle/pack.json",
+      "sha256": "eb535f57b76882892357087fe68274b324cba9f45b4aac1a75b9d1e8d7f9ceba",
+      "bytes": 7825,
+      "role": "runtime"
+    },
+    {
+      "path": "animation-kit/idle-sheet.png",
+      "source": "runs/2026-10-25-survivors-idle/idle-sheet.png",
+      "sha256": "ea6763e85daedc529e3cf7ef08674d514c48ce8035d95a4032eb4dba2e47bc2f",
+      "bytes": 1237921,
+      "role": "runtime"
+    },
+    {
+      "path": "source/native-hero/auryn-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/auryn-front-part.aseprite",
+      "sha256": "68231b3cd332b1332bb65aa5ff5ceda83d2f3a9f54d295a50ff3e18737ec3cb4",
+      "bytes": 5584,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/auryn.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/auryn.aseprite",
+      "sha256": "68231b3cd332b1332bb65aa5ff5ceda83d2f3a9f54d295a50ff3e18737ec3cb4",
+      "bytes": 5584,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-brows-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-brows-part.aseprite",
+      "sha256": "8109171a9369d2af70d6a5d2e7e3a4e75247932622202d6caf51663866580709",
+      "bytes": 3903,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-eye-left-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-eye-left-part.aseprite",
+      "sha256": "a8e156c65e45938161beba437f36d3b3c6742c6c7a0971c0b848d9564b64025c",
+      "bytes": 5026,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-eye-right-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-eye-right-part.aseprite",
+      "sha256": "4415621653f70d283a0fdedfd0a9f653afd585512ecb546d461a8e49ac6252be",
+      "bytes": 5223,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-far-arm-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-far-arm-part.aseprite",
+      "sha256": "9994b4117a327ecf026f26062038a7fd21630ca0b8162d195f3ad8fec8828199",
+      "bytes": 4615,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-hair-back-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-hair-back-part.aseprite",
+      "sha256": "6f9582710567f7e6822c362bba96dc6728f49c093c3a38a8220d2e2e366544e6",
+      "bytes": 7911,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-hair-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-hair-front-part.aseprite",
+      "sha256": "4908a46f38ad03bacdbc65b1ade8bd1b753a98a167e2fd9478616727b10c4092",
+      "bytes": 9368,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-head-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-head-part.aseprite",
+      "sha256": "9370ef8b7638180cabf720b3e34b04a29d513db698ba0bfd9b90061cd4dc10bb",
+      "bytes": 9392,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-legs-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-legs-part.aseprite",
+      "sha256": "81fdfa68eb45524f881f37de903c26037dbf817f1dfa7bd3b7c75e07b86728d4",
+      "bytes": 6279,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-mouth-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-mouth-part.aseprite",
+      "sha256": "8660053aa8eee212f28569e7f5c175929198b88504d8eadb0f766a8069c4544f",
+      "bytes": 3399,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-near-arm-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-near-arm-part.aseprite",
+      "sha256": "4e08599c42e596288f828fc7be7e535f37ede641c22a9743a3f333f68cd0307b",
+      "bytes": 4913,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/base-torso-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/base-torso-part.aseprite",
+      "sha256": "2eb3a9245f4cfedff8bde89ec0e861e093ba02486bd78bd09f3211bca1d53516",
+      "bytes": 5959,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/blue-bandana-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/blue-bandana-front-part.aseprite",
+      "sha256": "6c3778acdb9e70fbe508bd46609dc61d4795664c5466e9ec07b9bc7a5fd28646",
+      "bytes": 6571,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/blue-bandana.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/blue-bandana.aseprite",
+      "sha256": "6c3778acdb9e70fbe508bd46609dc61d4795664c5466e9ec07b9bc7a5fd28646",
+      "bytes": 6571,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/blue-shades-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/blue-shades-front-part.aseprite",
+      "sha256": "4cf0f62fd8e1791697911eaa4828bfb20e9494e42a9ae74c47b597055ae61aeb",
+      "bytes": 7410,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/blue-shades.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/blue-shades.aseprite",
+      "sha256": "4cf0f62fd8e1791697911eaa4828bfb20e9494e42a9ae74c47b597055ae61aeb",
+      "bytes": 7410,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/bucket-hat-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/bucket-hat-front-part.aseprite",
+      "sha256": "06d27c78a5bc0950d6eb36e643602124cd3a8661a115e48560e2987f1033de96",
+      "bytes": 8066,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/bucket-hat.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/bucket-hat.aseprite",
+      "sha256": "06d27c78a5bc0950d6eb36e643602124cd3a8661a115e48560e2987f1033de96",
+      "bytes": 8066,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/cross-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/cross-front-part.aseprite",
+      "sha256": "790e98251c9f30cda5d08f49bb95308109e57a8ab40016515f79b690e74863bf",
+      "bytes": 5444,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/cross.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/cross.aseprite",
+      "sha256": "790e98251c9f30cda5d08f49bb95308109e57a8ab40016515f79b690e74863bf",
+      "bytes": 5444,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/foil-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/foil-front-part.aseprite",
+      "sha256": "147a3d1e422c3ad210395a08c0dff0e7708e30cb79852a97bdcdf8ec17bb4611",
+      "bytes": 8551,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/foil.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/foil.aseprite",
+      "sha256": "147a3d1e422c3ad210395a08c0dff0e7708e30cb79852a97bdcdf8ec17bb4611",
+      "bytes": 8551,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/laser-right-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/laser-right-front-part.aseprite",
+      "sha256": "96876dde42ca1ca1fe064e39a8d718c42765cb667869cab9c3db4a255919b3f8",
+      "bytes": 5990,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/laser-right.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/laser-right.aseprite",
+      "sha256": "96876dde42ca1ca1fe064e39a8d718c42765cb667869cab9c3db4a255919b3f8",
+      "bytes": 5990,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/nobody-far-sleeve-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/nobody-far-sleeve-part.aseprite",
+      "sha256": "5022bc8f89551d27a50bfd5f01d74ecd6d469e69871a395c925af10c1c1ad83a",
+      "bytes": 4288,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/nobody-near-sleeve-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/nobody-near-sleeve-part.aseprite",
+      "sha256": "b8849ba0acf0b7d9ff605d5f3555c90a6dc0fd3db850f425460ee066f071faac",
+      "bytes": 4736,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/nobody-torso-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/nobody-torso-part.aseprite",
+      "sha256": "f59646e99ffd0216cd30d21ff9fbfe9991e8430e3a10e0c42c2313bc50a5b3ad",
+      "bytes": 7093,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/nobody.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/nobody.aseprite",
+      "sha256": "06e27d59c50dae80dbff60ae706a394fd08e13073fc297d12f91b790c4e9a8da",
+      "bytes": 14315,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/og-1242.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/og-1242.aseprite",
+      "sha256": "5b2e8a8ee90794496cc907507f3cf4e92d28ca26d21206db9127ff253c0b3cf5",
+      "bytes": 74701,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/og-1435.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/og-1435.aseprite",
+      "sha256": "ad0d86f77307941714a508a298e2f7fb2c0a0fc09fd1fa2292edfcb59d2a35a8",
+      "bytes": 86030,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/og-290.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/og-290.aseprite",
+      "sha256": "deec5c5c6de3998f0f559491fc214b860445cf6eb4d5319750d9460b9b47f64c",
+      "bytes": 91144,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/og-484.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/og-484.aseprite",
+      "sha256": "3ae6f624f77605352706d1eba2e001c4cbb18f5145be6cf0c101dd1f7f60d464",
+      "bytes": 83099,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/overfiend-far-sleeve-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/overfiend-far-sleeve-part.aseprite",
+      "sha256": "02b2c9927518ff1eebc0ea85e6e8248bb64a89016f5e495fee5c31e90252d0ae",
+      "bytes": 4291,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/overfiend-near-sleeve-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/overfiend-near-sleeve-part.aseprite",
+      "sha256": "a30c3466f855cfb63a5b88057e00208e1103741fd36908b1f7b073d743eeb707",
+      "bytes": 4739,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/overfiend-torso-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/overfiend-torso-part.aseprite",
+      "sha256": "fc9834b35e60a44dcee02d7224c61fbe3b2aebacb3be61c844cfec677670a37a",
+      "bytes": 6808,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/overfiend.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/overfiend.aseprite",
+      "sha256": "79ed1ca3b84cae2b3bdc2699bb6b563feae99b452e4efab0355202d4533ce0a7",
+      "bytes": 14036,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/panda-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/panda-front-part.aseprite",
+      "sha256": "1c249a0b4bbe8fe1a6dbb970efdebfc5d00e78729a91d79b73f173df26f54cbe",
+      "bytes": 4716,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/panda.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/panda.aseprite",
+      "sha256": "1c249a0b4bbe8fe1a6dbb970efdebfc5d00e78729a91d79b73f173df26f54cbe",
+      "bytes": 4716,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/pirate-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/pirate-front-part.aseprite",
+      "sha256": "36313c20264912f7c0315593224c15d8c167ee6980b988e5fa4e00967eaba239",
+      "bytes": 5333,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/pirate.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/pirate.aseprite",
+      "sha256": "36313c20264912f7c0315593224c15d8c167ee6980b988e5fa4e00967eaba239",
+      "bytes": 5333,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/radbro-base.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/radbro-base.aseprite",
+      "sha256": "d6381d3220488ffd06fafad4026283ca046d965846d2bd9a6d93865ef0e4f0ea",
+      "bytes": 56978,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/radbro-master.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/radbro-master.aseprite",
+      "sha256": "c68e5f7c099f458bfce71c707d7c0f98c17f7ff54ae48c49d9927f7252f34089",
+      "bytes": 152920,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/red-bandana-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/red-bandana-front-part.aseprite",
+      "sha256": "438f619d4054d258feb9837c68e3dbf8103dc6d2114d9be75dc71ba26a7ab423",
+      "bytes": 6609,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/red-bandana.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/red-bandana.aseprite",
+      "sha256": "438f619d4054d258feb9837c68e3dbf8103dc6d2114d9be75dc71ba26a7ab423",
+      "bytes": 6609,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/vape-mod-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/vape-mod-front-part.aseprite",
+      "sha256": "0d8f29297c62a5703e1ef818f69e2550da0b7b91b563557168dcf43a8fdde774",
+      "bytes": 4907,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/vape-mod.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/vape-mod.aseprite",
+      "sha256": "0d8f29297c62a5703e1ef818f69e2550da0b7b91b563557168dcf43a8fdde774",
+      "bytes": 4907,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/wink-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/wink-front-part.aseprite",
+      "sha256": "50404e9ad2da9044c0ad677a26736e62a24499e8dded16bcdcfc63ce9dfbafc4",
+      "bytes": 3623,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/wink.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/wink.aseprite",
+      "sha256": "50404e9ad2da9044c0ad677a26736e62a24499e8dded16bcdcfc63ce9dfbafc4",
+      "bytes": 3623,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/yuk-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/yuk-front-part.aseprite",
+      "sha256": "b547730bc0aa0849930b40a47f0baa2c8bf9fad124c85086d9b7855635bd7a87",
+      "bytes": 4601,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/yuk.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/yuk.aseprite",
+      "sha256": "b547730bc0aa0849930b40a47f0baa2c8bf9fad124c85086d9b7855635bd7a87",
+      "bytes": 4601,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/yuky-front-part.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/yuky-front-part.aseprite",
+      "sha256": "b8172bc6e13a65fd3543e2996dda03912bfd397ad689a79b17f871cf5b23f262",
+      "bytes": 4602,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-hero/yuky.aseprite",
+      "source": "runs/2026-10-17-radbro-paperdoll/sources/yuky.aseprite",
+      "sha256": "b8172bc6e13a65fd3543e2996dda03912bfd397ad689a79b17f871cf5b23f262",
+      "bytes": 4602,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-kit/sentry-beetle.aseprite",
+      "source": "runs/2026-10-18-survivors-dual-style/native/sentry-beetle.aseprite",
+      "sha256": "fa40d6f0c4901833b9048b69a870e66949865d9ed8b89fcfea6c6f0308629f91",
+      "bytes": 3639,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-kit/ground.aseprite",
+      "source": "runs/2026-10-18-survivors-dual-style/native/ground.aseprite",
+      "sha256": "1349d1b46285df0b64434188fcb41b8ba9f45a1c7aeef1b00db72af1fd4b7ebc",
+      "bytes": 1288,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-kit/icons.aseprite",
+      "source": "runs/2026-10-18-survivors-dual-style/native/icons.aseprite",
+      "sha256": "99eaaf9a91b7ebbe0cc70134edb72fb089d54a3ceac541cc9e044dc4c6e4de94",
+      "bytes": 2432,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/native-kit/author.lua",
+      "source": "runs/2026-10-18-survivors-dual-style/native/author.lua",
+      "sha256": "b7e65a5ddbc09b1fc48a1b38f8328380ae8d8d82e122cf27fb4619c30bc6f21c",
+      "bytes": 6388,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/illustrated-hero/original-sheet.png",
+      "source": "runs/2026-10-18-radbro-fresh-ai-sheets/raw/nano-banana.png",
+      "sha256": "6060deddb3dcf098a0d31002b323f33256b18e86acd0c2a12541b77c4c392960",
+      "bytes": 3975968,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/illustrated-hero/prompt.txt",
+      "source": "runs/2026-10-18-radbro-fresh-ai-sheets/prompts/canonical-radbro-four-phase.txt",
+      "sha256": "399fb47b5667667437e2ca3370da9c71f0e55f98a44a0be2d38a9abf0d221edf",
+      "bytes": 2165,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/illustrated-enemy/prompt.txt",
+      "source": "runs/2026-10-18-survivors-dual-style/illustrated/prompt.txt",
+      "sha256": "1e1bd2e285cb37f5ecbf2fbb2164b16ef95cbea2c2bd2a8d33a91d4f5693e89f",
+      "bytes": 1685,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/illustrated-ground/prompt.txt",
+      "source": "runs/2026-10-19-survivors-full-look/prompt.txt",
+      "sha256": "9fde21beccdfea71008972cb11de7ffe06c27331f23c05d65873890b6b272c84",
+      "bytes": 1081,
+      "role": "editable-source"
+    },
+    {
+      "path": "source/illustrated-idle/prompt.txt",
+      "source": "runs/2026-10-25-survivors-idle/prompt.txt",
+      "sha256": "8467fa355cde525f912037a4b3716fd557052bea5d24654e9865d8911bba9168",
+      "bytes": 1678,
+      "role": "editable-source"
+    }
+  ]
+}

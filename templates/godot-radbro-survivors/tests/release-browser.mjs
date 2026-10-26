@@ -25,6 +25,10 @@ await page.addInitScript(()=>{
     return connect.call(this,destination,...args);
   };
 });
+await page.addInitScript(()=>{
+  window.__survivorsMessages=[];
+  window.addEventListener('message',event=>{if(['radbro:game-ready','radbro:game-result'].includes(event.data?.type))window.__survivorsMessages.push(event.data);});
+});
 const state=()=>page.evaluate(()=>JSON.parse(window.render_game_to_text()));
 const waitMode=value=>page.waitForFunction(v=>JSON.parse(window.render_game_to_text()).state===v,value);
 const waitEnabled=value=>page.waitForFunction(v=>JSON.parse(window.render_game_to_text()).audio.enabled===v,value);
@@ -84,6 +88,8 @@ try{
     await page.waitForTimeout(100);
   }
   check(outcome.state==='lost','idle play can lose the tuned round in the browser');
+  await page.waitForFunction(()=>window.__survivorsMessages.some(m=>m.type==='radbro:game-result'));
+  check(await page.evaluate(kills=>{const results=window.__survivorsMessages.filter(m=>m.type==='radbro:game-result');return results.length===1 && results[0].status==='gameover' && results[0].score===kills;},outcome.kills),'one real loss reports the correct host result');
   check(outcome.audio.requested.hurt>0 && outcome.audio.requested.loss>0,'real damage and defeat request their cues');
   check((await signal('loss-cue'))>0.00001,'defeat cue produces real output after backing stops');
   await fs.writeFile(`${out}/idle-outcome.json`,JSON.stringify(outcome,null,2));

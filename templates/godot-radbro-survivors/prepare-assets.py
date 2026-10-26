@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Copy the published default pack. Private art is an explicit native-only option."""
+"""Prepare both released styles. Private art remains an explicit option."""
 import argparse
 import hashlib
 import json
@@ -8,26 +8,21 @@ import shutil
 
 PROJECT = Path(__file__).resolve().parent
 ROOT = PROJECT.parents[1]
-FILES = ['LICENSE.txt', 'SPRITE-PERMISSION.txt', 'pack.json', 'sprites/animation-manifest.json', 'sprites/idle-sheet.json', 'sprites/idle-sheet.png', 'sprites/walk-sheet.json', 'sprites/walk-sheet.png']
 
 
 def prepare():
-    target = PROJECT / 'assets/radcat-motion-v2'
-    source = ROOT / 'assets/radcat-motion-v2'
-    if source.exists():
+    registration = json.loads((PROJECT / 'template.json').read_text())
+    if (ROOT / 'assets/catalog.json').is_file():
         import sys
         sys.path.insert(0, str(ROOT / 'scripts'))
-        from catalog import verify
-        verify()
-        for name in FILES:
-            destination = target / name
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source / name, destination)
+        from prepare import prepare as prepare_template
+        prepare_template(registration['id'])
     else:
-        for name in FILES:
-            if not (target / name).is_file():
-                raise ValueError(f'Missing packaged default asset: {name}')
-    return target
+        for pack_id, names in registration['assetFiles'].items():
+            for name in names:
+                if not (PROJECT / 'assets' / pack_id / name).is_file():
+                    raise ValueError(f'Missing packaged asset: {pack_id}/{name}')
+    return PROJECT / 'assets'
 
 
 def import_review(source):

@@ -1,0 +1,150 @@
+{
+  "schema": "radbro-survivors-art-study-v1",
+  "id": "native-sentry-kit",
+  "style": "native-pixel",
+  "name": "Sentry beetle native test kit",
+  "reviewOnly": true,
+  "published": false,
+  "publicLicenseAssigned": false,
+  "humanArtChoice": "pending",
+  "authoringTool": "Aseprite 1.3.18.6 Lua",
+  "enemy": {
+    "image": "enemy.png",
+    "atlas": "enemy.png",
+    "metadata": "enemy-atlas.json",
+    "source": "sentry-beetle.aseprite",
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "frameSize": {
+      "w": 64,
+      "h": 64
+    },
+    "columns": 4,
+    "frames": [
+      {
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "duration": 240
+      },
+      {
+        "frame": {
+          "x": 64,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "duration": 240
+      },
+      {
+        "frame": {
+          "x": 128,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "duration": 240
+      },
+      {
+        "frame": {
+          "x": 192,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "duration": 240
+      }
+    ],
+    "frameCount": 4,
+    "frameDurationMs": 240,
+    "durationMs": 960,
+    "anchor": {
+      "x": 32,
+      "y": 60
+    },
+    "facing": "front",
+    "mirroredViewIsNewDirection": false,
+    "loop": true,
+    "clip": "walk_front",
+    "maxVisibleHeight": 45,
+    "reviewOnly": true
+  },
+  "ground": {
+    "image": "ground.png",
+    "source": "ground.aseprite",
+    "frameWidth": 64,
+    "frameHeight": 64,
+    "frameSize": {
+      "w": 64,
+      "h": 64
+    },
+    "tileable": true
+  },
+  "icons": {
+    "image": "icons.png",
+    "source": "icons.aseprite",
+    "metadata": "icons-atlas.json",
+    "frameSize": {
+      "w": 32,
+      "h": 32
+    },
+    "regions": {
+      "projectile": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "xp": {
+        "x": 32,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "power": {
+        "x": 64,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "reach": {
+        "x": 96,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "speed": {
+        "x": 128,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      }
+    }
+  },
+  "references": [
+    {
+      "path": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/previews/og-1435-native.png",
+      "sha256": "3073a59c45a7eaf81315708f3ff54725a9f8881dc60519f92e4ed02400a94788",
+      "role": "Style reference only. No original pixels imported or modified."
+    },
+    {
+      "path": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/manifest.json",
+      "sha256": "8d1d947620b1283961834918ec467d178ae2cd8020156f1421abc1804fcd61db",
+      "role": "Paperdoll revision and review status."
+    },
+    {
+      "path": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-survivors-dual-style/brief.md",
+      "sha256": "884bca44a6c2617f3f9b4b382d875da90b0caad07cb3fb289f53e39bc3b242d2",
+      "role": "Shared native and illustrated enemy brief."
+    }
+  ],
+  "limits": [
+    "Original non-NFT enemy. No canonical Radbro hero pixels changed.",
+    "Four front-view walk phases only. No attack, hurt, or death art.",
+    "Small first kit. No full level set or audio.",
+    "Internal export and visual checks do not approve art or grant public permission."
+  ]
+}

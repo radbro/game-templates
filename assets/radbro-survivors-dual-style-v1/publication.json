@@ -1,0 +1,18 @@
+{
+  "schema": "radbro-asset-release-approval-v1",
+  "approved": true,
+  "approvalDate": "2026-10-26",
+  "authorization": "User instruction in the project chat",
+  "instruction": "let\u2019s publish Survivors to radbro.fun and put the source template in the repo, keeping both art styles and the toggle",
+  "scope": [
+    "playable game",
+    "source template",
+    "both art styles",
+    "style toggle"
+  ],
+  "pack": "radbro-survivors-dual-style-v1",
+  "version": "1.0.0",
+  "license": "LICENSE.txt",
+  "historicalReviewMetadataPreserved": true,
+  "canonicalSourceRunsModified": false
+}

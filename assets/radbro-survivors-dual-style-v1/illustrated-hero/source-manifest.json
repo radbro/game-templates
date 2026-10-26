@@ -1,0 +1,268 @@
+{
+  "id": "nano-banana",
+  "label": "Nano Banana Pro",
+  "raw": "raw/nano-banana.png",
+  "rawSha256": "6060deddb3dcf098a0d31002b323f33256b18e86acd0c2a12541b77c4c392960",
+  "atlas": "processed/nano-banana/atlas.png",
+  "width": 2048,
+  "height": 2048,
+  "columns": 4,
+  "rows": 4,
+  "directions": [
+    "down",
+    "right",
+    "up",
+    "left"
+  ],
+  "framesPerDirection": 4,
+  "frameDurationMs": 240,
+  "gameScale": 0.25,
+  "anchor": {
+    "x": 256.0,
+    "y": 465.92
+  },
+  "frames": [
+    {
+      "filename": "walk_down-00.png",
+      "direction": "down",
+      "index": 0,
+      "duration": 240,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_down-00.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_down-00.png"
+    },
+    {
+      "filename": "walk_down-01.png",
+      "direction": "down",
+      "index": 1,
+      "duration": 240,
+      "rect": {
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_down-01.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_down-01.png"
+    },
+    {
+      "filename": "walk_down-02.png",
+      "direction": "down",
+      "index": 2,
+      "duration": 240,
+      "rect": {
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_down-02.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_down-02.png"
+    },
+    {
+      "filename": "walk_down-03.png",
+      "direction": "down",
+      "index": 3,
+      "duration": 240,
+      "rect": {
+        "x": 1536,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_down-03.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_down-03.png"
+    },
+    {
+      "filename": "walk_right-00.png",
+      "direction": "right",
+      "index": 0,
+      "duration": 240,
+      "rect": {
+        "x": 0,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_right-00.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_right-00.png"
+    },
+    {
+      "filename": "walk_right-01.png",
+      "direction": "right",
+      "index": 1,
+      "duration": 240,
+      "rect": {
+        "x": 512,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_right-01.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_right-01.png"
+    },
+    {
+      "filename": "walk_right-02.png",
+      "direction": "right",
+      "index": 2,
+      "duration": 240,
+      "rect": {
+        "x": 1024,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_right-02.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_right-02.png"
+    },
+    {
+      "filename": "walk_right-03.png",
+      "direction": "right",
+      "index": 3,
+      "duration": 240,
+      "rect": {
+        "x": 1536,
+        "y": 512,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_right-03.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_right-03.png"
+    },
+    {
+      "filename": "walk_up-00.png",
+      "direction": "up",
+      "index": 0,
+      "duration": 240,
+      "rect": {
+        "x": 0,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_up-00.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_up-00.png"
+    },
+    {
+      "filename": "walk_up-01.png",
+      "direction": "up",
+      "index": 1,
+      "duration": 240,
+      "rect": {
+        "x": 512,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_up-01.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_up-01.png"
+    },
+    {
+      "filename": "walk_up-02.png",
+      "direction": "up",
+      "index": 2,
+      "duration": 240,
+      "rect": {
+        "x": 1024,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_up-02.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_up-02.png"
+    },
+    {
+      "filename": "walk_up-03.png",
+      "direction": "up",
+      "index": 3,
+      "duration": 240,
+      "rect": {
+        "x": 1536,
+        "y": 1024,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_up-03.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_up-03.png"
+    },
+    {
+      "filename": "walk_left-00.png",
+      "direction": "left",
+      "index": 0,
+      "duration": 240,
+      "rect": {
+        "x": 0,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_left-00.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_left-00.png"
+    },
+    {
+      "filename": "walk_left-01.png",
+      "direction": "left",
+      "index": 1,
+      "duration": 240,
+      "rect": {
+        "x": 512,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_left-01.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_left-01.png"
+    },
+    {
+      "filename": "walk_left-02.png",
+      "direction": "left",
+      "index": 2,
+      "duration": 240,
+      "rect": {
+        "x": 1024,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_left-02.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_left-02.png"
+    },
+    {
+      "filename": "walk_left-03.png",
+      "direction": "left",
+      "index": 3,
+      "duration": 240,
+      "rect": {
+        "x": 1536,
+        "y": 1536,
+        "w": 512,
+        "h": 512
+      },
+      "framePath": "processed/nano-banana/frames/walk_left-03.png",
+      "rawCropPath": "processed/nano-banana/raw-resolution-frames/walk_left-03.png"
+    }
+  ],
+  "processing": {
+    "layoutApproved": true,
+    "grid": "Fixed 4 by 4 grid; boundaries round exact fractional grid edges. No per-frame bounding-box alignment.",
+    "background": {
+      "method": "magenta-dominance",
+      "rgb": "FF00FF",
+      "maximum_channel_difference": null,
+      "minimum_red_blue": 90,
+      "minimum_red_blue_minus_green": 50,
+      "removed_pixels": 2254806,
+      "all_rgb_bytes_preserved": true
+    },
+    "poseRepair": "none",
+    "recolor": "none",
+    "scaling": "One declared gameScale applies to every frame. Source-resolution pixels are preserved."
+  },
+  "reviewOnly": true,
+  "productionApproved": false
+}

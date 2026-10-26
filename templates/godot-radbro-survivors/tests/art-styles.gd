@@ -25,6 +25,8 @@ func run() -> void:
     root.add_child(game)
     await process_frame
     var has_review: bool = game.available_art_styles == ["native", "illustrated"]
+    if FileAccess.file_exists("res://assets/radbro-survivors-dual-style-v1/publication.json"):
+        check(has_review, "released source loads both complete styles without review flags")
     var requested_review: bool = OS.has_feature("art_review") or "--art-review" in OS.get_cmdline_user_args()
     if requested_review and not has_review:
         check(false, "explicit art review requires both complete style packs")
@@ -44,7 +46,7 @@ func run() -> void:
         game.player.visual.face_horizontal(-1)
         check(game.player.visual.scale.x > 0, "published Radcat keeps source facing for left travel")
     else:
-        check(game.art_style == "native" and game.style_button.visible, "local review starts with native and visible Style button")
+        check(game.art_style == "native" and game.style_button.visible, "both styles start with native and a visible Style button")
         check(game.player.visual.parts.size() == 11 and game.player.visual.equipped.is_empty(), "native comparison uses separate base planes")
         game.start()
         game.spawn_clock = 100

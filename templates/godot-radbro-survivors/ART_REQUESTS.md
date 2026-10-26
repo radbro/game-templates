@@ -63,3 +63,8 @@ Both directions remain active in the actual game. T/Style changes the hero, enem
 Original code supplies bounded hurt feedback, eight sound cues, and a short backing phrase. These sounds need no third-party samples. The game now has a tested three-wave balance profile.
 
 Next art work: compare the full looks during play. Then choose refinements for the enemy family, hurt/attack poses, and upgrade UI. Keep small generated pose differences and enemy identity drift visible in the review record. Final art choice and release approval remain open.
+
+
+## Publication approval, 2026-10-26
+
+The user approved both styles for the game and source template. The exact selected runtime and source files are released as radbro-survivors-dual-style-v1. Its publication.json records that instruction. The canonical Radclaw draft records remain unchanged. Keep both styles and the toggle. Future additions need their own source, permission, and review record.

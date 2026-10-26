@@ -41,6 +41,7 @@ var sound_button: Button
 var wave_label: Label
 var announced_wave := 0
 var wave_notice := 0.0
+var last_result: Dictionary = {}
 
 func _ready() -> void:
     rng.seed = 314159
@@ -124,6 +125,7 @@ func restart() -> void:
     gems.clear()
     effects.clear()
     audio.restart()
+    last_result = {}
     elapsed = 0
     spawn_clock = 0
     kills = 0
@@ -205,6 +207,7 @@ func _physics_process(delta: float) -> void:
         state = "won"
         _set_active(false)
         audio.play_event("win")
+        _report_result("clear")
         _update_hud()
         return
     _announce_wave()
@@ -274,7 +277,15 @@ func _on_player_health_depleted() -> void:
     state = "lost"
     _set_active(false)
     audio.play_event("loss")
+    _report_result("gameover")
     _update_hud()
+
+func _report_result(status: String) -> void:
+    if not last_result.is_empty():
+        return
+    last_result = {"status": status, "score": kills}
+    if OS.has_feature("web"):
+        JavaScriptBridge.eval("window.radbroSurvivorsResult(%s,%d)" % [JSON.stringify(status), kills], true)
 
 func _on_player_damaged() -> void:
     audio.play_event("hurt")
@@ -455,7 +466,7 @@ func _update_hud() -> void:
     message.text = "Move through XP. Keep clear of the sentries."
     if available_art_styles.size() > 1:
         style_button.text = "Style: %s [T]" % art_style.capitalize()
-        message.text = "PRIVATE ART REVIEW · T or Style swaps the full game look."
+        message.text = "T or Style changes the full game look."
         credit_label.text = "Same round · T: art style · M: sound · F: fullscreen\n" + ("Native: crisp tiles + sparks · one mirrored hero view" if art_style == "native" else ("Illustrated: idle + blink · soft trails + wisps" if player.visual.has_illustrated_idle() else "Illustrated: soft trails + wisps · idle holds a pose"))
     else:
         credit_label.text = "WASD / arrows / touch · M: sound · F: fullscreen\nGDQuest MIT logic · " + ("Radbro paperdoll: PRIVATE ART REVIEW" if player.visual.using_paperdoll else "Radbro assets · Radcat preview hero")
@@ -479,7 +490,7 @@ func state_text() -> String:
     var enemies: Array = []
     for mob in mobs:
         if is_instance_valid(mob): enemies.append({"node_id": mob.get_instance_id(), "art_style": mob.art_style, "x": snappedf(mob.position.x, 0.1), "y": snappedf(mob.position.y, 0.1), "health": mob.health})
-    return JSON.stringify({"game": "radbro-survivors", "state": state, "audio": audio.snapshot(), "animation": player.visual.animation_state(), "art_style": art_style, "available_art_styles": available_art_styles, "visual_style": {"floor": art_style, "ground_texture_loaded": art_data.styles.get(art_style, {}).get("look", {}).get("ground") != null, "ground_mirror_alternate": art_data.styles.get(art_style, {}).get("look", {}).get("mirror_alternate", false), "gun": gun.art_style, "projectile_style": art_style}, "active_fx": effects.snapshot(), "projectiles": projectiles.get_children().filter(func(p): return not p.is_queued_for_deletion()).map(func(p): return {"node_id": p.get_instance_id(), "art_style": p.art_style, "x": snappedf(p.position.x, 0.1), "y": snappedf(p.position.y, 0.1), "distance": snappedf(p.travelled_distance, 0.1)}), "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": BALANCE.wave_number(elapsed), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": BALANCE.xp_threshold(level), "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
+    return JSON.stringify({"game": "radbro-survivors", "state": state, "result": last_result, "audio": audio.snapshot(), "animation": player.visual.animation_state(), "art_style": art_style, "available_art_styles": available_art_styles, "visual_style": {"floor": art_style, "ground_texture_loaded": art_data.styles.get(art_style, {}).get("look", {}).get("ground") != null, "ground_mirror_alternate": art_data.styles.get(art_style, {}).get("look", {}).get("mirror_alternate", false), "gun": gun.art_style, "projectile_style": art_style}, "active_fx": effects.snapshot(), "projectiles": projectiles.get_children().filter(func(p): return not p.is_queued_for_deletion()).map(func(p): return {"node_id": p.get_instance_id(), "art_style": p.art_style, "x": snappedf(p.position.x, 0.1), "y": snappedf(p.position.y, 0.1), "distance": snappedf(p.travelled_distance, 0.1)}), "elapsed": snappedf(elapsed, 0.01), "duration": round_seconds, "wave": BALANCE.wave_number(elapsed), "player": {"node_id": player.get_instance_id(), "facing": player.visual.facing, "x": snappedf(player.position.x, 0.1), "y": snappedf(player.position.y, 0.1), "health": snappedf(player.health, 0.1), "speed": player.speed, "paperdoll": player.visual.using_paperdoll}, "kills": kills, "level": level, "xp": xp, "xp_next": BALANCE.xp_threshold(level), "gems": gems.map(func(p: Vector2) -> Dictionary: return {"x": p.x, "y": p.y}), "enemies": enemies, "shots": gun.shots, "damage": gun.damage, "fire_interval": gun.interval, "upgrades": upgrades, "coordinates": "origin top-left; +x right; +y down; player position is floor anchor"})
 
 func _install_bridge() -> void:
     if not OS.has_feature("web"): return
@@ -488,4 +499,4 @@ func _install_bridge() -> void:
     callbacks.append(callback)
     browser.set("__survivorsSnapshot", callback)
     JavaScriptBridge.eval("window.render_game_to_text=function(){window.__survivorsSnapshot();return window.__survivorsState};window.advanceTime=function(ms){return new Promise(function(resolve){setTimeout(function(){resolve(window.render_game_to_text())},Math.max(0,Math.min(Number(ms)||0,60000)))})};", true)
-    JavaScriptBridge.eval("window.parent.postMessage({type:'radbro:game-ready',game:'godot-radbro-survivors',title:'Radbro Survivors',controls:['WASD / arrows / touch: move','P: pause','R: restart','1 / 2 / 3: upgrade','T / Style: switch local review art when available','M / Sound: mute or unmute']},'*')", true)
+    JavaScriptBridge.eval("window.radbroSurvivorsReady()", true)

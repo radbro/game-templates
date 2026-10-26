@@ -1,0 +1,363 @@
+{
+  "reviewOnly": true,
+  "published": false,
+  "native": {
+    "sourceRig": "radbro64-front-v2",
+    "anchor": {
+      "x": 32,
+      "y": 60
+    },
+    "outfitCalibration": {
+      "base": {
+        "visibleTop": 3,
+        "visibleBottom": 61,
+        "visibleHeight": 58,
+        "clips": [
+          "idle",
+          "walk"
+        ]
+      },
+      "default": {
+        "visibleTop": 2,
+        "visibleBottom": 61,
+        "visibleHeight": 59,
+        "clips": [
+          "idle",
+          "walk"
+        ]
+      },
+      "og-484": {
+        "visibleTop": 3,
+        "visibleBottom": 61,
+        "visibleHeight": 58,
+        "clips": [
+          "idle",
+          "walk"
+        ]
+      },
+      "og-1242": {
+        "visibleTop": 2,
+        "visibleBottom": 61,
+        "visibleHeight": 59,
+        "clips": [
+          "idle",
+          "walk"
+        ]
+      }
+    },
+    "visibleTop": 2,
+    "visibleBottom": 61,
+    "visibleHeight": 59
+  },
+  "illustrated": {
+    "sourceAnchor": {
+      "x": 256.0,
+      "y": 465.92
+    },
+    "displayAnchor": {
+      "x": 256,
+      "y": 512
+    },
+    "visibleTop": 20,
+    "visibleBottom": 512,
+    "visibleHeight": 492,
+    "calibration": "One common display foot baseline for all 16 frames. Source frame bytes and source manifest remain unchanged. No per-frame alignment."
+  },
+  "worldHeroHeight": 56,
+  "files": [
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/pack.json",
+      "copy": "assets/native-hero/pack.json",
+      "sha256": "bc719a9a0dc0e40dd42e82f387d74f714197f131b2d215fe055e08e442abf569",
+      "bytes": 24759
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-brows.png",
+      "copy": "assets/native-hero/sprites/base/base-brows.png",
+      "sha256": "c9e6e84ae68c57754e17ce0cc198c35bc40276a3506843c2bb6f136997d2e61b",
+      "bytes": 1033
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-eye-left.png",
+      "copy": "assets/native-hero/sprites/base/base-eye-left.png",
+      "sha256": "32e7c0481413ce97a25f953b056d896637fe2069fbd0547922b0ffc606285f35",
+      "bytes": 1635
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-eye-right.png",
+      "copy": "assets/native-hero/sprites/base/base-eye-right.png",
+      "sha256": "2578adb4c78ae0c27c86f68b04bc2571e4ab48a9a811f2b11fa0ca16259e6223",
+      "bytes": 1658
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-far-arm.png",
+      "copy": "assets/native-hero/sprites/base/base-far-arm.png",
+      "sha256": "c07b2c944965d6622a223d29ef280a19e47bf4982a179058b82d0a4f126cce2f",
+      "bytes": 1558
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-hair-back.png",
+      "copy": "assets/native-hero/sprites/base/base-hair-back.png",
+      "sha256": "29820a2913fada167d4a8cbf17514cff17a8e30235a3e52f1e8c73f101734308",
+      "bytes": 3710
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-hair-front.png",
+      "copy": "assets/native-hero/sprites/base/base-hair-front.png",
+      "sha256": "ec82a3bc5d20b4203ba67e6f8fd47d0bffda83a636810d3e9b7bb70ed4922480",
+      "bytes": 3265
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-head.png",
+      "copy": "assets/native-hero/sprites/base/base-head.png",
+      "sha256": "915760d1d960d10a422762c015fe2685d1b097b7c8d4c628fd4e3958ee9b48ee",
+      "bytes": 3855
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-legs.png",
+      "copy": "assets/native-hero/sprites/base/base-legs.png",
+      "sha256": "8b2244592123d146d6af1b45bdb90840bb0dc2744a0bde2d08d788dc8e474a68",
+      "bytes": 3073
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-mouth.png",
+      "copy": "assets/native-hero/sprites/base/base-mouth.png",
+      "sha256": "2a1122ff0d21f7bcb297a1eec04cb686eeef18d11c55781508944ae92c3063ee",
+      "bytes": 878
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-near-arm.png",
+      "copy": "assets/native-hero/sprites/base/base-near-arm.png",
+      "sha256": "f0abbf069415b41f81fa6914ec070cab12496fb9f79e9251c4c4c017fca43577",
+      "bytes": 2274
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/base/base-torso.png",
+      "copy": "assets/native-hero/sprites/base/base-torso.png",
+      "sha256": "dfd0e23ef9393dcf4ae0dc56f2784f2779dc5db82a78633ac270a81e7ab906a9",
+      "bytes": 2123
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/auryn-front.png",
+      "copy": "assets/native-hero/sprites/items/auryn-front.png",
+      "sha256": "4a9416aa715315aecd12e214813ce655849f829ce7a19fd6708444b45a556a49",
+      "bytes": 1993
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/blue-bandana-front.png",
+      "copy": "assets/native-hero/sprites/items/blue-bandana-front.png",
+      "sha256": "c001e879172d9a8d5434418b68bbe2d5f5478e751da59501c469c384c95ace90",
+      "bytes": 2433
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/blue-shades-front.png",
+      "copy": "assets/native-hero/sprites/items/blue-shades-front.png",
+      "sha256": "265e7a0969450c6f32a3882e9a646eca9ef1973926d0827538b6997404828542",
+      "bytes": 2425
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/bucket-hat-front.png",
+      "copy": "assets/native-hero/sprites/items/bucket-hat-front.png",
+      "sha256": "0319062e603013ccb41a09e419b5be745dc99c5adb0415c5cf066e0c0b4478df",
+      "bytes": 3096
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/cross-front.png",
+      "copy": "assets/native-hero/sprites/items/cross-front.png",
+      "sha256": "6800cf0e32412073958265a7d16c637ae257276f432c86145236a0567b5c6626",
+      "bytes": 1853
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/foil-front.png",
+      "copy": "assets/native-hero/sprites/items/foil-front.png",
+      "sha256": "b90f7e075f4f6ee26f91d1192be8c582d76f9fdc4683278b059a48b8a3861079",
+      "bytes": 2802
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/laser-right-front.png",
+      "copy": "assets/native-hero/sprites/items/laser-right-front.png",
+      "sha256": "e8aba9c56bf82e16ae39926fbcbf44bba4618a0f6d809f6edea4235c75a6446f",
+      "bytes": 2523
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/nobody-far-sleeve.png",
+      "copy": "assets/native-hero/sprites/items/nobody-far-sleeve.png",
+      "sha256": "09fcc1a68d26bb940e0c77bb6f3326751cba8f42b9d06efe228178934246372f",
+      "bytes": 1572
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/nobody-near-sleeve.png",
+      "copy": "assets/native-hero/sprites/items/nobody-near-sleeve.png",
+      "sha256": "51b58136cbe8688f16b33f7f8925b5e74ed6929b0aff0d4572ba898796ec813d",
+      "bytes": 2255
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/nobody-torso.png",
+      "copy": "assets/native-hero/sprites/items/nobody-torso.png",
+      "sha256": "b92b5dc84cd919d35e0c6900df1860ef946f061bf1a126d0a2562c1b04eee560",
+      "bytes": 2299
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/overfiend-far-sleeve.png",
+      "copy": "assets/native-hero/sprites/items/overfiend-far-sleeve.png",
+      "sha256": "09fcc1a68d26bb940e0c77bb6f3326751cba8f42b9d06efe228178934246372f",
+      "bytes": 1572
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/overfiend-near-sleeve.png",
+      "copy": "assets/native-hero/sprites/items/overfiend-near-sleeve.png",
+      "sha256": "51b58136cbe8688f16b33f7f8925b5e74ed6929b0aff0d4572ba898796ec813d",
+      "bytes": 2255
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/overfiend-torso.png",
+      "copy": "assets/native-hero/sprites/items/overfiend-torso.png",
+      "sha256": "3e7a355cd36706524f10ed1774758cf4b88ff6a6ea7f0f72e1a4c28d0e05c95e",
+      "bytes": 2305
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/panda-front.png",
+      "copy": "assets/native-hero/sprites/items/panda-front.png",
+      "sha256": "12b30b23b08b709b2e581fd6014654f8bcb816903157368de35c85e7b5db076a",
+      "bytes": 1822
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/pirate-front.png",
+      "copy": "assets/native-hero/sprites/items/pirate-front.png",
+      "sha256": "15fcd091d8c0fc29cd337aa9307f447f8b0d062433927056c42b456eb2004583",
+      "bytes": 2087
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/red-bandana-front.png",
+      "copy": "assets/native-hero/sprites/items/red-bandana-front.png",
+      "sha256": "4c8f8e54542e8f173dc23f887bc149bd09ac73ee0f5591002e5cdd78acdcb7a2",
+      "bytes": 2566
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/vape-mod-front.png",
+      "copy": "assets/native-hero/sprites/items/vape-mod-front.png",
+      "sha256": "f8e4f17fb7033f534eeb7b863d21f3b4345eb8f94a516f82dcbea0e20acfadd7",
+      "bytes": 1757
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/wink-front.png",
+      "copy": "assets/native-hero/sprites/items/wink-front.png",
+      "sha256": "d565189600e81e17d756811735e77ca2aafa9bea483c96be9296a1a0420a46d4",
+      "bytes": 1010
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/yuk-front.png",
+      "copy": "assets/native-hero/sprites/items/yuk-front.png",
+      "sha256": "ca5d74a7cc3f947f2e316b90329e3879dcb669b9900609da4d374c233f48effa",
+      "bytes": 1324
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-17-radbro-paperdoll/sprites/items/yuky-front.png",
+      "copy": "assets/native-hero/sprites/items/yuky-front.png",
+      "sha256": "ca5d74a7cc3f947f2e316b90329e3879dcb669b9900609da4d374c233f48effa",
+      "bytes": 1324
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/manifest.json",
+      "copy": "assets/illustrated-hero/source-manifest.json",
+      "sha256": "8bf3e887cb9d603b260dfaf6ef9513ac18878f97b08829cc2208f19112d6eab9",
+      "bytes": 6995
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_down-00.png",
+      "copy": "assets/illustrated-hero/walk_down-00.png",
+      "sha256": "e41f32bc9bea80bbe8475d7cf32f2ea6033891dadf0782f24c3459998dfecf7f",
+      "bytes": 291536
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_down-01.png",
+      "copy": "assets/illustrated-hero/walk_down-01.png",
+      "sha256": "c651d77ed4c16f441b06173c27081df5ef2274001ad4490cea5193d943e124cc",
+      "bytes": 290568
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_down-02.png",
+      "copy": "assets/illustrated-hero/walk_down-02.png",
+      "sha256": "235dcb2398f48e2410f9e0eafa2f22ee9567f8045de01bf666606c6c1f3958d1",
+      "bytes": 293169
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_down-03.png",
+      "copy": "assets/illustrated-hero/walk_down-03.png",
+      "sha256": "bca1a3ee10234a15784aaf64252e7d565f589d600c3281f6713eee93b4c53da2",
+      "bytes": 294051
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_right-00.png",
+      "copy": "assets/illustrated-hero/walk_right-00.png",
+      "sha256": "fe39876c6c225a0cf957b35b21dd7d934821c32ba2ea7f5d228bd7b05ceadf19",
+      "bytes": 283061
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_right-01.png",
+      "copy": "assets/illustrated-hero/walk_right-01.png",
+      "sha256": "ecaf2a51651ad421d86e05a6ad4c26a7421bb85c97d4c10e3f74601fe5385438",
+      "bytes": 280633
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_right-02.png",
+      "copy": "assets/illustrated-hero/walk_right-02.png",
+      "sha256": "13b70c7ccb80ebf3d11f1cfdcf235dceeee304bccac099321a196b51f63e330f",
+      "bytes": 282528
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_right-03.png",
+      "copy": "assets/illustrated-hero/walk_right-03.png",
+      "sha256": "a065f79089c863ab388cf475bba0b216a72737f016c164aaea369e8942d4189f",
+      "bytes": 283046
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_up-00.png",
+      "copy": "assets/illustrated-hero/walk_up-00.png",
+      "sha256": "d0d7cbfbcde1a8ac704cfd26bc44ebada6a20e8b912e3b2985a25d0aebc210b3",
+      "bytes": 285798
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_up-01.png",
+      "copy": "assets/illustrated-hero/walk_up-01.png",
+      "sha256": "ca1a8148bca232f62bbe65977c0cd19efce1eb36df373f03dd06e5d52f5f11e9",
+      "bytes": 285153
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_up-02.png",
+      "copy": "assets/illustrated-hero/walk_up-02.png",
+      "sha256": "56959aac6eadba2b3aeaeaae4673e64d48a94f4d508ffb2c92cb8b8a032a02d9",
+      "bytes": 285846
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_up-03.png",
+      "copy": "assets/illustrated-hero/walk_up-03.png",
+      "sha256": "900abbafdd81ece991fa5c93bf481d0df4f2420fc3ba16770c0be693c650b3e4",
+      "bytes": 286478
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_left-00.png",
+      "copy": "assets/illustrated-hero/walk_left-00.png",
+      "sha256": "10ca6a601ae1bdef77dba540dd9d18ebd46a69c10e12b1c421e6136cb4515719",
+      "bytes": 274179
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_left-01.png",
+      "copy": "assets/illustrated-hero/walk_left-01.png",
+      "sha256": "21692a6d9c32b345935cd2bbe2d40bf7fb5383c6165226b2605ad6aad7832b4b",
+      "bytes": 273794
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_left-02.png",
+      "copy": "assets/illustrated-hero/walk_left-02.png",
+      "sha256": "af21f944e95a73a32e0390f177858ffbe4afaab641df37776ba1949c61898c24",
+      "bytes": 276905
+    },
+    {
+      "source": "/Users/tacopaco/workspace/fun/code/radclaw/runs/2026-10-18-radbro-fresh-ai-sheets/processed/nano-banana/frames/walk_left-03.png",
+      "copy": "assets/illustrated-hero/walk_left-03.png",
+      "sha256": "4d743a2b8b93752f1797810083f574ed39c3d21b9f9a7a8bbba4ad76154475b6",
+      "bytes": 273793
+    }
+  ]
+}
